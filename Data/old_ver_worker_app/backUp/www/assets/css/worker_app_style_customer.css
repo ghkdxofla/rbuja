@@ -1,0 +1,159 @@
+
+
+
+.customer-info-main-style {
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 100%;
+    z-index: 1000;
+    
+}
+
+
+
+#customer-info-main {
+
+    padding-top: 35px;
+    height: 200px;
+
+}
+
+.customer-info-button {
+    position: absolute;
+
+    padding: 8px 3px 8px 3px;
+    margin: 2px 2px 2px 2px;
+
+    z-index: 2000;
+    text-align: center;
+    font-weight: 500;
+    background-color: #F0FFF0;
+    border: 1px solid #4DC03D;
+    border-radius: 3px;
+    color: black;
+    
+}
+
+#customer-info-point-giving {
+    width: 60%;
+    bottom: 140px;
+    left: 20%;
+}
+
+#customer-info-breakdown {
+    
+    width: 29.5%;
+    bottom: 100px;
+
+    left: 20%;
+}
+
+#customer-info-correct {
+    
+    width: 29.5%;
+    background-color: #ffece8;
+    border-color: #FF6347;
+    bottom: 100px;
+
+    left: 50.5%;
+
+}
+
+#insert-line-1 {
+    z-index: 1000;
+    
+    width: 90%;
+    left: 5%;
+    bottom: 77px;
+
+    text-align: center;
+    height: 1px;
+}
+
+.customer-bottom-button {
+    position: absolute;
+
+    width: 50%;
+    bottom: 0%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+    z-index: 3000;
+    color: white;
+    font-size: 30px;
+    background-color: #4DC03D;
+}
+
+#customer-button-complete {
+    left: 0;
+}
+
+#customer-button-out {
+    left: 50%;
+    background-color:#FF6347;
+}
+
+#customer-button-part {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: 0;
+}
+
+.list-style-bold {
+    font-weight: bold;
+}
+
+.customer-serach-style {
+    position: absolute;
+    bottom: 0;
+    top: 19px;
+    background-color: transparent;
+    
+    z-index: 9000;
+    width: 100%;
+    display: inherit;
+    
+}
+
+.customer-search-button {
+    z-index: 9999;
+    right: 20%;
+    left: 20%;
+    opacity: 1.0 !important;
+}
+
+#customer-search-name {
+    top: 25%;
+}
+
+#customer-search-phone {
+    top: 40%;
+}
+
+#customer-search-address {
+    top: 55%;
+}
+
+.customer-search-back {
+    
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 9001;
+    width: 100%;
+    display: block;
+    
+
+}
+
+#customer-info-search {
+    position: absolute;
+    top: 30px;
+    right: 5%;
+    width: 15%;
+    
+    
+}

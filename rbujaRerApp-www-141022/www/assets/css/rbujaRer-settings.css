@@ -1,0 +1,105 @@
+#settings-settingsHome {
+  padding: 15px;
+}
+
+.settingsHome-label {
+  font-size: 20px;
+  margin-bottom: 20px !important;
+}
+
+.settingsHome-longTab {
+  padding: 14px;
+  margin: 10px;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#settingsHome-appConfigure-notificationSwitch {
+  display: inline-block;
+  float: right;
+  font-size: 18px;
+}
+
+#settings-agreements {
+  display: none;
+}
+
+#settings-versionInfo {
+  display: none;
+  padding: 20px;
+}
+
+#versionInfo-image {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+#settingsHome-appInfo {
+
+}
+
+.settings-wrapper {
+  background-color: #e3e3e3;
+  overflow: hidden;
+}
+
+#versionInfo-currentVersion {
+  float: right;
+}
+
+.versionInfo-longTab {
+  padding: 14px;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 5px;
+  border-bo
+}
+
+#versionInfo-comment {
+  display: inline-block;
+  width: 73%;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+#versionInfo-updateButton {
+  float: right;
+  margin-top: 30px;
+}
+
+#versionInfo-newestVersion {
+  float: right;
+}
+
+
+
+#agreements-service {
+  height: 200px; /* overriding textBox's css property due to wrapper-main blocking this element from inheriting body's height 100% proportion */
+}
+
+#agreements-private {
+  height: 200px; /* overriding textBox's css property due to wrapper-main blocking this element from inheriting body's height 100% proportion */
+}
+
+
+
+#versionInfo-topTab {
+  border: 1px solid black;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#versionInfo-bottomTab {
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 1px solid black;
+  border-top: none;
+}

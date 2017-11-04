@@ -1,0 +1,422 @@
+/* font-face */
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic.eot);
+  src: url(../fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic.woff2) format('woff2'),
+    url(../fonts/NanumGothic.woff) format('woff'),
+    url(../fonts/NanumGothic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NanumGothicBold.eot);
+  src: url(../fonts/NanumGothicBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothicBold.woff2) format('woff2'),
+    url(../fonts/NanumGothicBold.woff) format('woff'),
+    url(../fonts/NanumGothicBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/NanumGothicExtraBold.eot);
+  src: url(../fonts/NanumGothicExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothicExtraBold.woff2) format('woff2'),
+    url(../fonts/NanumGothicExtraBold.woff) format('woff'),
+    url(../fonts/NanumGothicExtraBold.ttf) format('truetype');
+}
+
+* { font-family:'Nanum Gothic', sans-serif; }
+a { text-decoration:none !important; }
+#barFixedTop {
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color: #F0FFF0;
+
+ 
+    
+}
+
+.rbuja-BackgroundColor {
+    background-color: #4DC03D;
+}
+
+#topBar {
+    position: relative;
+    height: 40px;
+    padding:8px 14px 7px 14px;
+    width:100%;
+    overflow:hidden;
+}
+
+#topBar-Logo {
+    margin:-34px -2px -25px -9px;
+    height:35px;
+}
+
+#topBar-Brand {
+      display:inline;
+  font-size:18px;
+  font-weight:200;
+  color:#FFF;
+}
+
+
+
+#sideBar-Toggle-TopBar {
+      float:right;
+  padding:2px 0 2px 0;
+  /* font-size for sideBar-Toggle-Topbar */
+  font-size:30px;
+  color:#FFF;
+}
+
+.menuIcon {
+  margin-bottom: 0px;
+  color:#DBDBDB;
+}
+.menuIcon-Text {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+  
+    padding:0;
+    font-size:12px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+#menuIcon-Certify {
+    
+    left: 0;
+  
+
+    font-size:38px;
+    text-align: center;
+    
+}
+
+#menuIcon-Customer {
+    
+    font-size:29px;
+    
+    text-align: center;
+    left: 20%;
+    
+}
+#subMenuBar {
+  overflow: hidden;
+  padding: 4px 10px 2px 14px;
+}
+.subMenuBar-Tab {
+  display:inline;
+  float:left;
+  height: 28px;
+  margin-right:14px;
+  margin-bottom: 4px;
+  color:#FFF;
+  font-size:16px;
+}
+#sideBar {
+  position:fixed;
+  top:0;
+  right:-171px;
+  width:172px;
+  padding-right: 1px;
+  height:100%;
+  z-index:9000;
+  background-color:#F0F0F0;
+  border-left:1px solid #BFBFBF;
+}
+#sideBar > ul {
+  margin:0;
+  padding:0;
+}
+#sideBar-Toggle-TopBar {
+  float:right;
+  padding:2px 0 2px 0;
+  /* font-size for sideBar-Toggle-Topbar */
+  font-size:30px;
+  color:#FFF;
+}
+#sideBar-Toggle-SideBar {
+  padding:10px 10px 10px 15px;
+  /* font-size for sideBar-Toggle-SideBar */
+  font-size:30px;
+}
+.sidebar-Item {
+  list-style:none;
+  line-height:55px;
+  /* font-size for sidebar-Item-Icon */
+  font-size:22px;
+  border-top:1px solid white;
+  border-bottom:1px solid #DCDCDC;
+}
+.sideBar-Item-Text {
+  position:absolute;
+  left:55px;
+  font-size:16px;
+  font-weight:bold;
+  color:#000;
+}
+.sideBar-Item-Icon {
+  position:relative;
+  left:20px;
+  color: #4DC03D;
+}
+.infoBlockPage {
+  padding:15px;
+  background-color:#F0F0F0;
+}
+.block {
+  position:relative;
+  padding:15px;
+  margin-bottom: 15px;
+  background-color:#FFF;
+  border:1px solid #DCDCDC;
+  border-radius:5px;
+}
+#menuIcon-Maps {
+    
+    font-size:49px;
+    text-align: center;
+    left: 40%;
+}
+
+#menuIcon-Calculates {
+    
+    font-size:50px;
+    text-align: center;
+    
+    left: 60%;
+}
+
+#menuIcon-More {
+    
+    font-size:49px;
+    text-align: center;
+    left: 80%;
+}
+
+.topBar-IconSize {
+    display:inline-block;
+    position: absolute;
+    float: left;
+    height: 80px;
+    
+    width:20%;
+    text-align: center;
+    
+    
+}
+
+#mainFrame {
+    position: fixed;
+    overflow:hidden;
+    bottom: 0px;
+    width: 100%;
+    
+    background-color: #F0FFF0;
+    z-index: 5000;
+   
+}
+
+
+
+.insert-line-horizontal {
+    position: absolute;
+    outline-color: #DCDCDC;
+    outline-style: solid;
+    outline-width: thin;
+    background-color: #DCDCDC;
+    z-index: 3000;
+}
+
+.iframe-setting {
+    position:absolute;
+    height: 100%;
+    
+    width: 100%;
+    overflow: hidden;
+    
+    
+}
+
+#menuIconBar {
+    background-color: #F0FFF0;
+    outline-color: black;
+    vertical-align: 
+}
+
+#topBar-remain {
+    position: fixed;
+    background-color: #F0FFF0;
+
+    width: 100%;
+    top: 100px;
+    outline-color: #F0FFF0;
+    padding: 10px;
+}
+
+.change-button-color {
+    background-color: #87CEFA;
+    color: white;
+}
+
+
+#menuIcon-MapsText {
+    top: 57px;
+}
+
+#menuIcon-CalculatesText {
+    top: 57px;
+}
+
+#menuIcon-MoreText {
+    top: 100px;
+}
+
+#menuIcon-Certify-icon {
+    left: 0%;
+}
+
+.menuIcon-position {
+    position: absolute;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    top: 5px;
+    
+    
+}
+
+#menuIcon-Customer-icon {
+    left: 0%;
+    top: 5px;
+}
+
+#menuIcon-Maps-icon {
+    left: 0%;
+}
+
+#menuIcon-Calculates-icon {
+    left: 0%;
+    top: 5px;
+}
+
+#menuIcon-More-icon {
+    left: 0%;
+}
+
+
+
+#menuIcon-Point {
+        
+
+    text-align: center;
+    
+    left: 80%;
+}
+
+#menuIcon-Point-icon {
+    left: 0%;
+    margin-top: -20px;
+        font-size: 60px;
+    font-weight: bolder;
+}
+
+#menuIcon-PointText {
+    top: 57px;
+}
+
+#menuIcon-Manual {
+        font-size:50px;
+    text-align: center;
+    
+    left: 100%;
+}
+
+#menuIcon-Manual-icon {
+    left: 0%;
+}
+
+#menuIcon-ManualText {
+    top: 57px;
+}
+
+#menuIcon-Setting {
+            font-size:50px;
+    text-align: center;
+    
+    left: 120%;
+}
+
+#menuIcon-Setting-icon {
+    left: 0%;
+}
+
+#menuIcon-SettingText {
+    top: 57px;
+}
+
+
+
+#menuIconScroll {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+
+    
+    
+}
+
+#testtest {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    z-index: -1;
+}
+
+#app-loading {
+    position: fixed;
+    z-index: 6000;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#loading-logo {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    float: left;
+    left: 50%;
+    margin-left: -125px;
+    top: 10%;
+    
+}
+
+#app-loading-p {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    float: left;
+    left: 50%;
+    padding-top: 220px;
+    margin-left: -125px;
+    top: 10%;
+    text-align: center;
+    font-size: 18px
+}

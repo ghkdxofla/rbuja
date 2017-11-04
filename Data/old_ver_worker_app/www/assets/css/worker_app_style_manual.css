@@ -1,0 +1,134 @@
+
+#manual-info-title {
+    position: relative;
+    display:inline-block;
+    clear: both;
+    
+    width:100%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #87CEFA;
+    color: white;   
+    z-index: 2000;
+    outline-width: 0;
+    
+     
+    outline-style: solid;
+    outline-color: white;
+}
+
+#manual-info-part {
+    position: absolute;
+    z-index: 100;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+#manual-scroll-horizontal {
+    position: absolute;
+    z-index: 100;
+    /*전체길이*/
+    width: auto;
+    height: 100%;
+}
+
+#manual-scroll-horizontal ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#manual-scroll-horizontal li {
+    display: block;
+    float: left;
+    /*하나의 길이*/
+    width: auto;
+    height: 100%;
+    
+}
+
+.manual-main-style {
+    position: absolute;
+    display: box;
+    box-orient: center;
+    width: inherit;
+    padding: 30px;
+    height: inherit;
+    
+}
+
+.manual-title {
+    position: absolute;
+    display: block;
+    left: 0px;
+    right: 60px;
+    padding-left: 30px;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+    min-width: 270px;
+}
+
+.manual-point {
+    color: red;
+}
+
+.manual-picture-part {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    height: 60%;
+    top: 80px;
+    
+}
+
+.manual-picture {
+    position: relative;
+   
+    width: 60%;
+    max-height: 230px;
+    max-width:  230px;
+    min-height: 230px;
+    min-width: 230px;
+    
+}
+
+.manual-content {
+    position: absolute;
+    display: block;
+    left: 10%;
+    right: 10%;
+    top: 330px;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 20px;
+    
+    
+}
+
+
+
+
+
+.manual-content-list {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 370px;
+    text-align: left;
+    
+    
+}
+
+.manual-content-example {
+    font-weight: bolder;
+}

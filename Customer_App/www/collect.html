@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_collect.css">
+
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            $(document).ready(function(){
+				$("#collect-main-button-recycle").hide();
+
+                $("#status-collect-recycle").addClass("status-button-on");
+                document.getElementById("collect-recycle-menu").style.display = 'block';
+
+                $("#status-collect-recycle").click(function(){
+                    document.getElementById("collect-electric-menu").style.display = 'none';
+                    document.getElementById("collect-recycle-menu").style.display = 'block';
+                    $(".status-button").removeClass("status-button-on");
+                    $("#status-collect-recycle").addClass("status-button-on");
+                });
+                $("#status-collect-electric").click(function(){
+                    document.getElementById("collect-recycle-menu").style.display = 'none';
+                    document.getElementById("collect-electric-menu").style.display = 'block';
+                    $(".status-button").removeClass("status-button-on");
+                    $("#status-collect-electric").addClass("status-button-on");
+                });
+				$("#collect-recycle-button").click(function(){
+					$("#collect-main-button-recycle").show();
+				});
+				$(".collect-button-close").click(function(){
+					$("#collect-main-button-recycle").hide();
+				});
+				$("#collect-button-recycle-out").click(function(){
+					$("#collect-visit-recycle").hide();
+
+					$("#collect-out-recycle").toggle();
+				});
+				$("#collect-button-recycle-visit").click(function(){
+					$("#collect-out-recycle").hide();
+
+					$("#collect-visit-recycle").toggle();
+				});
+				$("#collect-out-button-recycle").click(function(){
+					var d = new Date();
+					d = d.toISOString();
+					var searchT = d.search("T");
+					d = d.slice(0, searchT);
+					$.ajax({
+						type: 'POST',
+						url: "http://rbuja.herokuapp.com/rbuja/MakeRequest_app",
+						data: {
+							request_type: "recycle",
+							pickup_date: d
+						},
+						dataType: 'json',
+						timeout: 5000,
+						success: function(data) {
+							alert(data.message);
+							$("#collect-main-button-recycle").hide();
+
+
+
+						},
+						error: function(data){
+							
+							alert(data.message);
+
+						}
+
+					});
+				});
+				$("#collect-visit-button-recycle").click(function(){
+					var d = new Date();
+					d = d.toISOString();
+					var searchT = d.search("T");
+					d = d.slice(0, searchT);
+					$.ajax({
+						type: 'POST',
+						url: "http://rbuja.herokuapp.com/rbuja/MakeRequest_app",
+						data: {
+							request_type: "recycle_visit",
+							pickup_date: d
+						},
+						dataType: 'json',
+						timeout: 5000,
+						success: function(data) {
+							alert(data.message);
+							$("#collect-main-button-recycle").hide();
+
+
+
+						},
+						error: function(data){
+							
+							alert(data.message);
+
+						}
+
+					});
+				});
+				
+				
+					
+
+            });
+
+
+        </script>
+    
+    </head>
+    
+    <body style="height: 100%; width: 100%; background-color: #eaeaea;">
+        
+        <!--total part-->
+        <div id="collect-menu">
+            
+            <!-- top part-->
+            <div id="collect-top">
+                
+                <!--top status-->
+                <div class="top-status">
+                    
+                    <div class="status-button" id="status-collect-recycle">
+                        재활용품
+                    </div>
+                    
+                    <div class="status-button" id="status-collect-electric">
+                        가전제품
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <!-- howto menu-->
+            
+            <!-- recycle-->
+            <div class="collect-howto-menu-style" id="collect-recycle-menu">
+                <div class="collect-worker-part" id="collect-recycle-worker">
+                    <div class="collect-worker-info" id="collect-recycle-info">
+                        
+
+                        수거기사　<span class="collect-info-style" id="recycle-info-name">미스캔디</span><br>
+                        담당지역　<span class="collect-info-style" id="recycle-info-address">신정2동</span>
+                    
+                    </div>
+                    
+                    <div class="collect-worker-photo" id="collect-recycle-photo">
+                        <img src="images/collect/worker_ex.jpg" class="photo-worker-style" id="recycle-photo-worker">
+                    
+                    </div>
+
+                </div>
+                <div class="collect-main-arrow">
+                    <div class="collect-arrow-style-up fa fa-chevron-up"></div>
+                    <div class="collect-arrow-style-down fa fa-chevron-down"></div>
+
+                </div>
+                <div class="collect-main-title">수거 신청 시 참조 사항</div>
+
+                <div class="collect-main-info" id="collect-recycle=info">
+                    <p>방문 수거 대상 물품은 인력으로 수거가 가능한 물품에 한하며,</p>
+                    <p>수거가 용이하도록 분리 또는 분해된 상태로</p>
+                    <p>현관 앞에 비치되어 있어야 합니다.</p>
+                    <br>
+                    <p>유의사항</p>
+                    <p>가전제품은 인력비용상 무료 수거를 원칙으로 합니다.</p>
+                    <p>가전제품은 부재중 신청이 불가능 합니다.</p>
+                    <p>가로, 세로, 높이 1m 미만의 소형가전은 재활용 방문수거를</p>
+                    <p>이용해 주시기 바랍니다.</p>
+                    <br>
+                    <p>수거 불가 품목</p>
+                    <p>1. 폐가구 (장롱, 책상, 의자 등...)</p>
+                
+                
+                
+                </div>
+                <div class="collect-main-button" id="collect-recycle-button">
+                    <span class="fa fa-check"></span>수거신청
+                
+                </div>
+            
+            </div>
+			
+			<div class="collect-main-button-style" id="collect-main-button-recycle">
+				<div class="collect-button-close"><br></div>
+				<div class="collect-button-style" id="collect-button-recycle-out">
+					부재중<br>
+					신청
+				</div>
+				<div class="collect-out-style" id="collect-out-recycle">
+					<div class="collect-out-content">
+						<p>부재중 신청은 신청 후 다음날 00시에서 00시에 수거됩니다.</p>
+						<br>
+						<p>현관 앞에 물품을 준비하여 주세요. 단, 도난 시 <br>책임은 지지 않습니다.</p>
+					
+					</div>
+					<div class="collect-out-button" id="collect-out-button-recycle">
+						신청하기
+					
+					</div>
+					
+				
+				</div>
+				<div class="collect-button-style" id="collect-button-recycle-visit">
+					방문<br>
+					신청
+				</div>
+				<div class="collect-visit-style" id="collect-visit-recycle">
+					<div class="collect-visit-content">
+						<p>방문 신청은 요일과 시간을 선택하여 주세요</p>
+					
+					
+					</div>
+					<div class="collect-visit-button" id="collect-visit-button-recycle">
+						신청하기
+					
+					</div>
+					
+				
+				</div>
+																				
+			
+			</div>
+            
+            <!-- electric-->
+            <div class="collect-howto-menu-style" id="collect-electric-menu">
+                <div class="collect-worker-part" id="collect-electric-worker">
+                    <div class="collect-worker-info" id="collect-electric-info">
+                        
+
+                        수거기사　<span class="collect-info-style" id="electric-info-name">남궁민수</span><br>
+                        담당지역　<span class="collect-info-style" id="electric-info-address">신정6동</span>
+                    
+                    </div>
+                    
+                    <div class="collect-worker-photo" id="collect-electric-photo">
+                        <img src="images/collect/worker_ex2.jpg" class="photo-worker-style" id="electric-photo-worker">
+                    
+                    </div>
+
+                </div>
+                <div class="collect-main-arrow">
+                    <div class="collect-arrow-style-up fa fa-chevron-up"></div>
+                    <div class="collect-arrow-style-down fa fa-chevron-down"></div>
+
+                </div>
+                <div class="collect-main-title">수거 신청 시 참조 사항</div>
+
+                <div class="collect-main-info" id="collect-electric=info">
+                    <p>방문 수거 대상 물품은 인력으로 수거가 가능한 물품에 한하며,</p>
+                    <p>수거가 용이하도록 분리 또는 분해된 상태로</p>
+                    <p>현관 앞에 비치되어 있어야 합니다.</p>
+                    <br>
+                    <p>유의사항</p>
+                    <p>가전제품은 인력비용상 무료 수거를 원칙으로 합니다.</p>
+                    <p>가전제품은 부재중 신청이 불가능 합니다.</p>
+                    <p>가로, 세로, 높이 1m 미만의 소형가전은 재활용 방문수거를</p>
+                    <p>이용해 주시기 바랍니다.</p>
+                    <br>
+                    <p>수거 불가 품목</p>
+                    <p>1. 폐가구 (장롱, 책상, 의자 등...)</p>
+                
+                
+                
+                </div>
+                <div class="collect-main-button" id="collect-electric-button">
+                    <span class="fa fa-check"></span>수거신청
+                
+                </div>
+            
+            </div>
+            
+            
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,458 @@
+/* font-face */
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/NanumGothic.eot);
+    src: url(../fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
+        url(../fonts/NanumGothic.woff2) format('woff2'),
+        url(../fonts/NanumGothic.woff) format('woff'),
+        url(../fonts/NanumGothic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/NanumGothicBold.eot);
+    src: url(../fonts/NanumGothicBold.eot?#iefix) format('embedded-opentype'),
+        url(../fonts/NanumGothicBold.woff2) format('woff2'),
+        url(../fonts/NanumGothicBold.woff) format('woff'),
+        url(../fonts/NanumGothicBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Nanum Gothic';
+    font-style: normal;
+    font-weight: 800;
+    src: url(../fonts/NanumGothicExtraBold.eot);
+    src: url(../fonts/NanumGothicExtraBold.eot?#iefix) format('embedded-opentype'),
+        url(../fonts/NanumGothicExtraBold.woff2) format('woff2'),
+        url(../fonts/NanumGothicExtraBold.woff) format('woff'),
+        url(../fonts/NanumGothicExtraBold.ttf) format('truetype');
+}
+
+* { 
+    font-family:'Nanum Gothic', sans-serif; 
+}
+#home-menu {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#home-top {
+    position: absolute;
+    top: 0;
+    height: 140px;
+    width: 100%;
+}
+
+#home-top-title {
+    position: absolute;
+    top: 0;
+    
+    width: 100%;
+
+    height: 30px;
+}
+
+#top-title-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-height: 30px;
+    min-height: 30px;
+	z-index: -1;
+}
+
+.main-style {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.popup-style {
+    position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 35000;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    display: inherit;
+
+}
+
+#top-title-icon {
+    position: absolute;
+    z-index: 100;
+    top: 2px;
+    float: left;
+    height: 25px;
+    padding-left: 3px;
+    
+    
+}
+
+#top-title-home {
+    position: absolute;
+    z-index: 100;
+    top: 5px;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    float: left;
+    left: 30px;
+    text-shadow: 0px 0px 1.4px white;
+}
+
+#top-image-more {
+    position: absolute;
+    top: 0px;
+    float: right;
+    right: 0px;
+	width: 40px;
+    
+
+    height: 30px;
+    z-index: 2000;
+}
+
+#home-top-menu {
+    position: absolute;
+    top: 30px;
+    height: 70px;
+    width: 100%;
+    
+}
+
+.top-menu {
+    position: relative;
+    height: 70px;
+    float: left;
+    display: inline-block;
+    width: 25%;
+    
+    
+}
+
+#top-menu-front {
+    
+}
+
+#top-menu-manual {
+}
+
+#top-menu-collect {
+}
+
+#top-menu-shop {
+}
+
+
+
+#home-main {
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+.top-image-menu-off {
+    position: absolute;
+    height: 70px;
+    left: 50%;
+    margin-left: -37px;
+    display: block;
+    }
+
+.top-image-menu-on {
+    position: absolute;
+    height: 70px;
+    left: 50%;
+    margin-left: -37px;
+    display: none;
+    z-index: 100;
+    }
+
+.top-status {
+    position: absolute;
+    top: 0;
+    height: 28px;
+    background-color: #4ec140;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+}
+
+#home-top-side {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3000;
+    display: none;
+    
+
+}
+
+#top-side-close {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#top-side-main {
+    position: absolute;
+    width: 40%;
+    float: right;
+    right: 0;
+    top: 30px;
+    height: 400px;
+    background-color: black;
+    opacity: 0.9;
+}
+
+#top-side-list {
+    position: absolute;
+    width: 40%;
+    float: right;
+    right: 0;
+    top: 30px;
+    height: 400px;
+}
+
+.side-list-menu-style {
+    position: relative;
+    width: 80%;
+    float: right;
+    right: 0;
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 5px;
+    
+}
+
+.side-list-style {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.side-list-icon-style {
+    position: relative;
+    width: 20%;
+    float: left;
+    left: 0;
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-size: 30px !important;
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.status-button {
+    position: relative;
+    top: 2px;
+    margin-left: 20px;
+    float: left;
+}
+
+.status-button-on {
+    border-bottom: solid 2px white;
+}
+
+.side-style {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+#home-side {
+    position: absolute;
+    top: 30px;
+    bottom: 0;
+    width: 100%;
+    z-index: 2000;
+    display: none;
+}
+
+#top-title-sidebar {
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    padding-top: 5px;
+    height: 30px;
+    float: left;
+    width: 100%;
+    left: 0;
+    text-shadow: 0px 0px 1.4px white;
+    display: none;
+}
+
+#top-back-home {
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    color: white;
+    text-align: left;
+    font-size: 30px !important;
+    float: left;
+    left: 0px;
+    padding-left: 3px;
+    padding-top: 1px;
+    padding-right: 3px;
+    text-shadow: 0px 0px 1.4px white;
+    display: none;
+    height: 30px;
+}
+
+#home-logout {
+    position: fixed;
+    width: 250px;
+    left: 50%;
+    margin-left: -125px;
+    top: 35%;
+    height: 140px;
+    background-color: white;
+    z-index: 20000;
+    box-shadow: 0px 0px 15px black;
+    border-radius: 5px;
+    border: solid 4px #e0e0e0;
+    display: none;
+}
+
+#home-logout-message {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 10px;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
+.home-logout-button {
+    position: absolute;
+    text-align: center;
+    border-radius: 5px;
+    bottom: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    padding: 5px;
+    box-shadow: 0px 0px 5px gray;
+
+}
+
+#home-logout-button-yes {
+    background-color: #4ec140;
+    left: 20px;
+    
+}
+
+#home-logout-button-no {
+    background-color: #ff5656;
+    right: 20px;
+}
+
+#home-logout-close {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.4;
+    z-index: 15000;
+    display: none;
+
+}
+
+#home-popup {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 20000;
+    display: none;
+}
+
+.home-popup-style {
+    position: absolute;
+    z-index: 30000;
+    width: 86%;
+    left: 50%;
+    margin-left: -43%;
+    top: 30px;
+	bottom: 30px;
+    display: none;
+}
+
+#home-popup-close {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.4;
+    display: inherit;
+	z-index: 25000;
+}
+
+#top-image-more-style {
+	position: absolute;
+	width: 30px;
+	height: 20px;
+	right: 5px;
+	top: 5px;
+	z-index: 2000;
+}
+
+#top-title-bar-red {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-height: 30px;
+    min-height: 30px;
+	z-index: -0;
+	display: none;
+}
+
+#top-title-icon-red {
+    position: absolute;
+    z-index: 101;
+    top: 2px;
+    float: left;
+    height: 25px;
+    padding-left: 3px;
+	display: none;
+}
+
+
+
+#home-popup-close-button-style {
+	position: absolute;
+	z-index: 35000;
+	top: 30px;
+	right: 7%;
+	
+	width: 40px;
+	height: 40px;
+}

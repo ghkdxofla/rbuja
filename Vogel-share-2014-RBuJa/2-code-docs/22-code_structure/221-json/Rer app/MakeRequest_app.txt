@@ -1,0 +1,19 @@
+Rer app function
+http://rbuja.herokuapp.com/rbuja/MakeRequest_app
+POST
+request_type: 0(재활용부재중수거) or 1(재활용방문수거) or 2(전자제품수거),
+pickup_date: 2014-12-29
+
+{
+    "message": "요청한 작업에 성공했습니다",
+    "result": true,
+    "response": {
+        "request_ids": [
+            15,
+            16,
+            17,
+            19,
+            18
+        ]
+    }
+}

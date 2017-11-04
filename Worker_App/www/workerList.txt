@@ -1,0 +1,11 @@
+[
+    {
+        "name": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1"
+    }
+]

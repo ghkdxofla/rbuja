@@ -1,0 +1,32 @@
+﻿[
+    {
+        "visittime": "",
+        "givepoint": "5300",
+        "benefitpoint": "1300",
+        "username": "853"
+    },
+    {
+        "visittime": "",
+        "givepoint": "4200",
+        "benefitpoint": "1600",
+        "username": "772"
+    },
+    {
+        "visittime": "",
+        "givepoint": "3300",
+        "benefitpoint": "300",
+        "username": "663"
+    },
+    {
+        "visittime": "",
+        "givepoint": "2700",
+        "benefitpoint": "900",
+        "username": "315"
+    },
+    {
+        "visittime": "",
+        "givepoint": "4600",
+        "benefitpoint": "800",
+        "username": "254"
+    }
+]

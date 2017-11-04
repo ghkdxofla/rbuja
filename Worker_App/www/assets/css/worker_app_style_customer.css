@@ -1,0 +1,186 @@
+
+
+
+.customer-info-main-style {
+    position: absolute;
+    background-color: transparent;
+    width: 90%;
+    float: left;
+    left: 50%;
+    margin-left: -45%;
+    top: 23px;
+    z-index: 1000;
+    border: 2px solid #DCDCDC;
+    border-radius: 5px;
+    padding-top: 5px;
+    
+}
+
+
+
+
+
+.customer-info-button {
+    position: absolute;
+
+    padding: 8px 3px 8px 3px;
+    margin: 2px 2px 2px 2px;
+    padding-left: 10px;
+
+    z-index: 2000;
+    text-align: left;
+    font-weight: 500;
+    background-color: #F0FFF0;
+    border: 1px solid #4DC03D;
+    border-radius: 3px;
+    color: black;
+    
+}
+
+#customer-info-point-giving {
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    right: 2px;
+    display: none;
+}
+
+#customer-info-breakdown {
+    position: absolute;
+    bottom: 2px;
+
+    right: 50%;
+    left: 2px;
+
+    display: none;
+
+}
+
+#customer-info-correct {
+    
+    width: 29.5%;
+    background-color: #ffece8;
+    border-color: #FF6347;
+    bottom: 100px;
+
+    left: 50.5%;
+
+}
+
+#insert-line-1 {
+    z-index: 1000;
+    
+    width: 90%;
+    left: 5%;
+    bottom: 77px;
+
+    text-align: center;
+    height: 1px;
+}
+
+.customer-bottom-button {
+    position: absolute;
+
+    width: 50%;
+    bottom: 0%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+    z-index: 3000;
+    color: white;
+    font-size: 30px;
+    background-color: #4DC03D;
+}
+
+#customer-button-complete {
+    left: 0;
+}
+
+#customer-button-out {
+    left: 50%;
+    background-color:#FF6347;
+}
+
+#customer-button-part {
+    position: absolute;
+    bottom: 98px;
+    height: 90px;
+    width: 80%;
+    float: right;
+    right: 50%;
+    margin-right: -40%;
+    border: 2px solid #DCDCDC;
+    border-radius: 5px;
+}
+
+.list-style-bold {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#customer-info-search {
+    position: absolute;
+    bottom: 42px;
+    right: 50%;
+    left: 2px;
+
+    
+}
+
+#customer-info-previous {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    right: 2px;
+     
+}
+
+
+
+
+
+#customer-info-collection {
+    position: absolute;
+    
+    bottom: 2px;
+
+    right: 50%;
+    left: 2px;
+
+    display: none;
+
+}
+
+#customer-info-request {
+    position: absolute;
+    bottom: 42px;
+    left: 50%;
+    right: 2px;
+    display: none;
+
+}
+
+.bottom-button-part {
+        position: absolute;
+    bottom: 0;
+    width: 100%;
+    top: 0;
+}
+
+.button-icon-style {
+    position: absolute;
+    right: 10px !important;
+    font-size: 20px !important;
+    color: gray;
+}

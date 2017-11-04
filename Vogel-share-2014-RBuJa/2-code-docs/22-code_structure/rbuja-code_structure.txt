@@ -1,0 +1,255 @@
+""" rbuja-code_structure.txt
+
+0** file_info
+
+file_classification = class2
+
+modified_dates = [
+    141124.1530,
+    141219.21:48
+]
+
+description | how_to_read_this_file = [
+    based on server-side codes,
+    formatted in data_structures of computer language python,
+]
+
+terms = {
+    'func': 'function',
+    'funcs': 'functions',
+    '.f': 'means the element is ForeignKey'
+}
+
+Copyright © 2014 by Vogel All rights reserved.
+
+1** index = {
+    '0**': 'file_info',
+    '1**': 'index',
+    '2**': 'data',
+    '3**': 'funcs'
+}
+
+"""
+
+********************************************************************************
+2** data
+
+1__ index = {
+    '1__': 'index',
+    '2__': 'description',
+    '3__': 'context'
+}
+
+
+2__ description = [
+    elements in lists represent the names of attributes while variables do classes respectively,
+    for example = [
+	Account = [
+	    username,
+	    password
+	],
+	variable Account represents the class,
+	while an element, username is an attribute of its belonging class Account
+	each element's name is the exact name of the corresponding attribute's name
+    ]
+]
+
+
+3__ context
+
+Account = [
+    username,
+    password,
+    realname,
+    phone,
+    joindate,
+    is_active
+]
+
+Rer = Account + [
+    address,
+    area.f
+]
+
+Picker = Account + []    
+
+Resource = Account + [
+    servicearea.f,
+    ceo_name,
+    ceo_phone,
+    address
+]
+
+ServiceArea = [
+    name
+]
+
+Area = [
+    name,
+
+]
+
+Request = [
+    rer.f,
+    picker.f,
+    servicearea.f,
+    rer_point,
+    picker_point,
+    made_date,
+    pickup_date,
+    request_type,
+    status_type   
+]
+
+Recycle = [
+    request.f,
+    total_weight,
+    paper,
+    plastic,
+    glassBottle,
+    custom,
+    clothes,
+    steel,
+    wire,
+    stainless,
+    copper
+]
+
+Electronics = [
+    request.f,
+    description
+]
+
+
+********************************************************************************
+3** funcs
+
+1__ index = {
+    '1__': 'index',
+    '2__': 'description',
+    '3__': 'terms',
+    '4__': 'context',
+    '__1': 'accounts',
+    '__2': 'rbuja',
+}
+
+
+2__ description = [
+    parenthesis next to elements refer to the options
+    or the format of the data to receive
+    for example = [
+	'input': {
+	    'username': ''
+	    'request_type': options(0/1/2),
+	    'pickup_date': strc('2014-12-29')
+	},
+    ]
+    this means the followings:
+    username is string
+    request_type should be one of the options: 0 or 1 or 2
+    while pickup_date should follow 'YYYY-MM-DD' format
+]
+
+
+3__ terms = {
+    'server_main_domain': 'http://rbuja.herokuapp.com',
+    'result': 'always boolean',
+    'message': 'always string',
+    'response': 'usually dictionary'
+}
+
+
+4__ context
+
+__1 accounts
+
+accounts/Login_app = {
+    'func_name': 'login_view',
+    'method': 'POST',
+    'input': [
+        'username',
+	'password'
+    ],
+    'output': {
+        'csrftoken': '',
+        'result': True,
+        'message': '',
+	'response': {
+	    'username': '',
+	    'realname': ''
+	}
+    }
+}
+
+accounts/Logout_app = {
+    'func_name': 'logout_view',
+    'method': 'GET',
+    'input': {
+	'username': '',
+	'password': '',
+    },
+    'output': {
+        'result': True,
+        'message': '',
+    }
+}
+
+accounts/SignUp_app = {
+    'func_name': 'sign_up',
+    'method': 'POST',
+    'input': {
+	'username': '',
+	'password': '',
+	'realname': '',
+	'phone': 0,
+	'address': ''
+    },
+    'output': {
+        'result': True,
+        'message': '',
+    }
+}
+
+
+__2 rbuja
+
+rbuja/MakeRequest_app = {
+    'func_name': 'make_request',
+    'method': POST',
+    'input': {
+        'request_type': 0/1/2,
+	'pickup_date': '2014-12-29'
+    },
+    'output': {
+        'result': True,
+        'message': '',
+        'response': {
+	    'request_type': options(0/1/2),
+	    'pickup_date': strc('2014-12-29'),
+	    'picker_realname': '',
+	    'picker_phone': 0
+        }
+    }
+}
+
+rbuja/ListRequest_app = {
+    'func_name': 'list_request',
+    'method': 'GET',
+    'input': {
+        'request_type': 0/1/2,
+	'pickup_date': '2014-12-29'
+    },
+    'output': {
+        'result': True,
+        'message': '',
+        'response': {
+	    'request_type': options(0/1/2),
+	    'pickup_date': strc('2014-12-29'),
+	    'picker_realname': '',
+	    'picker_phone': 0
+        }
+    }
+}
+
+rbuja/CompleteRequest_app
+rbuja/CheckPrices_app

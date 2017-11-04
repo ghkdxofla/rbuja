@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html style="background-color: #FFFFFF;height: 100%;font-size: 100%;">
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+
+
+        
+        <meta charset="utf-8">        
+        
+        
+        <script>
+            
+            function doCalculate(num){
+                var docOrigin = num.parentNode.parentNode.getElementsByTagName("div");
+                var x = docOrigin[0].getElementsByTagName("span");
+                x = x[0].innerHTML;
+                var y = num.value;
+                var z = x * y;
+                if (z == 0){
+                    z = null;
+                    docOrigin[2].innerHTML = z;
+                }
+                else {
+                    docOrigin[2].innerHTML = z + "p";
+                }
+                totalSum();
+            }
+            function totalSum(){
+                var totalCalculate =[];
+                $(".list-point").each(function(){
+                    var i = $(this).text();
+
+                    if(i==null){
+                        i=0;
+                    }
+                    else{
+                        i = i.slice(0, -1);
+                    }
+                    i = Number(i);
+                    totalCalculate.push(i);
+
+                });
+                var j;
+                var k = 0;
+                for(j=0;j < totalCalculate.length; j++){
+                    
+                    k += totalCalculate[j];
+                }
+                document.getElementById("list-point-total").innerHTML = k + "P";
+
+            }
+            
+
+            
+
+                
+                
+        
+            
+            
+                
+            
+            $(document).ready(function(){
+                
+                $("#list-up-calculates").hide();
+
+                $(".calculates-product-list").scroll(function(){
+                    //------------------------upupupupupupup---------------------                   
+                    var scrollIsDown = $(".calculates-product-list").scrollTop();
+                    var scrollHeightIs = $(".calculates-product-list").outerHeight(true);
+                    var scrollShow = $(".calculates-list-style").outerHeight(true);
+ 
+                    scrollShow *=sessionStorage.getItem("listTotal");
+
+                    
+                    scrollShow -= scrollHeightIs;
+                    scrollShow += 4;
+
+                    if(scrollIsDown == scrollShow){
+                        $("#list-down-calculates").hide();
+                        $("#list-up-calculates").show();
+
+                    }
+                    else if(scrollIsDown == 0){
+                        $("#list-down-calculates").show();
+                        $("#list-up-calculates").hide();
+
+                    }
+
+
+
+                });
+                
+                $("#calculates-button-point").click(function(){
+                    
+                    
+                    //=====================이대로 하면 목록이 변동됐을 때 문제가 생김!!!==================================
+                    var sendData = [];
+					
+					
+
+                    var inputData = document.getElementById("JSON-calculatesIndicator").getElementsByTagName("input");
+                    var totalData=0;
+                    var i;
+
+                    for(i=0; i<inputData.length; i++){
+                        var num = inputData[i].value;
+                        num = Number(num);
+                        totalData += num;
+						sendData.push(num);
+                    }
+
+					var changeVisit = parent.document.getElementById("URLhere2").contentDocument;
+					if(changeVisit.document.getElementById("client-visit-check").innerHTML != "certifying"){
+
+
+
+						var sendDataSaved = localStorage.setItem("SDS", sendData);
+						var savedTotal = localStorage.getItem("product");
+						savedTotal = Number(savedTotal);
+						savedTotal += totalData;
+						localStorage.setItem("product-certifying", savedTotal);
+						parent.document.location.hash = "#customer";
+						parent.document.location.hash = "#calculate_close";
+
+
+
+					}
+					else{
+						alert("이미 처리된 고객입니다!");
+						parent.document.location.hash = "#calculate_close";
+					
+					}
+					changeVisit.document.getElementById("client-visit-check").innerHTML = "certifying";
+
+
+                });
+                    
+                    
+            });
+
+        </script>
+
+
+
+        <!-- Main CSS -->
+            <link rel="stylesheet" href="assets/css/worker_app_style_calculates.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+    
+    </head>
+    <body style="overflow: hidden;background-color: #FFFFFF;height: 100%;">
+        <!-- mainframe menu-->
+        <div id="calculates-menu">
+
+            <!-- calculates menu bar-->
+            <div class="calculates-info-style" id="calculates-info-title">R 포인트 지급</div>
+            
+
+            
+            
+
+            <img src="images/arrow-up.png" id="list-up-calculates">
+            
+            <div class="calculates-product-list" id="JSON-calculatesIndicator">
+                
+                
+                <!-- popup list-->
+                <div class="calculates-list-style">
+                    
+                    <div class="list-product-calculates">종이<br>[<span>50</span>p]</div>
+                    <div class="list-amount-calculates input-group input-group-sm">
+                        <input type="number" min="0" class="form-control" value=0 oninput="doCalculate(this)">
+                    </div>
+                    
+                    
+               
+                    
+                    
+
+
+                    <div class="list-point">10200p</div>
+                    
+                
+
+                
+                
+                
+                </div>
+                
+
+            
+            </div>
+            <img src="images/arrow-down.png" id="list-down-calculates">
+            <div id="list-point-total">0P</div>
+            
+            
+            
+            
+
+
+            <div class="calculates-client-info" id="calculates-client-section">
+                
+                <span id="calculates-customer-name">남궁민혁</span> 님
+            </div>
+            
+            
+            <div class="calculates-button" id="calculates-button-point">
+                
+                포인트 적립
+            
+            </div>
+            
+            
+            
+
+    
+        </div>
+        
+        
+
+    
+    </body>
+
+
+
+
+
+</html>

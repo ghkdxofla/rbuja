@@ -1,0 +1,168 @@
+/* @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css'); */
+
+@viewport{ zoom:1.0; width:device-width; }
+@-ms-viewport{ width:extend-to-zoom; zoom:1.0; }
+
+body { position: absolute; height: 100%; width: 100%; background-color: #eee !important; }
+
+#loginBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin: 0 auto;
+  max-width: 75%;
+}
+#idForm {
+  height: 55px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+#passwordForm {
+  height: 55px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#buttonBox {
+  padding: 15px 0 15px 0;
+  overflow: hidden;
+  text-align: center;
+}
+#loginButton {
+  float: left;
+  width: 50%;
+  border: 1px solid #dcdcdc;
+  background-color: #6cdb44;
+  color: #fff;
+}
+#joinButton {
+  float: left;
+  width: 50%;
+  border: 1px solid #dcdcdc;
+  background-color: #ace808;
+  color: #fff;
+}
+
+#logo {
+  display: block;
+  margin: 50px auto;
+  width: 60%;
+  border-radius: 50px;
+}
+
+.containerCenter {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.textBox > p {
+  font-size: 12px;
+}
+
+#formBox {
+  float: right;
+  width: 65%;
+}
+
+.form-control {
+  display: inline !important;
+}
+
+.checkbox > label {
+  padding: 0 0 0 0 !important;
+}
+
+.buttonBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 10%;
+  padding: 10px !important;
+  border-radius: 0;
+  width: 100%;
+  background-color: #6cdb44;
+  color: white !important;
+  font-size: 23px !important;
+}
+
+.form {
+  position: absolute;
+  right: 20px;
+  width: 55% !important;
+}
+
+.formLine {
+  padding: 6px;
+}
+
+.formLine > label {
+  padding-top: 9px;
+}
+
+@keyframes shine {
+    from { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes shine {
+    from { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    to { opacity: 1.0; }
+}
+
+.shine {
+    animation:shine 3000ms infinite;
+    -webkit-animation:shine 3000ms infinite;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 25px black; }
+  50% { box-shadow: 0 0 0px black; }
+  to { box-shadow: 0 0 25px black; }
+}
+
+@-webkit-keyframes glow {
+  from { box-shadow: 1.0; }
+  50% { box-shadow: 0.1; }
+  to { box-shadow: 1.0; }
+}
+
+.glow {
+  box-shadow: 0 0 100px #a1ff7f;
+  animation:glow 3000ms infinite;
+  -webkit-animation:glow 3000ms infinite;
+}
+
+#imageBoundary {
+  position: absolute;
+
+  margin: 40px auto;
+  border: 30px solid blue;
+  border-radius: 40px;
+}
+
+.checkbox {
+  margin: 10px;
+}
+
+
+
+
+
+
+
+#wrapper-Forms {
+  display: none;
+}
+
+
+
+

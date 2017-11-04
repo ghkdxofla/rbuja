@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <script>
+
+        
+        
+            $(document).ready(function(){
+                 $("#loading-logo").delay(1000).fadeOut(1000).fadeIn(1000, function(){
+                    $("#app-loading").delay(2000).fadeOut("", function(){
+                        location.replace("home.html");
+                    });
+                    
+                 });
+            });
+        </script>
+    
+    </head>
+    
+    <body>
+        
+        
+        <div id="app-loading">
+    
+        <img id="loading-logo" src="images/logo-md.jpg">
+        <p id="app-loading-p">알부자, 알뜰한 쇼핑의 지름길</p>
+        
+    
+    
+    
+    </div>
+
+    </body>
+</html>

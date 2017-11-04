@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_front.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+			$(document).ready(function(){
+				document.getElementById("name-JSON").innerHTML = localStorage.getItem("realname");
+			});
+
+
+
+        </script>
+    
+    </head>
+    
+    <body style="height: 100%; width: 100%; background-color: #eaeaea;">
+        <!--total part-->
+        <div id="front-menu">
+            <!-- top part-->
+            <div id="front-top">
+                <!--top status-->
+                <div class="top-status">
+                     
+                    <div id="status-name">
+                        <span class="status-style" id="name-JSON">???</span>
+                        님, 안녕하세요!
+                    </div>
+                    
+                    <div id="status-point">
+                        <span class="status-style" id="point-JSON">0000</span>
+                        포인트 / 레벨
+                        <span class="status-style" id="level-JSON">0</span>
+                    </div>
+                
+                </div>
+            </div>
+            <div id="front-main">
+            
+                
+                <!--top menu-->
+                <div id="top-point">
+                    <div id="top-point-total">
+                        <span class="top-point-style">포인트</span>
+                        <span id="point-total-status">1,523,332</span>
+                        <span class="top-point-mark">P</span>
+                    </div>
+                    <div id="top-point-level">
+                        <span class="top-point-style" style="top: -20px;">레벨</span>
+                        <!--아래의 width는 실제 레벨 포인트의 퍼센트 수치를 javascript로 적용시키면 됨-->
+                        <span id="top-level-progress"><img src="images/home/top-bar-gradation.png" id="top-level-current"></span>
+
+                    </div>
+                </div>
+                <ul class="main-list-content">
+                    <!--shop menu-->
+                    <li class="main-list">
+                        <div class="main-list-upper">
+                            <div class="main-list-image">
+                                <img src="images/product1.jpg" class="main-list-image-size">
+                            </div>
+
+                            <div class="main-list-title">
+                                <P>이 칸에는 설명이 들어간다.</P>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                                <p>설명은 P를 사용한다.</p>
+                            </div>
+                            <div class="main-list-price"><span class="price-color">00000</span> 원</div>
+                        </div>
+
+                        <div class="main-list-under">구 매 하 기</div>
+
+                    </li>
+
+                    <!--notice menu-->
+                    <li class="main-list">
+                        <div class="main-list-notice-title">
+                            <span class="main-list-notice-title-style">이 곳에는 공지사항의 제목이 들어간다</span>
+                            <br>
+                        </div>
+
+
+                        <div class="main-list-notice-content">
+                            <P>이 칸에는 내용이 들어간다</P>
+                            <p>설명은 P를 사용한다</p>
+                        </div>
+
+
+
+                    </li>
+
+                    <!--event menu-->
+                    <li class="main-list">
+                        <div class="main-list-upper">
+                            <div class="main-list-image">
+                                <img src="images/product1.jpg" class="main-list-image-size">
+                            </div>
+
+                            <div class="main-list-title">
+                                <P>이 칸에는 설명이 들어간다.</P>
+                                <p>설명은 P를 사용한다.</p>
+                            </div>
+                            <div class="main-list-price"><span class="price-color">00000</span> 원</div>
+                        </div>
+
+                        <div class="main-list-under">구 매 하 기</div>
+
+                    </li>
+
+                    <!--shop menu-->
+                    <li class="main-list">
+                        <div class="main-list-upper">
+                            <div class="main-list-image">
+                                <img src="images/product1.jpg" class="main-list-image-size">
+                            </div>
+
+                            <div class="main-list-title">
+                            </div>
+                            <div class="main-list-price"><span class="price-color">00000</span> 원</div>
+                        </div>
+
+                        <div class="main-list-under">구 매 하 기</div>
+
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

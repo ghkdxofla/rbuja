@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_tutorial.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            function isTutorialPopup(){
+                if(location.hash == "#tutorial"){
+                }
+            }
+                    
+
+
+        </script>
+    
+    </head>
+    
+    <body onhashchange="isTutorialPopup()" style="height: 100%; width: 100%; background-color: #eaeaea;">
+        <!--main part-->
+        <div id="tutorial-menu">
+            <div class="tutorial-pages" id="tutorial-page1">
+                <img src="images/tutorial/page1.JPG" class="tutorial-pages-image" id="tutorial-page1-image">
+            
+            </div>
+            <div class="tutorial-pages" id="tutorial-page2">
+                <img src="images/tutorial/page2.JPG" class="tutorial-pages-image" id="tutorial-page2-image">
+            </div>
+            <div class="tutorial-pages" id="tutorial-page3">
+                <img src="images/tutorial/page3.JPG" class="tutorial-pages-image" id="tutorial-page3-image">
+            </div>
+        
+        </div>
+
+    </body>
+</html>

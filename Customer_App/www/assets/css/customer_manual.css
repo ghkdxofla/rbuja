@@ -1,0 +1,114 @@
+
+#manual-menu {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#manual-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 45px;
+}
+
+
+
+
+
+.manual-menu-content {
+    position: absolute;
+    background-color: white;
+    top: 30px;
+    margin-top: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 15px;
+    bottom: 12px;
+    border: solid 2px #e0e0e0;
+    border-radius: 5px;
+    overflow: auto;
+    display: none;
+}
+
+
+
+
+
+.manual-style-menu-howto {
+    position: absolute;
+    text-align: center;
+    width: 80%;
+    left: 50%;
+    margin-left: -40%;
+    top: 12px;
+
+    padding: 6px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #4ec140;
+    border: solid 2px #00a700;
+
+    color: white;
+
+    display: inherit;
+    font-size: 17px;
+
+}
+
+.manual-product-icon {
+    position: relative;
+    margin-left: 2.5%;
+    margin-bottom: 2.5%;
+    width: 30%;
+    float: left;
+
+}
+
+.product-icon {
+    position: relative;
+    width: 80px;
+    float: left;
+    left: 50%;
+    margin-left: -40px;
+    margin-bottom: 5%;
+    
+}
+
+
+
+
+
+.manual-style-menu-product {
+    position: absolute;
+    background-color: white;
+    top: 52px;    
+    left: 0;
+    right: 0;
+    padding: 15px;
+    bottom: 0;
+    display: inherit;
+
+}
+
+
+
+.manual-product-button-style {
+    position: relative;
+    background-color: white;
+    text-align: center;
+    width: 49%;
+
+    padding: 6px;
+    height: auto;
+    border: solid 2px #e0e0e0;
+    border-radius: 5px;
+    display: block;
+}
+
+
+
+
+
+

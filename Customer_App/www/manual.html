@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_manual.css">
+
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+			function OnIconClicked(){
+				if(location.hash !=""){
+					parent.document.getElementById("home-popup").style.display = "block";
+					parent.document.getElementById("popup-manual").style.display = "block";
+					
+				}
+			}
+						
+						
+            $(document).ready(function(){
+                location.hash = "";
+                $("#manual-recycle-menu").show();
+
+                $("#status-manual-recycle").addClass("status-button-on");
+                $("#status-manual-recycle").click(function(){
+                    $(".status-button").removeClass("status-button-on");
+                    $("#status-manual-recycle").addClass("status-button-on");
+                    $("#manual-electric-menu").hide();
+                    $("#manual-recycle-menu").show();
+                });
+                $("#status-manual-electric").click(function(){
+                    $(".status-button").removeClass("status-button-on");
+                    $("#status-manual-electric").addClass("status-button-on");
+                    $("#manual-recycle-menu").hide();
+                    $("#manual-electric-menu").show();
+                });
+                $(".manual-product-icon").click(function(){
+                    location.hash = $(this).attr("name");
+					parent.document.getElementById("popup-manualpopup").contentWindow.document.location.hash = $(this).attr("name");
+                });
+                $(".manual-style-menu-howto").click(function(){
+                    location.hash = $(this).attr("name");
+					parent.document.getElementById("popup-manualpopup").contentWindow.document.location.hash = $(this).attr("name");
+
+                });
+                    
+
+
+            });
+
+
+        </script>
+    
+    </head>
+    
+    <body onhashchange="OnIconClicked()" style="height: 100%; width: 100%; background-color: #eaeaea;">
+        
+        <!--total part-->
+        <div id="manual-menu">
+            
+            <!-- top part-->
+            <div id="manual-top">
+                
+                <!--top status-->
+                <div class="top-status">
+                    
+                    <div class="status-button" id="status-manual-recycle">
+                        재활용품 <span class="fa fa-recycle"></span>
+                    </div>
+                    
+                    <div class="status-button" id="status-manual-electric">
+                        가전제품 <span class="fa fa-desktop"></span>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            
+            <!-- recycle menu-->
+            <div class="manual-menu-content" id="manual-recycle-menu">
+                <div class="manual-style-menu-howto" name="recycle" id="manual-recycle-menu-howto">
+                    재활용품 이용안내
+
+                </div>
+                <div class="manual-style-menu-product" id="manual-recycle-menu-product">
+                    <div class="manual-product-icon" name="paper" id="product-paper"><img src="images/manual/paper.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="can" id="product-can"><img src="images/manual/can.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="plastic" id="product-plastic"><img src="images/manual/plastic.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="rope" id="product-rope"><img src="images/manual/rope.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="bottle" id="product-bottle"><img src="images/manual/bottle.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="clothe" id="product-clothe"><img src="images/manual/clothe.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="iron" id="product-iron"><img src="images/manual/iron.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="stainless" id="product-stainless"><img src="images/manual/stainless.jpg" class="product-icon"></div>
+                    <div class="manual-product-icon" name="small" id="product-small"><img src="images/manual/small.jpg" class="product-icon"></div>
+
+                
+                </div>
+            
+            </div>
+            <!-- electric menu-->
+            <div class="manual-menu-content" id="manual-electric-menu">
+                <div class="manual-style-menu-howto" name="electric" id="manual-electric-menu-howto">
+                    가전제품 이용안내
+                </div>
+                <div class="manual-style-menu-product" id="manual-electric-menu-product">
+                    준비중!
+
+
+
+                </div>
+            </div>
+            
+            
+            
+        </div>
+    </body>
+</html>

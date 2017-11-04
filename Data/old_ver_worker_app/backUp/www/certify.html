@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html style="background-color: #FFFFFF;height: 100%;">
+ 
+    
+    <head>
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+
+        <script type="text/javascript">
+        
+            var myScroll;
+            var yourScroll;
+
+            function loadedRe(){
+                myScroll = new IScroll('#recycle-client-list', {bounce: false, 
+                    click: true, tap: true});
+
+            }
+            function loadedEl(){
+                yourScroll = new IScroll('#electric-client-list', {bounce: false, 
+                    click: true, tap: true});
+            }
+
+            $.getDocHeight = function(){
+                 var doc_height =  Math.max(
+                     $(document).height(),
+                     $(window).height()
+                 );
+                 var iframe_height = doc_height - 120;
+                 return iframe_height + "px";
+            };
+            
+
+            $(document).ready(function(){
+
+                //ajax-function
+                
+                $.get("client.txt", function(data, status, certifyClient){
+                     var myArray = JSON.parse(certifyClient.responseText);
+                     ClientList(myArray);
+                });
+                    
+                $(document).ajaxComplete(function(){
+                    setTimeout(function(){
+                        loadedRe();
+                        loadedEl();
+                    }, 5);
+                    
+                    
+                    setTimeout(function(){
+                        $("#electric-client-list").hide();
+                    }, 10);
+                    localStorage.setItem("check", "home");
+                    
+                });
+
+                //click-function
+                
+                $("#recycle-title").click(function(){
+                    $("#recycle-client-list").show();
+                    $("#electric-client-list").hide();
+                });
+
+                $("#electric-title").click(function(){
+                    $("#recycle-client-list").hide();
+                    $("#electric-client-list").show();
+
+
+                });
+             
+
+                 
+            });
+            
+        </script>
+
+
+        
+        
+        
+        
+        <meta charset="utf-8">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_certify.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    
+    </head>
+
+    <body style="background-color:#FFFFFF;height:100%;">
+        
+        
+        
+        <!-- mainframe menu-->
+       
+        
+        <div id="goods-Menu">
+            
+            
+             <div class="common-info-title" id="certify-info-title">고객검색</div>
+            
+            
+            
+            
+            <div onclick="changeColor_Recycle()" class="certify-button" id="recycle-title">재활용품
+            </div>
+            
+
+            
+
+            
+            
+            
+            
+            <div onclick="changeColor_Electric()" class="certify-button" id="electric-title">가전제품</div>
+            
+            
+            
+        
+        
+       
+
+            
+            
+                
+                
+
+
+<!-- sidebar banned
+            <div class="sidebar-list" id="sidebar-list-setting">
+                
+                <span onclick="">
+                    <div class="sidebar-icon">
+                    <span class="fa fa-home menuIcon-certify rbuja-Color" id="sidebar-icon-search"></span>
+                    <p class="sidebar-text" id="sidebar-text-check">신청확인</p>
+                    </div>
+                </span>
+
+
+
+                <span onclick="">
+                    <div class="sidebar-icon">
+                    <span class="fa fa-search menuIcon-certify rbuja-Color" id="sidebar-icon-recent"></span>
+                    <p class="sidebar-text">최근검색</p>
+                    </div>
+                </span>
+
+
+
+                <span onclick="">
+                    <div class="sidebar-icon">
+                    <span class="fa fa-picture-o menuIcon-certify rbuja-Color" id="sidebar-icon-maps"></span>
+                    <p class="sidebar-text">지도보기</p>
+                    </div>
+                </span>
+                
+                
+            </div>
+-->
+       
+
+
+            <div id="all-client-list">
+                <!-- background title color-->
+                <div id="background-title"></div>
+                
+                <div id="recycle-main">
+                    신청고객
+
+                </div> 
+                
+
+
+                <div class="all-client-list-scroll" id="recycle-client-list">
+                    
+                    <ul class="all-client-list-setting" id="JSON-reIndicator">  
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- client 1-->
+                        <li class="all-client" id="re-client-1">
+                            <div class="re-client-info">
+
+                                이보라
+                                <br>
+                                010-0000-0000
+
+
+
+
+                            </div>
+
+                            <div class="re-client-number">
+
+                                1
+
+
+                            </div>
+                            
+                        </li>
+                       
+                    </ul>  
+
+                </div>
+
+
+
+                <div class="all-client-list-scroll" id="electric-client-list">
+                    <ul class="all-client-list-setting" id="JSON-elIndicator">
+                        
+                        
+                        
+                        <!-- client 1-->
+                        <li class="all-client" id="el-client-1">
+                            <div class="el-client-info">
+
+                                박홍열
+                                <br>
+                                010-5555-5555
+
+
+
+
+                            </div>
+
+                            <div class="el-client-number">
+
+                                1
+
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>    
+
+
+                
+            </div>
+                        
+        </div>
+        
+        
+    
+    
+    
+    
+
+
+        
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

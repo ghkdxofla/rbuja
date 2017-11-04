@@ -1,0 +1,26 @@
+
+#maps-info-title {
+    position: relative;
+    display:inline-block;
+    clear: both;
+    
+    width:100%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #87CEFA;
+    color: white;   
+    z-index: 2000;
+    outline-width: 0;
+    
+     
+    outline-style: solid;
+    outline-color: white;
+}
+
+#testMap {
+    position: absolute;
+    width: 100%;
+    border:0px;
+}

@@ -1,0 +1,44 @@
+#ifndef IDC_STATIC
+#define IDC_STATIC (-1)
+#endif
+
+#define IDD_LOGIN                               103
+#define IDD_GIVE                                108
+#define IDD_WEIGHT                              109
+#define IDR_MENU1                               114
+#define IDD_PAPER                               115
+#define IDD_SETTINGS                            117
+#define IDD_RVALUE                              119
+#define IDC_BUTTON_LOGIN                        40000
+#define IDC_BUTTON_RVALUE                       40000
+#define IDC_LIST_RVALUE                         40000
+#define IDC_EDIT_ID                             40001
+#define IDC_LIST_PAPER                          40001
+#define IDC_LIST_PICKER                         40001
+#define IDC_PICTURE_TOP                         40001
+#define IDC_BUTTON_LASTMONTH                    40002
+#define IDC_EDIT_PW                             40002
+#define IDC_LIST_GIVE                           40002
+#define IDC_PICTURE_PICKER                      40002
+#define IDC_BUTTON_NEXTMONTH                    40003
+#define IDC_STATIC_CORRECTIONCOUNT              40003
+#define IDC_STATIC_PICKERNAME                   40003
+#define IDC_LIST_CORRECTION                     40004
+#define IDC_STATIC_PICKERAREA                   40004
+#define IDC_STATIC_THISMONTH                    40004
+#define IDC_STATIC_GENERALTOTAL                 40005
+#define IDC_STATIC_PICKERWEIGHT                 40005
+#define IDC_STATIC_ELECTRONICSTOTAL             40006
+#define IDC_STATIC_MONTHTOTAL                   40007
+#define IDC_STATIC_PICKERCOUNT                  40007
+#define IDC_BUTTON_YESTERDAY                    40008
+#define IDC_BUTTON_TOMORROW                     40009
+#define IDC_BUTTON_REFRESH                      40010
+#define IDC_BUTTON_WEIGHT                       40011
+#define IDC_BUTTON_GIVE                         40012
+#define IDC_BUTTON_PAPER                        40013
+#define DISABLED                                40014
+#define IDC_STATIC_ID                           40015
+#define IDC_BUTTON_LOGOUT                       40016
+#define IDC_BUTTON_PAY                          40017
+#define IDC_LIST_WEIGHT                         40017

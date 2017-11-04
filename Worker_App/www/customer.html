@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html style="background-color:#FFFFFF;height:100%;">
+
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        
+
+        <meta charset="utf-8">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_customer.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            //complete clicked
+            function completeClicked() {
+                var sendData = {
+					is_absent: "",
+					request_id: "",
+					recycle: ""
+				};
+
+            }
+
+            //complete clicked
+            function outClicked() {
+                var sendData = {
+					is_absent: "",
+					request_id: ""
+				};
+                if(document.getElementById("client-visit-check").innerHTML == "certifying"){
+					sendData.is_absent = "false";
+					sendData.request_id = document.getElementById("client-index-check").innerHTML;
+
+
+                    $.ajax({
+                        type: 'POST',
+                        url: "http://rbuja.herokuapp.com/rbuja/CompleteRequest_app",
+                        data: sendData,
+                        dataType: 'json',
+                        timeout: 5000,
+                        success: function(data) {
+                            alert(JSON.stringify(data));
+
+                            if (data.status == true) {
+                                alert("부재중 처리되었습니다.");
+                            }
+                            
+   
+                            document.getElementById("client-visit-check").innerHTML = "certified";
+
+
+                        },
+                        error: function(){
+                            alert("서버 접속이 원활하지 않습니다. 잠시 후에 재시도 하십시오.");
+                        }
+
+                    });
+                }
+                else{
+                    alert("포인트 지급 또는 요청 확인을 하신 후 재시도 바랍니다");
+                }
+            }
+        
+            
+            
+                
+            
+            $(document).ready(function(){
+                var checkPicker;
+
+                checkPicker = localStorage.getItem("picker");
+                if(checkPicker == null){
+                    checkPicker = localStorage.setItem("picker", "rePicker");
+                }
+
+                if(checkPicker == "rePicker"){
+
+                    $("#customer-info-point-giving").show();
+                    $("#customer-info-breakdown").show();
+                    $("#customer-info-collection").hide();
+
+                    $("#customer-info-request").hide();
+
+
+                }
+                else if(checkPicker == "elPicker"){
+
+                    $("#customer-info-point-giving").hide();
+                    $("#customer-info-breakdown").hide();
+
+                    $("#customer-info-collection").show();
+                    $("#customer-info-request").show();
+
+
+
+
+                }
+
+                //popup-function
+                $(".customer-serach-style").hide();
+                
+                $("#customer-info-search").click(function(){
+                    parent.document.location.hash = "#find";
+                });
+
+                $("#customer-info-previous").click(function(){
+                    parent.document.location.hash = "#certify";
+                });
+                
+                $("#customer-info-request").click(function(){
+                    var isNull = document.getElementById("JSON-clientIndicator");
+                    var isNullLi = isNull.getElementsByTagName("li");
+                    if(isNullLi[0].innerHTML != '<span class="list-style-bold">이름: </span>'){
+                        parent.document.location.hash = "#collects_in_customer";
+                        var i = document.getElementById("client-index-check").innerHTML;
+                        localStorage.setItem("cit", i);
+
+                    }
+                    else{
+                        alert("요청을 확인할 고객을 먼저 지정해주세요");
+                    }
+
+                    
+                });
+                $("#customer-info-point-giving").click(function(){
+                    var isNull = document.getElementById("JSON-clientIndicator");
+                    var isNullLi= isNull.getElementsByTagName("li");
+                    if(isNullLi[0].innerHTML != '<span class="list-style-bold">이름: </span>'){
+                        parent.document.location.hash = "#calculates_in_customer";
+                        var i = document.getElementById("client-index-check").innerHTML;
+                        localStorage.setItem("cit", i);
+                    }
+                    else{
+                        alert("포인트를 지급할 고객을 먼저 지정해주세요");
+                    }
+
+                });
+                $("#customer-info-collection").click(function(){
+                    parent.document.location.hash = "#point";
+                });
+                $("#customer-info-breakdown").click(function(){
+                    parent.document.location.hash = "#point";
+                });
+                
+
+
+
+            });
+        
+        
+        
+        </script>
+ 
+    </head>
+    
+    
+    <body style="background-color:#FFFFFF;height:100%;">
+        
+        
+        <!--customer-info-title-->
+        <div  class="common-info-title" id="customer-info-title">고객정보</div>
+        <!--customer-info-main-->
+        <div class="customer-info-main-style" id="customer-info-main">
+        
+            <ul style="list-style-type:none; margin-left: -30px;" id="JSON-clientIndicator">
+                <li><span class="list-style-bold">이름: </span></li>
+                <li><span class="list-style-bold">번호: </span></li>
+                <li><span class="list-style-bold">신청일: </span></li>
+                <li><span class="list-style-bold">주소: </span></li>
+                <li style="display: none;"><span style="display: none;" id="client-index-check"></span></li>
+                <li style="display: none;"><span style="display: none;" id="client-visit-check"></span></li>
+                
+
+            
+            
+            </ul>
+        
+
+        
+        </div>
+        
+        
+        <div id="customer-button-part">
+            <div class="customer-info-button" id="customer-info-search">
+                찾기 <i class="fa fa-search button-icon-style"></i>
+            
+
+            </div>
+            
+
+            <div class="customer-info-button" id="customer-info-previous">
+                목록 <i class="fa fa-bars button-icon-style"></i>
+
+            </div>
+            
+            
+
+            <div class="customer-info-button" id="customer-info-point-giving">
+
+                R포인트 지급 <i class="fa fa-plus-circle button-icon-style"></i>
+
+            </div>
+
+
+
+            <div class="customer-info-button" id="customer-info-breakdown">
+
+                지급 내역 <i class="fa fa-recycle button-icon-style"></i>
+
+            </div>
+            <!-- elelelelelelelelelelel-->
+
+
+            <div class="customer-info-button" id="customer-info-collection">
+
+                수거 내역 <i class="fa fa-recycle button-icon-style"></i>
+
+            </div>
+
+
+
+            <div class="customer-info-button" id="customer-info-request">
+
+                요청 확인 <i class="fa fa-check-circle button-icon-style"></i>
+
+            </div>
+        </div>
+        <div class="bottom-button-part">
+            <!--banned
+            <div class="customer-info-button" id="customer-info-correct">
+
+                정정 신청
+
+            </div>
+            -->
+
+
+            <div class="insert-line-horizontal" id="insert-line-1">
+
+            </div>
+
+            <div onclick="completeClicked()" class="customer-bottom-button" id="customer-button-complete">
+
+
+                방문 완료
+
+
+
+            </div>
+
+            <div onclick="outClicked()" class="customer-bottom-button" id="customer-button-out">
+
+
+                부재중
+
+
+            </div>
+        </div>
+
+
+    </body>
+
+
+</html>

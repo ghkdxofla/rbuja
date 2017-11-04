@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html style="background-color: #FFFFFF;height: 100%;font-size: 100%;">
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        
+        <meta charset="utf-8">        
+        
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            
+            function searchStyle() {
+                switch(location.hash){
+                    case "#name":
+                        document.getElementById("find-client-name").style.display = "block";
+                        document.getElementById("find-client-cellular").style.display = "none";
+                        document.getElementById("find-client-address").style.display = "none";
+                        document.getElementById("dLabel").innerHTML = '이름검색 <span class="caret"></span>';
+                        break;
+                    case "#cellular":
+                        document.getElementById("find-client-name").style.display = "none";
+                        document.getElementById("find-client-cellular").style.display = "block";
+                        document.getElementById("find-client-address").style.display = "none";
+                        document.getElementById("dLabel").innerHTML = '번호검색 <span class="caret"></span>';        
+                        break;
+                    case "#address":
+                        document.getElementById("find-client-name").style.display = "none";
+                        document.getElementById("find-client-cellular").style.display = "none";
+                        document.getElementById("find-client-address").style.display = "block";
+                        document.getElementById("dLabel").innerHTML = '주소검색 <span class="caret"></span>';       
+                        break;
+                }
+
+            }
+            /*
+            $(".input1").keyup(function (e) {
+                if (e.keyCode == 13) {
+                    // Do something
+                }
+            });
+            */
+            
+            
+            function findToCustomer(doc){
+                var clientIndexIs = doc.getElementsByTagName("span");
+                var i = clientIndexIs[0].innerHTML;
+                localStorage.setItem("cit", i);
+                $.ajax({
+                    type: "GET",
+                    url: "client.txt",
+                    dataType: "json",
+                    success: function(data){
+                        var myArray = data;
+                        var out = certifyClientCustomer(myArray);
+                        findListToCustomer(out);
+                                parent.document.location.hash = "#find_close";
+                    }
+                });
+                
+            }
+
+            
+
+            $(document).ready(function(){
+                location.hash = "#name";
+
+                
+
+                
+                
+
+
+                $("#list-up-find").hide();
+  
+
+
+                
+                $(".find-client-list").scroll(function(){
+                    
+                    var scrollIsDown = $(".find-client-list").scrollTop();
+                    var scrollHeightIs = $(".find-client-list").outerHeight(true);
+                    var scrollShow = $(".find-list-style").outerHeight(true);
+                    //--------------------------------caution!---------------------
+                    scrollShow *= 4;
+                    
+                    scrollShow -= scrollHeightIs;
+                    scrollShow += 4;
+
+                   
+                    if(scrollIsDown == scrollShow){
+                        $("#list-down-find").hide();
+                        $("#list-up-find").show();
+
+                    }
+                    else if(scrollIsDown == 0){
+                        $("#list-down-find").show();
+                        $("#list-up-find").hide();
+
+                    }
+
+                });
+                
+                
+ 
+                 
+            });
+        
+        
+        
+        </script>
+
+
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_find.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+
+        
+    
+    </head>
+    <body onhashchange="searchStyle()" style="overflow: hidden;background-color: #FFFFFF;height: 100%;">
+        <!-- mainframe menu-->
+        <div id="find-menu">
+
+            <!-- find menu bar-->
+            <div class="find-info-style" id="find-info-title">고객 검색</div>
+                
+            
+            
+            <!-- find input part-->
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button id="dLabel" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">이름검색 <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" id="find-client-type">
+                        <li><a href="#name">이름검색</a></li>
+                        <li><a href="#cellular">번호검색</a></li>
+                        <li><a href="#address">주소검색</a></li>
+
+                    </ul>
+                </div><!-- /btn-group -->
+                <input oninput="searchInputContent()" type="text" placeholder="이름" class="input-setting form-control" id="find-client-name">
+                <input oninput="searchInputContent()" type="text" placeholder="집 휴대전화" class="input-setting form-control" id="find-client-cellular">
+                <input oninput="searchInputContent()" type="text" placeholder="동(읍/리/면)" class="input-setting form-control" id="find-client-address">
+
+                <span class="input-group-btn">
+                    <button onclick="searchInputContent()" class="btn btn-default" type="button" id="find-client-search">찾기</button>
+                </span>
+            </div><!-- /input-group -->
+            
+            <div id="find-search-bar">
+                총 <span id="find-search-result">0</span>명의 고객이 검색됨
+            </div>
+            
+
+            <img src="images/arrow-up.png" id="list-up-find">
+            
+            <div class="find-client-list" id="JSON-findIndicator">
+                
+                
+                
+                <!-- popup list
+                <div onclick="findToCustomer(this)" class="find-list-style">
+                    
+                    <div class="list-client-name">선우 용녀</div>
+                    <div class="list-client-cellular">010-3456-1234</div>
+                    <div class="list-client-address">서울시 양천구 신정2동 목동삼성아파트 XXX-XXX</div>
+                    <span class="list-client-index"></span>
+
+                </div>
+
+                <div onclick="findToCustomer(this)" class="find-list-style">
+                    
+                    <div class="list-client-name">김 미미</div>
+                    <div class="list-client-cellular">010-3456-1234</div>
+                    <div class="list-client-address">서울시 양천구 신정2동 목동삼성아파트 XXX-XXX</div>
+                    <span class="list-client-index"></span>
+
+
+                </div>
+
+                <div onclick="findToCustomer(this)" class="find-list-style">
+                    
+                    <div class="list-client-name">선우 용녀</div>
+                    <div class="list-client-cellular">010-3456-1234</div>
+                    <div class="list-client-address">서울시 양천구 신정2동 목동삼성아파트 XXX-XXX</div>
+                    <span class="list-client-index"></span>
+
+
+                </div>
+
+                <div onclick="findToCustomer(this)" class="find-list-style">
+                    
+                    <div class="list-client-name">선우 용녀</div>
+                    <div class="list-client-cellular">010-3456-1234</div>
+                    <div class="list-client-address">서울시 양천구 신정2동 목동삼성아파트 XXX-XXX</div>
+                    <span class="list-client-index"></span>
+
+
+                </div>
+                -->
+                
+
+            
+            </div>
+            <img src="images/arrow-down.png" id="list-down-find">
+
+
+        </div>
+        
+        
+
+    
+    </body>
+
+
+
+
+
+</html>

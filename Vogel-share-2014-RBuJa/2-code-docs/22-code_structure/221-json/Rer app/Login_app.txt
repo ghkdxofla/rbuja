@@ -1,0 +1,15 @@
+Rer app function
+http://rbuja.herokuapp.com/accounts/Login_app
+POST
+username: '',
+password: ''
+
+{
+    "csrftoken": "i1KbemgAMFmkpJTNmzX5Be5uBlWdofJK",
+    "message": "로그인 성공",
+    "result": true,
+    "response": {
+        "username": "reruserna0",
+        "realname": "강길동"
+    }
+}

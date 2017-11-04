@@ -1,0 +1,62 @@
+Picker app function
+http://rbuja.herokuapp.com/rbuja/ListRequest_app?pickup_date=2014-12-11
+GET
+
+{
+    "message": "요청한 작업에 성공했습니다",
+    "result": true,
+    "response": {
+        "requests": [
+             {
+                "requester_phone": "1010051005",
+                "request_type": 0,
+                "rer_point": "0",
+                "picker_point": "0",
+                "pickup_date": "2014-12-22",
+                "requester_realname": "강길동",
+                "requester_address": "인천시 어딘가 어디동 / 123동 234호",
+                "requester_username": "reruserna0"
+            },
+            {
+                "requester_phone": "1010051005",
+                "request_type": 0,
+                "rer_point": "0",
+                "picker_point": "0",
+                "pickup_date": "2014-12-31",
+                "requester_realname": "강길동",
+                "requester_address": "인천시 어딘가 어디동 / 123동 234호",
+                "requester_username": "reruserna0"
+            },
+            {
+                "requester_phone": "1010051005",
+                "request_type": 0,
+                "rer_point": "0",
+                "picker_point": "0",
+                "pickup_date": "2014-12-12",
+                "requester_realname": "강길동",
+                "requester_address": "인천시 어딘가 어디동 / 123동 234호",
+                "requester_username": "reruserna0"
+            },
+            {
+                "requester_phone": "1010051005",
+                "request_type": 0,
+                "rer_point": "0",
+                "picker_point": "0",
+                "pickup_date": "2015-01-01",
+                "requester_realname": "강길동",
+                "requester_address": "인천시 어딘가 어디동 / 123동 234호",
+                "requester_username": "reruserna0"
+            },
+            {
+                "requester_phone": "1010051005",
+                "request_type": 0,
+                "rer_point": "0",
+                "picker_point": "0",
+                "pickup_date": "2014-12-01",
+                "requester_realname": "강길동",
+                "requester_address": "인천시 어딘가 어디동 / 123동 234호",
+                "requester_username": "reruserna0"
+            }
+		]
+    }
+}

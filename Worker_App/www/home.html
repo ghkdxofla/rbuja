@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #FFFFFF;
+    }
+    
+
+    
+    
+    </style>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="assets/js/jquery-2.1.1.min.js"></script>
+
+
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/iscroll.js"></script>
+    <script src="assets/js/onArrayScript.js"></script>
+    <script src="assets/js/onClickScript.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+
+
+     <title>알부자</title>
+
+     <!-- Main CSS -->
+     <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+     <script>
+		if ('addEventListener' in document) {
+			document.addEventListener('DOMContentLoaded', function() {
+				FastClick.attach(document.body);
+			}, false);
+		}
+
+         
+        function CheckHashTagIs() {
+            switch(location.hash){
+
+                case "#certify":
+                    changeURL_Certify();
+                    location.hash = "";
+                    break;
+
+                case "#calculates":
+                    changeURL_Calculates();
+                    location.hash = "";
+                    break;
+
+
+                case "#calculates_in_customer":
+                    changeURL_Calculates();
+                    location.hash = "";
+                    break;
+
+
+                case "#collects":
+                    changeURL_Collects();
+                    location.hash = "";
+                    break;
+
+
+                case "#collects_in_customer":
+                    changeURL_Collects();
+                    location.hash = "";
+                    break;
+
+
+                case "#customer":
+                    changeURL_Customer();
+                    location.hash = "";
+                    break;
+
+
+                case "#maps":
+                    changeURL_Maps();
+                    location.hash = "";
+                    break;
+
+
+                case "#find":
+                    changeURL_Find();
+                    location.hash = "";
+                    break;
+
+
+                case "#point":
+                    changeURL_Point();
+                    location.hash = "";
+                    break;
+
+
+                case "#calculates_close":
+                    closePopupCalculates();
+                    location.hash = "";
+                    break;
+
+
+                case "#collects_close":
+                    closePopupCollects();
+                    location.hash = "";
+                    break;
+
+
+                case "#find_close":
+                    closePopupFind();
+                    location.hash = "";
+                    break;
+            }
+        }
+         /*
+         function startWorker(){
+             if(typeof(Worker) !== "undefined"){
+                 if(typeof(w) == "undefined"){
+                     w = new Worker("assets/js/searchWorker.js");
+                 }
+                 w.onmessage = function(event) {
+                     if(false == event.data){
+                         CheckHomeIs();
+                     }
+                     w.postMessage(checkHome);
+                 };
+             }
+         }
+         */
+         
+
+         
+         
+         
+         $(document).ready(function(){
+			 changeURL_Calculates();
+			 changeURL_Customer();
+			 changeURL_Collects();
+			 changeURL_Point();
+			 changeURL_Certify();
+
+
+
+              $("#menuIcon-Certify").addClass("change-button-color");
+             $("#menuIcon-Certify-icon").addClass("change-button-color");
+
+
+             
+             
+             var isNull = localStorage.getItem("product");
+             isNull = isNull.toString();
+             if(isNull == "null"){
+                 localStorage.setItem("product", 0);
+             }
+             if(localStorage.getItem("picker") == "rePicker"){
+                document.getElementById("topBar-Product").innerHTML = localStorage.getItem("product") + ' KG <div class="fa fa-refresh"></div>';
+             }
+             else{
+                document.getElementById("topBar-Product").innerHTML = localStorage.getItem("product") + ' 개 <div class="fa fa-refresh"></div>';
+             }
+             
+             
+              
+             location.hash = "";
+             location.hash = "#certify";
+
+             localStorage.setItem("cit", "home");
+             
+
+
+             
+
+             /*
+             $.getDocHeight = function(){
+                 var doc_height =  Math.max(
+                     $(document).height(),
+                     $(window).height()
+                 );
+                 var iframe_height = doc_height - 120;
+                 return iframe_height + "px";
+             };
+             $(".mainFrame").height($.getDocHeight);
+             */
+             //for loading html source
+             //changeURL_Maps();
+             //changeURL_Customer();
+             //changeURL_Calculates();
+             //changeURL_Point();
+             //changeURL_Manual();
+             //changeURL_Setting();
+             //changeURL_Certify();
+             $("#topBar-Product").click(function(){
+                 var sendData=[
+                     {"product": ""}
+                 ];
+                 var inputData = localStorage.getItem("product");
+                 sendData = [
+                     {"product": inputData}
+                 ];
+
+                //=======================================================================
+                //====================server security====================================
+//                var csrftoken = $.cookie('csrftoken');
+
+//                function csrfSafeMethod(method) {
+  //                  // these HTTP methods do not require CSRF protection
+//                    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+//                }
+//                function sameOrigin(url) {
+//                    // test that a given url is a same-origin URL
+//                    // url could be relative or scheme relative or absolute
+//                    var host = document.location.host; // host + port
+//                    var protocol = document.location.protocol;
+//                    var sr_origin = '//' + host;
+//                    var origin = protocol + sr_origin;
+//                    // Allow absolute or scheme relative URLs to same origin
+//                    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+//                        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+//                        // or any other URL that isn't scheme relative or absolute i.e relative.
+//                        !(/^(\/\/|http:|https:).*/.test(url));
+//                }
+//                $.ajaxSetup({
+//                    beforeSend: function(xhr, settings) {
+//////////                        if (!csrfSafeMethod(settings.type) && sameOrigin(settings.url)) {
+//                            // Send the token to same-origin, relative URLs only.
+//                            // Send the token only if the method warrants CSRF protection
+//                            // Using the CSRFToken value acquired earlier
+//                            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+//                        }
+//                    }
+//                });
+                //=======================================================================
+                //====================server security====================================
+
+                $.ajax({
+                    type: 'POST',
+                    url: "http://rbuja.herokuapp.com/rer",
+                    data: sendData,
+                    dataType: 'json',
+                    timeout: 5000,
+                    success: function(data) {
+                        alert(JSON.stringify(data));
+                        if(data.arrive=="yes"){
+
+                            if (data.status == true) {
+                                localStorage.setItem("product", 0);
+                            }
+
+                        }
+
+                    },
+                    error: function(){
+                        alert("서버 접속이 원활하지 않습니다. 잠시 후에 재시도 하십시오.");
+                    }
+
+                });
+             });
+
+             
+         });
+         
+
+     </script>
+      
+
+
+
+  </head>
+
+<body onhashchange="CheckHashTagIs()" style="background-color: #FFFFFF;">
+    
+    <!-- barFixedTop -->
+    <div id="barFixedTop">
+
+        <!-- topBar -->
+        <div id="topBar" class="rbuja-BackgroundColor">
+            <img src="images/top-bar-gradation.png" id="topBar-BG">
+
+
+            <!-- logo -->
+            <img src="images/logo-inverse-mini-trans.png" id="topBar-Logo">
+            <!-- brand -->
+            <div id="topBar-Brand">알부자</div>
+            <div id="topBar-Product"> <div class="fa fa-refresh"></div></div>
+        </div>
+
+    <!-- menuIconBar -->
+        <div id="menuIconBar">
+            <div id="menuIconScroll">
+
+
+                <span onclick="changeURL_Certify()" id="CLICKhere1">
+                    <div class="topBar-IconSize" id="menuIcon-Certify">
+                        <span class="menuIcon-position fa fa-home menuIcon"
+                              id="menuIcon-Certify-icon"></span>
+                        <p class="menuIcon-Text">신청<br>확인</p>
+                    </div>
+                </span>
+                <span onclick="changeURL_Customer()" id="CLICKhere2">
+                    <div class="topBar-IconSize"  id="menuIcon-Customer">
+                    <span class="menuIcon-position fa fa-tty menuIcon" 
+                          id="menuIcon-Customer-icon"></span>
+                    <p class="menuIcon-Text">고객<br>정보</p>
+                    </div>
+                </span>
+                <span onclick="changeURL_Maps()" id="CLICKhere3">
+                    <div class="topBar-IconSize" id="menuIcon-Maps">
+                    <span class="menuIcon-position fa fa-picture-o menuIcon" 
+                          id="menuIcon-Maps-icon"></span>
+                    <p class="menuIcon-Text" id="menuIcon-MapsText">지도</p>
+                    </div>
+                </span>
+                
+                
+
+                    <!--banned
+                    <div class="topBar-IconSize" id="menuIcon-Calculates">
+                    <span class="menuIcon-position fa fa-calculator menuIcon" 
+                          id="menuIcon-Calculates-icon"></span>
+                    <p class="menuIcon-Text" id="menuIcon-CalculatesText">계산</p>
+                    </div>
+
+                -->
+
+
+
+                <!--test
+                <span onclick="changeURL_More()">
+                    <div class="topBar-IconSize" id="menuIcon-More">
+                        <span class="menuIcon-position fa fa-exclamation-circle menuIcon" id="menuIcon-More-icon"></span>
+                        <p class="menuIcon-Text" id="menuIcon-MoreText">더보기</p>
+                    </div>
+                </span>
+                -->
+
+                <span onclick="changeURL_Point()" id="CLICKhere5">
+                    <div class="topBar-IconSize" id="menuIcon-Point">
+                        <span class="menuIcon-position menuIcon" id="menuIcon-Point-icon">P</span>
+                        <p class="menuIcon-Text" id="menuIcon-PointText">포인트</p>
+                    </div>
+                </span>
+
+
+                <span onclick="changeURL_Manual()" id="CLICKhere6">
+                    <div class="topBar-IconSize" id="menuIcon-Manual">
+                        <span class="menuIcon-position fa fa-book menuIcon" id="menuIcon-Manual-icon"></span>
+                        <p class="menuIcon-Text" id="menuIcon-ManualText">메뉴얼</p>
+                    </div>
+                </span>
+
+
+                <span onclick="changeURL_Setting()" id="CLICKhere7">
+                    <div class="topBar-IconSize" id="menuIcon-Setting">
+                        <span class="menuIcon-position fa fa-cog menuIcon" id="menuIcon-Setting-icon"></span>
+                        <p class="menuIcon-Text" id="menuIcon-SettingText">설정</p>
+                    </div>
+                </span>
+                
+            
+            
+            
+            
+            
+            
+                <!-- popup-click-part-->
+                <span onclick="changeURL_Calculates()" id="CLICKhere4"></span>
+            
+            
+                <span onclick="changeURL_Collects()" id="CLICKhere8"></span>
+                <span onclick="changeURL_Find()" id="CLICKhere9"></span>
+
+                
+                
+            </div>
+                
+        </div>
+
+    </div>
+        
+    <!--mainframe-->
+    <div class="mainFrame">
+        <iframe class="iframe-setting" id="URLhere1" name="CHECK_certify" src="certify.html" 
+                frameborder="0">
+        
+        </iframe>     
+        
+        
+        
+
+            
+
+
+        <iframe class="iframe-setting" id="URLhere2" name="CHECK_customer" src="customer.html" 
+                frameborder="0">
+
+        </iframe>
+
+
+        <iframe class="iframe-setting" id="URLhere3" name="CHECK_maps" src="maps.html" 
+                frameborder="0">
+        </iframe>
+
+                <!-- calculates older banned
+        <iframe class="iframe-setting" id="URLhere4" name="CHECK_calculates" src="calculates.html" 
+                frameborder="0">
+        
+        </iframe>
+        -->
+
+        <iframe class="iframe-setting" id="URLhere5" name="CHECK_point" src="point.html" 
+                frameborder="0">
+        
+        </iframe> 
+        <iframe class="iframe-setting" id="URLhere6" name="CHECK_manual" src="manual.html" 
+                frameborder="0">
+        
+        </iframe>
+        <iframe class="iframe-setting" id="URLhere7" name="CHECK_setting" src="setting.html" 
+                frameborder="0">
+        
+        </iframe>
+        
+    </div>
+    <div onclick="closePopupCalculates()" class="mainPopup" id="popupCalculates">
+        <div class="popupOpacity"><br></div>
+        <img src="images/close_button.png" class="popup-close-button">
+
+        
+        <iframe class="popup-setting" id="URLhere4" name="CHECK_calculates" src="calculates.html" 
+                frameborder="0">
+        
+        </iframe>
+
+    </div>
+ 
+    <div onclick="closePopupCollects()" class="mainPopup" id="popupCollects">
+        <div class="popupOpacity"><br></div>
+        <img src="images/close_button.png" class="popup-close-button">
+
+        
+
+        
+        <iframe class="popup-setting" id="URLhere8" name="CHECK_collects" src="collects.html" 
+                frameborder="0">
+        
+        </iframe>
+
+    </div>
+
+    <div onclick="closePopupFind()" class="mainPopup" id="popupFind">
+        <div class="popupOpacity"><br></div>
+        <img src="images/close_button.png" class="popup-close-button">
+
+        
+        <iframe class="popup-setting" id="URLhere9" name="CHECK_find" src="find.html" 
+                frameborder="0">
+        
+        </iframe>
+
+    </div>
+ 
+
+</body>
+
+
+</html>

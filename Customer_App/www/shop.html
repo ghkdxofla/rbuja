@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_shop.css">
+
+
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+			$(document).ready(function(){
+				$("#status-shop-lifestyle").addClass("status-button-on");
+				document.getElementById("shop-list-lifestyle").style.display = 'block';
+                $("#status-shop-lifestyle").click(function(){
+					$(".shop-list-style").hide();
+					document.getElementById("shop-list-lifestyle").style.display = 'block';
+                    $(".status-button").removeClass("status-button-on");
+                    $("#status-shop-lifestyle").addClass("status-button-on");
+                });
+                $("#status-shop-brandnew").click(function(){
+					$(".shop-list-style").hide();
+					document.getElementById("shop-list-brandnew").style.display = 'block';
+                    $(".status-button").removeClass("status-button-on");
+                    $("#status-shop-brandnew").addClass("status-button-on");
+                });
+                $("#status-shop-used").click(function(){
+					$(".shop-list-style").hide();
+					document.getElementById("shop-list-used").style.display = 'block';
+                    $(".status-button").removeClass("status-button-on");
+                    $("#status-shop-used").addClass("status-button-on");
+                });
+				$(".shop-list-content-main").click(function(){
+					
+					var originalIs = this.getElementsByTagName("span");
+					originalIs[0].
+					var indexIs = document.getElementById(originalIs[0].id);
+					indexIs.
+					document.getElementById("shop-list-content-detail-id").style.display = 'block';
+					indexIs.parentNode.style.display = 'table';
+
+					$(".shop-list-content").hide();
+				});
+
+				
+			});
+
+
+        </script>
+    
+    </head>
+    
+    <body style="height: 100%; width: 100%; background-color: #eaeaea;">
+		<div id="shop-main">
+			<div id="shop-top">
+                <!--top status-->
+                <div class="top-status shop-color-status">
+                    
+                    <div class="status-button" id="status-shop-lifestyle">
+                        생필품
+                    </div>
+                    
+                    <div class="status-button" id="status-shop-brandnew">
+                        신상품
+                    </div>
+                    <div class="status-button" id="status-shop-used">
+                        중고장터
+                    </div>
+                    
+                </div>
+			
+			</div>
+			<div class="shop-list-style" id="shop-list-lifestyle">
+				<ul class="shop-list-content">
+
+                    <!--shop menu-->
+                    <li class="shop-list-content-main">
+						<span class="shop-list-content-index" id="original-0"></span>
+                        <div class="shop-list-content-content">
+                            <div class="shop-list-content-image">
+                                <img src="images/product1.jpg" class="shop-list-content-image-size">
+                            </div>
+
+                            <div class="shop-list-content-title">
+								<p>설명</p>
+								<p>들어간다</p>
+                            </div>
+                            <div class="shop-list-content-price"><span class="shop-price-color">00000</span> 원</div>
+                        </div>
+
+
+                    </li>
+
+                    <!--shop menu-->
+                    <li class="shop-list-content-main">
+						<span class="shop-list-content-index"></span>
+
+                        <div class="shop-list-content-content">
+                            <div class="shop-list-content-image">
+                                <img src="images/product1.jpg" class="shop-list-content-image-size">
+                            </div>
+
+                            <div class="shop-list-content-title">
+								<p>설명</p>
+								<p>들어간다</p>
+                            </div>
+                            <div class="shop-list-content-price"><span class="shop-price-color">00000</span> 원</div>
+                        </div>
+
+
+                    </li>
+                    <!--shop menu-->
+                    <li class="shop-list-content-main">
+						<span class="shop-list-content-index"></span>
+
+                        <div class="shop-list-content-content">
+                            <div class="shop-list-content-image">
+                                <img src="images/product1.jpg" class="shop-list-content-image-size">
+                            </div>
+
+                            <div class="shop-list-content-title">
+								<p>설명</p>
+								<p>들어간다</p>
+                            </div>
+                            <div class="shop-list-content-price"><span class="shop-price-color">00000</span> 원</div>
+                        </div>
+
+
+                    </li>
+                    <!--shop menu-->
+                    <li class="shop-list-content-main">
+						<span class="shop-list-content-index"></span>
+
+                        <div class="shop-list-content-content">
+                            <div class="shop-list-content-image">
+                                <img src="images/product1.jpg" class="shop-list-content-image-size">
+                            </div>
+
+                            <div class="shop-list-content-title">
+								<p>설명</p>
+								<p>들어간다</p>
+                            </div>
+                            <div class="shop-list-content-price"><span class="shop-price-color">00000</span> 원</div>
+                        </div>
+
+
+                    </li>
+				</ul>
+				<div class="shop-list-content-detail" id="shop-list-content-detail-id">
+					<div class="shop-list-content-detail-main">
+						<span class="shop-list-content-index" id="list-0"></span>
+						<div class="shop-list-content-detail-content">
+							
+
+
+							<div class="shop-list-content-detail-content-status">
+								<div class="shop-list-content-image">
+									<img src="images/product1.jpg" class="shop-list-content-image-size">
+								</div>
+
+								<div class="shop-list-content-title">
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>설명</p>
+									<p>들어간다</p>
+								</div>
+								<div class="shop-list-content-price"><span class="shop-price-color">00000</span> 원</div>
+							</div>
+							<div class="shop-list-content-detail-content-menu">
+
+								<div class="shop-list-content-detail-content-button" style="left: 0;">
+									상세설명
+								</div>
+								<div class="shop-list-content-detail-content-button" style="margin: auto;">
+									유의사항
+								</div>
+								<div class="shop-list-content-detail-content-button" style="right: 0;">
+									상품문의
+								</div>
+							</div>
+						</div>
+						<div class="shop-list-content-detail-content-main">
+							<div class="shop-list-content-detail-content-content">
+								내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용
+
+							</div>
+							<div class="shop-list-content-detail-content-buy">
+								<div class="shop-list-content-detail-content-buy-button">
+									구매하기
+								</div>
+							</div>
+						</div>
+
+
+
+                    </div>
+				</div>
+
+
+		
+			</div>
+			
+			
+			<div class="shop-list-style" id="shop-list-brandnew">
+				
+			</div>
+			<div class="shop-list-style" id="shop-list-used">
+				
+			</div>
+
+		
+		</div>
+
+    </body>
+</html>

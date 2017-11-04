@@ -1,0 +1,675 @@
+/* @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');*/
+@viewport{ zoom:1.0; width:device-width; }
+@-ms-viewport{ width:extend-to-zoom; zoom:1.0; }
+
+/* font-face */
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic.eot);
+  src: url(../fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic.woff2) format('woff2'),
+    url(../fonts/NanumGothic.woff) format('woff'),
+    url(../fonts/NanumGothic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NanumGothicBold.eot);
+  src: url(../fonts/NanumGothicBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothicBold.woff2) format('woff2'),
+    url(../fonts/NanumGothicBold.woff) format('woff'),
+    url(../fonts/NanumGothicBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/NanumGothicExtraBold.eot);
+  src: url(../fonts/NanumGothicExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothicExtraBold.woff2) format('woff2'),
+    url(../fonts/NanumGothicExtraBold.woff) format('woff'),
+    url(../fonts/NanumGothicExtraBold.ttf) format('truetype');
+}
+
+* { font-family:'Nanum Gothic', sans-serif; }
+a { text-decoration:none !important; }
+
+/*
+ * 				Common
+ */
+
+#barFixedTop {
+  position:fixed;
+  top:0px;
+  width:100%;
+  z-index:2000;
+}
+#topBar {
+  padding:8px 14px 7px 14px;
+  width:100%;
+  overflow:hidden;
+}
+#topBar-Logo {
+  margin:-34px -2px -25px -9px;
+  height:35px;
+}
+#topBar-Brand {
+  display:inline;
+  font-size:18px;
+  font-weight:200;
+  color:#FFF;
+}
+#menuIconBar {
+  overflow:hidden;
+  margin:0 auto;
+  padding:4px 0 7px 0;
+  width:100%;
+  border-bottom:3px #4DC03D solid;
+  background-color:#FFFFFF;
+  /* font-size for Font Awesome Icons*/
+  font-size:36px;
+  text-align:center;
+}
+.menuIcon {
+  margin-bottom:8px;
+  color:#DBDBDB;
+}
+.menuIcon-Text {
+  margin:-3px 0 0 0;
+  padding:0;
+  font-size:12px;
+  color:#333333;
+}
+#menuIcon-Home {
+  margin-top:2px;
+  font-size:38px;
+}
+#menuIcon-HomeText {
+  margin-top:-7px;
+}
+#menuIcon-DescriptionSpan {
+  font-size:29px;
+}
+#subMenuBar {
+  overflow: hidden;
+  padding: 4px 10px 2px 14px;
+}
+.subMenuBar-Tab {
+  display:inline;
+  float:left;
+  height: 28px;
+  margin-right:14px;
+  margin-bottom: 4px;
+  color:#FFF;
+  font-size:16px;
+}
+#sideBar {
+  position:fixed;
+  top:0;
+  right:-171px;
+  width:172px;
+  padding-right: 1px;
+  height:100%;
+  z-index:9000;
+  background-color:#F0F0F0;
+  border-left:1px solid #BFBFBF;
+}
+#sideBar > ul {
+  margin:0;
+  padding:0;
+}
+#sideBar-Toggle-TopBar {
+  float:right;
+  padding:2px 0 2px 0;
+  /* font-size for sideBar-Toggle-Topbar */
+  font-size:30px;
+  color:#FFF;
+}
+#sideBar-Toggle-SideBar {
+  padding:10px 10px 10px 15px;
+  /* font-size for sideBar-Toggle-SideBar */
+  font-size:30px;
+}
+.sidebar-Item {
+  list-style:none;
+  line-height:55px;
+  /* font-size for sidebar-Item-Icon */
+  font-size:22px;
+  border-top:1px solid white;
+  border-bottom:1px solid #DCDCDC;
+}
+.sideBar-Item-Text {
+  position:absolute;
+  left:55px;
+  font-size:16px;
+  font-weight:bold;
+  color:#000;
+}
+.sideBar-Item-Icon {
+  position:relative;
+  left:20px;
+  color: #4DC03D;
+}
+.infoBlockPage {
+  padding:15px;
+  background-color:#F0F0F0;
+}
+.block {
+  position:relative;
+  padding:15px;
+  margin-bottom: 15px;
+  background-color:#FFF;
+  border:1px solid #DCDCDC;
+  border-radius:5px;
+}
+
+/*
+ * 				home.html
+ */
+
+#profileBlock {
+  padding:10px 15px 0 15px;
+  background-color:#FFFFFF;
+}
+#pointLevelBlock {
+  overflow:hidden;
+  padding:10px 0 20px 0;
+  width:100%;
+}
+#pointBlock {
+  float:left;
+  padding:0 25px 0 0;
+  width:65%;
+  text-align:right;
+}
+#levelBlock {
+  float:left;
+  padding:0;
+  width:34%;
+  text-align:center;
+}
+#profileBlock-Line {
+  float:left;
+  margin-top:12px;
+  height:45px;
+  border-left:1px solid #DCDCDC;
+}
+#profileBlock-MyPoint {
+  font-size:34px;
+  margin-bottom:-5px;
+  color:#1960A0;
+}
+#profileBlock-MyLevel {
+  font-size:34px;
+  margin-bottom:-5px;
+  color:#1F9ED3;
+}
+#userName {
+  color:#4AC23C;
+  font-weight:bold;
+}
+.infoBlock {
+  min-height:150px;
+}
+.infoBlock-Product {
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  min-height:140px;
+  border-bottom:1px solid #DCDCDC;
+}
+.infoBlock-ProductImage {
+  display:inline;
+  float:left;
+  width:40%;
+  max-width:130px;
+}
+.infoBlock-ProductDescription {
+  display:inline;
+  float:left;
+  width:60%;
+  padding:10px 0 0 10px;
+  text-align:left;
+}
+.infoBlock-ProductPrice {
+  position:absolute;
+  bottom:0;
+  right:0;
+  float:right;
+  display:inline;
+  width:60%;
+  text-align:right;
+  font-size:34px;
+  font-weight:bolder;
+  color:#4DC03D;
+}
+.infoBlock-Buy {
+  margin:8px 0 -4px 0;
+  font-size:18px;
+  color:#4DC03D;
+  text-align:center;
+}
+/*
+ * 				pickup.html
+ */
+
+#pickerProfile {
+  position: relative;
+  overflow:hidden;
+  width:100%;
+  height:150px;
+}
+.pickerProfile-text {
+  padding:5px 5px 5px 10px;
+  position:absolute;
+  bottom:10px;
+  left:10px;
+  color:#FFF;
+  font-size:12px;
+}
+#pickerProfile-pickerName,
+#pickerProfile-pickerArea {
+  padding-left:8px;
+  font-size:20px;
+  color:#BEFA1E;
+}
+.instructions-list {
+  padding: 0 10px 10px 30px;
+}
+.instructions-heading {
+  font-weight:bold;
+  margin: 20px 0 15px 0;
+}
+.instructions {
+  line-height: 24px;
+}
+#pickupButtonBox {
+  overflow:hidden;
+  width: 95%;
+  padding: 10px 10px 20px 10px;
+  text-align:center;
+}
+#recycleTab-pickupIndoorButton {
+  float:left;
+  padding-top:17px;
+  color:#FFF;
+  background-color:#89CF14;
+  border:2px solid #89CF14;
+  font-size: 19px;
+}
+#recycleTab-pickupOutdoorButton {
+  float:right;
+  padding-top:18px;
+  color:#FFF;
+  background-color:#4DC03D;
+  border:2px solid #4DC03D;
+  font-size: 17px;
+}
+.roundButton {
+  height:90px;
+  width:90px;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius:50%;
+  /* Firefox 1-3.6 */
+  -moz-border-radius:50%;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius:50%;
+}
+/*
+ * 				store.html
+ */
+.productBlock {
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  min-height:100px;
+  border-bottom:1px solid #DCDCDC;
+}
+.productBlock-ProductImage {
+  display:inline;
+  float:left;
+  width:40%;
+  max-width:130px;
+}
+.productBlock-ProductDescription {
+  display:inline;
+  float:left;
+  width:60%;
+  padding:10px 0 0 10px;
+  text-align:left;
+}
+.productBlock-ProductPrice {
+  position:absolute;
+  bottom:-5px;
+  right:15px;
+  float:right;
+  display:inline;
+  width:60%;
+  text-align:right;
+  font-size:34px;
+  font-weight:bolder;
+  color:#4DC03D    ;
+}
+/*
+ * 				Custom
+ */
+
+.rbuja-BackgroundColor {
+  background-color: #4DC03D;
+}
+.rbuja-Color {
+  /* original designer's color is #8DC03D */
+  color: #4DC03D;
+}
+.rbuja-border-color {
+  border-color: #4DC03D;
+}
+
+.footerBox {
+  padding: 1px;
+  background-color: #70D660;
+}
+#footer-Text {
+  padding: 10px 0 0 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+
+
+#pickerProfile-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+
+.floatRight {
+  float: right;
+}
+
+#wrapper-main {
+  position: absolute;
+  width:100%;
+  z-index:1000;
+
+  /* scrolling */
+  overflow: auto;
+  -webkit-overflow-scrolling:touch;
+
+  /* hardware acceleration */
+  /*
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  */
+
+  /*
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  */
+}
+
+#secondHandedTab-contents {
+  display: none;
+}
+
+#lifeGoodsTab-contents {
+  display: none;
+}
+
+
+
+
+
+
+
+.howto-contents {
+  padding: 7px 20px 20px 20px;
+  display: none;
+}
+
+.howto-topic {
+  display: block;
+  font-size: 26px;
+  font-weight: bold;
+  padding: 10px 0 15px 0;
+}
+.howto-article {
+  font-size: 15px;
+}
+
+.howto-list {
+  padding: 0 !important;
+}
+
+.howto-list > li {
+  display: inline-block;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.howto-image {
+  display: block;
+  height: 130px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+#sideBar, #barFixedTop {
+  /* Do Something */
+}
+
+.openSideBar {
+  /* hardware acceleration */
+  /* -webkit-transform: translate3d(0, 0, 0); */
+
+  /* css animation */
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -ms-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  transition-duration: 300ms;
+
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  /* translate */
+  -webkit-transform: translate(-171px,0);
+  -moz-transform: translate(-171px,0);
+  -o-transform: translate(-171px,0);
+  -ms-transform: translate(-171px,0);
+  transform: translate(-171px,0);
+
+}
+
+.closeSideBar {
+  /* hardware acceleration */
+  /* -webkit-transform: translate3d(0, 0, 0); */
+
+  /* css animation */
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -ms-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  transition-duration: 300ms;
+
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+
+  /* translate */
+  -webkit-transform: translate(0,0);
+  -moz-transform: translate(0,0);
+  -o-transform: translate(0,0);
+  -ms-transform: translate(0,0);
+  transform: translate(0,0);
+}
+
+
+#sideBar-Toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px 11px 0 0;
+  width: 90px;
+  height: 40px;
+}
+
+#level-progress-bar {
+  height: 14px;
+  width: 60%;
+}
+
+#level-progress {
+  margin: 20px 0 10px 0;
+  height: 14px;
+}
+
+.sideBar-Home {
+  position: absolute;
+  right: 60px;
+  margin: -3px 0 -6px 0;
+  padding: 2px 0 2px 0;
+  color: #FFF;
+
+  /* font-size for sideBar-Toggle-Topbar */
+  font-size: 28px !important;
+  z-index: 8000;
+}
+
+.textBox {
+  height: 35%;
+  overflow: scroll;
+  margin: 15px;
+  padding: 13px;
+  border: 1px solid #919191;
+}
+
+.wrapper-join {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 20px 20px 50px 20px;
+}
+
+.join-header {
+    display: block;
+    font-size: 25px;
+}
+
+#electronicsTab-contents {
+  display: none;
+}
+
+#electronicsTab-pickupButton {
+  float:right;
+  margin: 5px 5px 10px 20px;
+  padding-top:17px;
+  color:#FFF;
+  background-color:#4DC03D;
+  border-color: #4DC03D;
+  font-size: 19px;
+  text-align: center;
+}
+
+
+
+.pickup-tabContents {
+  padding: 20px;
+}
+
+#pickup-electronicsRequest {
+  display: none;
+  padding: 20px;
+}
+
+.pickup-label {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.pickup-request-choiceDescription {
+  vertical-align: middle;
+  font-size: 25px;
+  padding-left: 5px;
+}
+
+.pickup-request-dropdown {
+  display: inline-block !important;
+}
+
+.pickup-request-fieldset {
+  margin-bottom: 20px;
+}
+
+#pickup-request-dropdown-typeButton {
+  width: 100px !important;
+}
+
+
+
+.dropdown-menu {
+  padding: 15px !important;
+  line-height: 36px;
+  font-size: 18px !important;
+}
+
+.pickup-request-comment {
+  padding-left: 7px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+#pickup-request-add {
+  float: right;
+  font-size: 18px;
+}
+
+.pickup-request-dropdown-button {
+  font-size: 18px !important;
+}
+
+.pickup-request-requestButton {
+  float: right;
+  display: block;
+  padding: 10px 30px 10px 30px !important;
+  font-size: 20px !important;
+}
+
+.pickup-request-dropdown-menu-sidedList {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  padding-left: 0;
+  padding-right: 27px;
+}
+
+#howto-article {
+  font-size: 18px;
+  line-height: 29px;
+}
+
+#visit-already {
+    display: none;
+}

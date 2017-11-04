@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+
+
+
+        
+        
+        
+        
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            function getLogin(){
+                var loginInfo = {
+                  username: $('#idForm').val(),
+                  password: $('#passwordForm').val()
+                };
+                
+                
+
+                $.ajax({
+                  type: 'POST',
+                  url: "http://rbuja.herokuapp.com/accounts/Login_app",
+                  data: loginInfo,
+                  dataType: 'json',
+                  timeout: 5000,
+                  success: function(data) {
+                    // if
+                    if (data.result == true) {
+                      // move page to home.html
+
+
+
+
+                        if(data.response.picker_type == "recycle_picker"){
+                            localStorage.setItem("picker", "rePicker");
+                        }
+                        else{
+                            localStorage.setItem("picker", "elPicker");
+                        }
+						window.location.href = "home.html";
+
+
+                    }
+                    else {
+                        alert(data.message);
+                    }
+                  },
+                  error: function(data){
+                      alert(data.message);
+                  }
+                  
+                });
+
+
+				
+
+
+                //testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+                  //localStorage.setItem("picker", "rePicker");
+                  //window.location.href = "home.html";
+                  //localStorage.setItem("picker", "elPicker");
+                //testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            }
+            
+            
+            
+            
+            function enterPressedID(e){
+                if (e.which == 13 || e.keyCode == 13) {
+                    if(document.getElementById("passwordForm").value == ""){
+                        document.getElementById("passwordForm").focus();
+                    }
+                    else{
+                      getLogin();
+                    }
+
+                    alert(event);
+                    return false;
+                }
+                return true;
+            }
+
+			
+        
+        
+            $(document).ready(function(){
+             // when login button is clicked
+              $('#loginButton').click(function() {
+                // get user's id and password
+                  getLogin();
+
+
+
+              });
+
+                /*
+                */
+
+                /*
+                $.ajax({
+                  type: 'POST',
+                  url: "http://rbuja.herokuapp.com/rer",
+                  data: { 'patientID' : 1 },
+                  dataType: 'json',
+                  success: function(jsonData) {
+                    alert('hello');
+                    // alert(jsonData);
+                  },
+                  error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Error: " + xhr.status + "\n" +
+                    "Message: " + xhr.statusText + "\n" +
+                    "Response: " + xhr.responseText + "\n" + thrownError);
+                  }
+                });
+                */
+            
+
+            });
+
+        </script>
+    
+    </head>
+    
+    <body>
+        
+        
+        
+            
+            
+            
+            
+        <!-- Login Box-->
+        <div id="loginBox">
+
+            <form class="loginBoxStyle form-signin" role="form">
+                <input onkeydown="enterPressedID(e)" type="text" class="form-control" id="idForm" placeholder="아이디" required autofocus>
+                <input type="password" class="form-control" id="passwordForm" placeholder="비밀번호" required>
+
+                <div id="buttonBox">
+
+
+                    <!-- login -->
+                    <button type="button" class="loginButtonStyle btn btn-lg" id="loginButton">로그인</button>
+                </div>
+            </form>
+
+        </div>
+        <div id="app-loading">
+
+            <img id="loading-logo" src="images/logo-md.jpg">
+            <!--<p id="app-loading-p">알부자, 알뜰한 쇼핑의 지름길</p>-->
+        </div>
+
+    
+    
+    
+
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

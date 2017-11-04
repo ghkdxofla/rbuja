@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_popup_manual.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+			function OnManualClicked(){
+				var whichOneClicked = location.hash;
+				switch(whichOneClicked){
+					case "#recycle":
+						document.getElementById("manual-popup-menu-title").innerHTML = "이용안내";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-howto-recycle").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-howto-recycle").show();
+						break;
+					case "#electric":
+						document.getElementById("manual-popup-menu-title").innerHTML = "이용안내";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-howto-electric").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-howto-electric").show();
+						break;
+					case "#paper":
+						document.getElementById("manual-popup-menu-title").innerHTML = "종이";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-paper").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-paper").show();
+						break;
+					case "#can":
+						document.getElementById("manual-popup-menu-title").innerHTML = "캔";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-can").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-can").show();
+						break;
+					case "#plastic":
+						document.getElementById("manual-popup-menu-title").innerHTML = "플라스틱";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-plastic").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-plastic").show();
+						break;
+					case "#rope":
+						document.getElementById("manual-popup-menu-title").innerHTML = "잡선";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-rope").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-rope").show();
+						break;
+					case "#bottle":
+						document.getElementById("manual-popup-menu-title").innerHTML = "병";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-bottle").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-bottle").show();
+						break;
+					case "#clothe":
+						document.getElementById("manual-popup-menu-title").innerHTML = "옷";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-clothe").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-clothe").show();
+						break;
+					case "#iron":
+						document.getElementById("manual-popup-menu-title").innerHTML = "철";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-iron").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-iron").show();
+						break;
+					case "#stainless":
+						document.getElementById("manual-popup-menu-title").innerHTML = "스댕";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-stainless").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-stainless").show();
+						break;
+					case "#small":
+						document.getElementById("manual-popup-menu-title").innerHTML = "소형가전";
+						$(".manual-popup-content").hide();
+						$("#manual-popup-small").show();
+						$(".manual-popup-content-style").hide();
+						$("#manual-popup-content-small").show();
+						break;
+					
+				}
+						
+			}
+						
+            $(document).ready(function(){
+				location.hash ="";
+                $(".manual-popup-content-image-list").each(function(){
+					var listLi = this.getElementsByTagName("li");
+                    $(listLi).each(function(index){
+                        var i = (index) * 100;
+                        $(this).css("left", i + "%");
+                    });
+                });
+                
+            });
+
+
+        </script>
+    
+    </head>
+    
+    <body onhashchange="OnManualClicked()" style="height: 100%; width: 100%; background-color: white;">
+        <div id="manual-popup-menu">
+            <div id="manual-popup-menu-status">
+                <img src="images/shop/sicon10.png" id="manual-popup-menu-image">
+                <span id="manual-popup-menu-title">팝업의 스테이터스 제목 칸</span>
+            </div>
+            <div class="manual-popup-content" id="manual-popup-howto-recycle">
+                <p>알부자는 고객님의 집으로 <span class="popup-text-green">직접 방문</span>하여,</p>
+                <p><span class="popup-text-green">재활용 쓰레기를 수거</span>하고,</p>
+                <p><span class="popup-text-green">포인트(현금)을 지급</span>하는 서비스를 제공합니다.</p>
+                <br>
+                <p>알부자에서 매입하고 있는</p>
+                <p>재활용 쓰레기의 기준은 다음과 같습니다.</p>
+                <br>
+                <p>대표 품목 : 종이류, 병류, 잡동사니류(캔, 플라스틱, 잡선...)</p>
+                <p>별도 품목 : 옷, 스텐리스, 소형가전...</p>
+                <br>
+                <p>각 품목의 세부사항은 위의 <span class="popup-text-green">'취급상품'</span>을
+                참고하시길 바랍니다.</p>
+                <br>
+                <p>수거 기준 : 첫 방문 시 재활용쓰레기 분리수거를 위한 2개의 봉지가 지급되며, 지급된 봉지가 모두 채워질 때마다 수거신청을 해주시면 됩니다. </p>
+                <br>
+                <p>봉지가 채워지지 않더라도, 기타 수거 항목(병류, 옷, 스덴, 소형가전)이 있을 경우, 수거 신청이 가능합니다.</p>
+                <br>
+                <p><span class="popup-text-green">첫 수거신청 보너스!</span> 첫 번째 수거신청의 경우 수량에 관계없이 수거신청이 가능하며, 봉투지급과 함께 1,000p가 지급됩니다!</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-howto-electric">
+                <p>알부자는 고객님의 집으로 <span class="popup-text-green">직접 방문</span>하여,</p>
+                <p><span class="popup-text-green">재활용 쓰레기를 수거</span>하고,</p>
+                <p><span class="popup-text-green">포인트(현금)을 지급</span>하는 서비스를 제공합니다.</p>
+                <br>
+                <p>알부자에서 매입하고 있는</p>
+                <p>재활용 쓰레기의 기준은 다음과 같습니다.</p>
+                <br>
+                <p>대표 품목 : 종이류, 병류, 잡동사니류(캔, 플라스틱, 잡선...)</p>
+                <p>별도 품목 : 옷, 스텐리스, 소형가전...</p>
+                <br>
+                <p>각 품목의 세부사항은 위의 <span class="popup-text-green">'취급상품'</span>을
+                참고하시길 바랍니다.</p>
+                <br>
+                <p>수거 기준 : 첫 방문 시 재활용쓰레기 분리수거를 위한 2개의 봉지가 지급되며, 지급된 봉지가 모두 채워질 때마다 수거신청을 해주시면 됩니다. </p>
+                <br>
+                <p>봉지가 채워지지 않더라도, 기타 수거 항목(병류, 옷, 스덴, 소형가전)이 있을 경우, 수거 신청이 가능합니다.</p>
+                <br>
+                <p><span class="popup-text-green">첫 수거신청 보너스!</span> 첫 번째 수거신청의 경우 수량에 관계없이 수거신청이 가능하며, 봉투지급과 함께 1,000p가 지급됩니다!</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-paper">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-paper-JSON">100</span>원/kg</span></p>
+				<p>- 신문이나 책은 끈으로 묶어서 배출해주세요.</p>
+				<p>-과자 상자나 우유팩 등등 소형 종이류는 접어서, 지급된 봉지에 담아 배출해주세요.</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-can">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-can-JSON">100</span>원/kg</span></p>
+				<p>- 캔은 부피를 최대한 줄여서 배출해주세요.</p>
+				<p>- 캔 종류는 벌레가 꼬일 수 있으니, 물로 간단 <span class="popup-text-green">세척</span> 후 배출해주세요.</p>
+				<p>- 캔, 플라스틱, 잡선 류는 지급된 봉지에 한데 모아
+배출해주세요.</p>
+				<p><span class="popup-text-green">수거 가능</span>한 캔은 다음과 같습니다.</p>
+				<p>[음료수 캔, 맥주 캔, 참치 캔, 통조림 캔, 부탄가스 등등]</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-plastic">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-plastic-JSON">100</span>원/kg</span></p>
+				<p>- 플라스틱류와 캔, 잡선은 지급된 봉투에 한데 모아 배출해주세요.</p>
+				<p>- 부피를 줄일 수 있는 플라스틱 계열(ppt)은 최대한 부피를 줄여서 담아주세요.</p>
+				<p>- 재활용 <span class="popup-text-green">가능한 플라스틱</span>은 다음과 같습니다.</p>
+				<p>[샴푸통, 피죤통, 흰색말통, 락스통, 김치통, 반찬통, 펫트병, 빠랫트, 플라스틱우유통, 된장 &amp; 고추장통 등등]</p>
+            </div>
+            <div class="manual-popup-content" id="manual-popup-rope">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-rope-JSON">100</span>원/kg</span></p>
+				<p>- 신문이나 책은 끈으로 묶어서 배출해주세요.</p>
+				<p>-과자 상자나 우유팩 등등 소형 종이류는 접어서, 지급된 봉지에 담아 배출해주세요.</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-bottle">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-bottle-JSON">100</span>원/kg</span></p>
+				<p>- 신문이나 책은 끈으로 묶어서 배출해주세요.</p>
+				<p>-과자 상자나 우유팩 등등 소형 종이류는 접어서, 지급된 봉지에 담아 배출해주세요.</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-clothe">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-clothe-JSON">100</span>원/kg</span></p>
+				<p>- 신문이나 책은 끈으로 묶어서 배출해주세요.</p>
+				<p>-과자 상자나 우유팩 등등 소형 종이류는 접어서, 지급된 봉지에 담아 배출해주세요.</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-iron">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-iron-JSON">100</span>원/kg</span></p>
+				<p>- 신문이나 책은 끈으로 묶어서 배출해주세요.</p>
+				<p>-과자 상자나 우유팩 등등 소형 종이류는 접어서, 지급된 봉지에 담아 배출해주세요.</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-stainless">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-stainless-JSON">100</span>원/kg</span></p>
+				<p>- 신문이나 책은 끈으로 묶어서 배출해주세요.</p>
+				<p>-과자 상자나 우유팩 등등 소형 종이류는 접어서, 지급된 봉지에 담아 배출해주세요.</p>
+
+            </div>
+            <div class="manual-popup-content" id="manual-popup-small">
+				<p class="popup-text-center"><span class="popup-text-green"><span id="manual-popup-content-small-JSON">100</span>원/kg</span></p>
+				<p>- 신문이나 책은 끈으로 묶어서 배출해주세요.</p>
+				<p>-과자 상자나 우유팩 등등 소형 종이류는 접어서, 지급된 봉지에 담아 배출해주세요.</p>
+
+            </div>
+            <div id="manual-popup-content-image">
+                <img src="images/common/background-light.jpg" class="manual-popup-content-image-bg">
+                <div class="manual-popup-content-image-bg"><br></div>
+
+                <img src="images/common/arrow_left.png" class="manual-popup-content-arrow" id="manual-popup-content-arrow-left">
+                <img src="images/common/arrow_right.png" class="manual-popup-content-arrow" id="manual-popup-content-arrow-right">
+
+
+                
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-howto-recycle">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-howto-electric">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+
+
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-paper">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product3.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product3.jpg" class="manual-popup-content-image-list-style"></li>
+
+
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-can">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-plastic">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-rope">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-bottle">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-clothe">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-iron">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-stainless">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                    </ul>
+                </div>
+                <!-- image list-->
+                <div class="manual-popup-content-style" id="manual-popup-content-small">
+                    <ul class="manual-popup-content-image-list">
+                        <li class="manual-popup-content-image-list-li"><img src="images/product3.jpg" class="manual-popup-content-image-list-style"></li>
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product2.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product4.jpg" class="manual-popup-content-image-list-style"></li>
+
+                        <li class="manual-popup-content-image-list-li"><img src="images/product1.jpg" class="manual-popup-content-image-list-style"></li>
+                    </ul>
+                </div>
+
+                    
+                
+                
+                
+            
+            </div>
+        
+        </div>
+        
+        
+
+
+    </body>
+</html>

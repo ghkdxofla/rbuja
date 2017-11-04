@@ -1,0 +1,639 @@
+/* font-face */
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic.eot);
+  src: url(../fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothic.woff2) format('woff2'),
+    url(../fonts/NanumGothic.woff) format('woff'),
+    url(../fonts/NanumGothic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NanumGothicBold.eot);
+  src: url(../fonts/NanumGothicBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothicBold.woff2) format('woff2'),
+    url(../fonts/NanumGothicBold.woff) format('woff'),
+    url(../fonts/NanumGothicBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/NanumGothicExtraBold.eot);
+  src: url(../fonts/NanumGothicExtraBold.eot?#iefix) format('embedded-opentype'),
+    url(../fonts/NanumGothicExtraBold.woff2) format('woff2'),
+    url(../fonts/NanumGothicExtraBold.woff) format('woff'),
+    url(../fonts/NanumGothicExtraBold.ttf) format('truetype');
+}
+
+* { font-family:'Nanum Gothic', sans-serif; }
+a { text-decoration:none !important; }
+#barFixedTop {
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color: #FFFFFF;
+    height: 120px;
+
+ 
+    
+}
+
+
+
+#topBar {
+    position: absolute;
+    height: 40px;
+    padding:8px 14px 7px 14px;
+    width:100%;
+    overflow:hidden;
+    z-index: 900;
+}
+
+#topBar-Logo {
+    position: absolute;
+    top: 2px;
+    height: 35px;
+    margin-left: -10px;
+}
+
+#topBar-Brand {
+    position: absolute;
+    top: 4px;
+    margin-left: 30px;
+    display:inline;
+  font-size:22px;
+  font-weight:bolder;
+  color:#FFF;
+    text-shadow: 0px 0px 40px gray;
+}
+
+
+
+#sideBar-Toggle-TopBar {
+      float:right;
+  padding:2px 0 2px 0;
+  /* font-size for sideBar-Toggle-Topbar */
+  font-size:30px;
+  color:#FFF;
+}
+
+.menuIcon {
+  margin-bottom: 0px;
+  color:#DBDBDB;
+}
+.menuIcon-Text {
+    position: absolute;
+    width: 100%;
+    top: 40px;
+  
+    padding:0;
+    font-size:12px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+#menuIcon-Certify {
+    
+    left: 0;
+  
+
+    font-size:38px;
+    text-align: center;
+    
+}
+
+#menuIcon-Customer {
+    
+    font-size:29px;
+    
+    text-align: center;
+    left: 20%;
+    
+}
+#subMenuBar {
+  overflow: hidden;
+  padding: 4px 10px 2px 14px;
+}
+.subMenuBar-Tab {
+  display:inline;
+  float:left;
+  height: 28px;
+  margin-right:14px;
+  margin-bottom: 4px;
+  color:#FFF;
+  font-size:16px;
+}
+#sideBar {
+  position:fixed;
+  top:0;
+  right:-171px;
+  width:172px;
+  padding-right: 1px;
+  height:100%;
+  z-index:9000;
+  background-color:#F0F0F0;
+  border-left:1px solid #BFBFBF;
+}
+#sideBar > ul {
+  margin:0;
+  padding:0;
+}
+#sideBar-Toggle-TopBar {
+  float:right;
+  padding:2px 0 2px 0;
+  /* font-size for sideBar-Toggle-Topbar */
+  font-size:30px;
+  color:#FFF;
+}
+#sideBar-Toggle-SideBar {
+  padding:10px 10px 10px 15px;
+  /* font-size for sideBar-Toggle-SideBar */
+  font-size:30px;
+}
+.sidebar-Item {
+  list-style:none;
+  line-height:55px;
+  /* font-size for sidebar-Item-Icon */
+  font-size:22px;
+  border-top:1px solid white;
+  border-bottom:1px solid #DCDCDC;
+}
+.sideBar-Item-Text {
+  position:absolute;
+  left:55px;
+  font-size:16px;
+  font-weight:bold;
+  color:#000;
+}
+.sideBar-Item-Icon {
+  position:relative;
+  left:20px;
+  color: #4DC03D;
+}
+.infoBlockPage {
+  padding:15px;
+  background-color:#F0F0F0;
+}
+.block {
+  position:relative;
+  padding:15px;
+  margin-bottom: 15px;
+  background-color:#FFF;
+  border:1px solid #DCDCDC;
+  border-radius:5px;
+}
+#menuIcon-Maps {
+    
+    font-size:49px;
+    text-align: center;
+    left: 40%;
+}
+
+#menuIcon-Calculates {
+    
+    font-size:50px;
+    text-align: center;
+    
+    left: 60%;
+}
+
+#menuIcon-More {
+    
+    font-size:49px;
+    text-align: center;
+    left: 80%;
+}
+
+.topBar-IconSize {
+    display:inline-block;
+    position: absolute;
+    float: left;
+    height: 80px;
+    
+    width:20%;
+    text-align: center;
+    
+    
+}
+
+.mainFrame {
+    position: fixed;
+    overflow:hidden;
+    bottom: 0px;
+    width: 100%;
+    top: 120px;
+    
+    background-color: #FFFFFF;
+    z-index: 5000;
+    display: block;
+   
+}
+
+
+
+.insert-line-horizontal {
+    position: absolute;
+    outline-color: #DCDCDC;
+    outline-style: solid;
+    outline-width: thin;
+    background-color: #DCDCDC;
+    z-index: 3000;
+}
+
+.iframe-setting {
+    position: absolute;
+    
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+    
+    
+}
+
+#menuIconBar {
+
+    position: absolute;
+    top: 40px;
+    background-color: #FFFFFF;
+    height: 80px;
+    z-index: 1000;
+}
+
+#topBar-remain {
+    position: fixed;
+    background-color: #FFFFFF;
+
+    width: 100%;
+    top: 100px;
+    outline-color: #FFFFFF;
+    padding: 10px;
+}
+
+.change-button-color {
+    background-color: #87CEFA;
+    color: white;
+}
+
+
+#menuIcon-MapsText {
+    top: 57px;
+}
+
+#menuIcon-CalculatesText {
+    top: 57px;
+    
+}
+
+#menuIcon-MoreText {
+    top: 100px;
+}
+
+#menuIcon-Certify-icon {
+    left: 0%;
+}
+
+.menuIcon-position {
+    position: absolute;
+    width: 100%;
+    float: left;
+    display: inline-block;
+    top: 5px;
+    
+    
+}
+
+#menuIcon-Customer-icon {
+    left: 0%;
+    top: 10px;
+}
+
+#menuIcon-Maps-icon {
+    left: 0%;
+}
+
+#menuIcon-Calculates-icon {
+    left: 0%;
+    top: 5px;
+    padding-left: 5px;
+}
+
+#menuIcon-More-icon {
+    left: 0%;
+}
+
+
+
+#menuIcon-Point {
+        
+
+    text-align: center;
+    
+    left: 60%;
+}
+
+#menuIcon-Point-icon {
+    left: 0%;
+    margin-top: -20px;
+        font-size: 60px;
+    font-weight: bolder;
+}
+
+#menuIcon-PointText {
+    top: 57px;
+}
+
+#menuIcon-Manual {
+        font-size:50px;
+    text-align: center;
+    
+    left: 80%;
+}
+
+#menuIcon-Manual-icon {
+    left: 0%;
+}
+
+#menuIcon-ManualText {
+    top: 57px;
+}
+
+#menuIcon-Setting {
+            font-size:50px;
+    text-align: center;
+    
+    left: 100%;
+}
+
+#menuIcon-Setting-icon {
+    left: 0%;
+}
+
+#menuIcon-SettingText {
+    top: 57px;
+}
+
+
+
+#menuIconScroll {
+    position: absolute;
+
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+
+    
+    
+}
+
+#testtest {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    z-index: -1;
+}
+
+#app-loading {
+    position: fixed;
+    z-index: 1000;
+    background-color: transparent;
+    
+    width: 200px;
+    float: left;
+    left: 50%;
+    margin-left: -100px;
+    top: 5%;
+    height: 200px;
+    
+}
+
+#loading-logo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    float: left;
+    left: 50%;
+    margin-left: -100px;
+    top: 0;
+    border-radius: 50px;
+    z-index: -1;
+}
+
+#app-loading-p {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    float: left;
+    left: 50%;
+    padding-top: 220px;
+    margin-left: -125px;
+    top: 10%;
+    text-align: center;
+    font-size: 18px
+}
+
+.common-info-title {
+    position: relative;
+    display:inline-block;
+    float: left;
+    clear: both;
+    
+    width:100%;
+    text-align: center;
+    font-size: 12px;
+
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #87CEFA;
+    color: white;   
+    z-index: 2000;
+    outline-width: 0;
+    height: auto;
+    
+     
+    
+}
+
+
+
+
+
+
+
+
+.mainPopup {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    
+    
+    background-color: transparent;
+    
+    z-index: 5000;
+    display: none;
+}
+
+.popup-setting {
+    position: absolute;
+    width: 80%;
+    float: left;
+    left: 50%;
+    margin-left: -40%;
+    top: 8%;
+    height: 84%;
+    overflow: hidden;
+    display: none;
+}
+
+.ddddddddddd {
+    position: fixed;
+    display: block;
+    background-color: black;
+}
+
+.popupOpacity {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-color: black;
+}
+
+#topBar-BG {
+    position: absolute;
+    
+    width: 100%;
+    height: 40px;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.popup-close-button {
+
+    position: absolute;
+    z-index: 5001;
+    float: right;
+    right: 50%;
+    margin-right: -40%;
+    top: 8%;
+    padding-top: 5px;
+    padding-right: 4px;
+    width: 28px;
+
+}
+
+#loginBox {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    top: 60%;
+    z-index: 2000;
+}
+
+
+
+
+
+#idForm {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-width: 0;
+}
+
+#passwordForm {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top-width: 0;
+}
+
+.loginBoxStyle {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    float: left;
+    left: 50%;
+    margin-left: -100px;
+
+
+   
+    top: 0;
+    z-index: 6000;
+}
+
+#loginButton {
+    
+    background-color: #4DC03D;
+    color: white;
+    border: solid 1px #3b9f2d;
+    border-radius: 10px;
+}
+
+#buttonBox {
+    position: absolute;
+    width: 100%;
+}
+
+.loginButtonStyle {
+    position: absolute;
+    width: 150px !important;
+    float: left;
+    left: 50%;
+    margin-left: -75px;
+    top: 10px;
+    
+}
+
+
+
+
+
+.list-client-index {
+
+    display: none;
+
+}
+
+.work-in-progress {
+    position: absolute;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+    color: lightgray;
+}
+
+#topBar-Product {
+    position: absolute;
+    float: right;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    z-index: 3000;
+    color: white;
+    top: 6px;
+    text-shadow: 0px 0px 40px black;
+    height: 20px;
+    
+}
+
+
+
+#URLhere1 {
+    display: block;
+}

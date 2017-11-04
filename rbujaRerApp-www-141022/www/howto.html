@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <!-- cordova settings -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <title>알부자</title>
+
+    <!-- Main CSS -->
+    <link href="assets/css/rbujaRer-common.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Font-Awesome CDN -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+
+
+  <!-- cordova scripts -->
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    // onDeviceReady default settings
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    function onDeviceReady() {
+      // fastclick.js register
+      FastClick.attach(document.body);
+    }
+  </script><!-- cordova scripts end -->
+
+
+<body>
+
+  <!-- barFixedTop -->
+  <nav id="barFixedTop">
+
+    <!-- topBar -->
+    <div id="topBar" class="rbuja-BackgroundColor">
+      <!-- logo -->
+      <img src="images/logo-inverse-mini.png" id="topBar-Logo">
+      <!-- brand -->
+      <div id="topBar-Brand">알부자</div>
+      <span id="sideBar-Toggle">
+        <!-- sideBar-Toggle -->
+        <span class="fa fa-bars fa-lg" id="sideBar-Toggle-TopBar"></span>
+      </span>
+    </div>
+
+    <!-- menuIconBar -->
+    <div id="menuIconBar">
+      <a href="home.html">
+        <div class="col-xs-3 col-sm-3 col-md-3" id="menuIcon-Home">
+          <span class="fa fa-home menuIcon"></span>
+          <p class="menuIcon-Text" id="menuIcon-HomeText">홈</p>
+        </div>
+      </a>
+      <a href="howto.html">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <span class="fa fa-file-text-o menuIcon rbuja-Color" id="menuIcon-DescriptionSpan"></span>
+          <p class="menuIcon-Text">설명서</p>
+        </div>
+      </a>
+      <a href="pickup.html">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <span class="fa fa-truck menuIcon"></span>
+          <p class="menuIcon-Text">수거</p>
+        </div>
+      </a>
+      <a href="store.html">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <span class="fa fa-shopping-cart menuIcon"></span>
+          <p class="menuIcon-Text">상점</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- SubMenuBar -->
+    <div id="subMenuBar" class="rbuja-BackgroundColor">
+      <div class="subMenuBar-Tab" id="howto-general">이용안내</div>
+      <div class="subMenuBar-Tab" id="howto-paper">종이</div>
+      <div class="subMenuBar-Tab" id="howto-plastic">플라스틱</div>
+      <div class="subMenuBar-Tab" id="howto-glass">병</div>
+      <div class="subMenuBar-Tab" id="howto-etc">기타(캔, 철)</div>
+      <div class="subMenuBar-Tab" id="howto-clothes">옷</div>
+      <div class="subMenuBar-Tab" id="howto-steel">철</div>
+      <div class="subMenuBar-Tab" id="howto-stainless">스덴(스테인리스)</div>
+      <div class="subMenuBar-Tab" id="howto-smallDevices">소형가전</div>
+    </div>
+
+  </nav>
+
+
+
+
+
+
+
+  <!-- sideBar -->
+  <nav id="sideBar">
+    <!-- sideBar-Item -->
+    <ul>
+      <li class="sidebar-Item"><i class="fa fa-bell sideBar-Item-Icon"></i><span class="sideBar-Item-Text">공지사항</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-question-circle sideBar-Item-Icon"></i><span class="sideBar-Item-Text">고객센터</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-file-text-o sideBar-Item-Icon"></i><span class="sideBar-Item-Text">주문내역</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-krw sideBar-Item-Icon"></i><span class="sideBar-Item-Text">포인트관리</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-cog sideBar-Item-Icon"></i><span class="sideBar-Item-Text">설정
+        </span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-lock sideBar-Item-Icon" style="padding-left: 3px;"></i><span class="sideBar-Item-Text">로그아웃
+        </span>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
+
+  <!-- wrapper-main begin -->
+  <div id="wrapper-main">
+
+
+
+
+
+
+    <!-- howto-contents begin -->
+    <div id="howto-general-contents" class="howto-contents">
+      <h class="howto-topic">이용안내</h>
+      <p id="howto-article">
+        알부자는 직접 방문하여, 재활용쓰레기를 매입하는 서비스를 제공하고 있습니다.<br />
+        <br />
+        수거 신청기준은 위의 분류 항목 중, 두 가지 이상.<br />
+        <br />
+        용량 기준 – 50리터 봉지<br />
+        <br />
+        수거 봉지는 첫 회 방문 시 수거 기사님을 통해 제공됩니다. (부재중 신청 시 불가.)<br />
+        <br />
+        분리 수거 항목은 다음과 같습니다.<br />
+      </p>
+      <h class="howto-topic">대표 품목</h>
+      <ul class="howto-list">
+        <li>종이류</li>
+        <li>플라스틱류</li>
+        <li>병류</li>
+        <li>기타(캔, 철)</li>
+      </ul>
+      <h class="howto-topic">별도 품목</h>
+      <ul class="howto-list">
+        <li>옷</li>
+        <li>철</li>
+        <li>스덴</li>
+        <li>소형가전</li>
+      </ul>
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-paper-contents" class="howto-contents">
+      <h class="howto-topic">종이류 : 50원/kg</h>
+      <p id="howto-article">
+        - 신문이나 책은 끈으로 묶어서 배출해주세요<br />
+        <br />
+        - 과자 상자나 우유팩 등등 소형 종이류는 접어서, 50리터 봉투에 담아 배출해주세요.<br />
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-plastic-contents" class="howto-contents">
+      <h class="howto-topic">플라스틱류 : 100원/kg</h>
+      <p id="howto-article">
+        부피를 줄일 수 있는 플라스틱 계열(ppt)은 최대한 부피를 줄여서 담아주세요.<br />
+        (추가 설명 필요)<br />
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+      <h class="howto-topic">재활용 가능 품목</h>
+      <ul class="howto-list">
+        <li>샴푸통</li>
+        <li>피죤통</li>
+        <li>흰색말통</li>
+        <li>락스통</li>
+        <li>김치통</li>
+        <li>반찬통</li>
+        <li>핸드백</li>
+        <li>펫트병</li>
+        <li>빠랫트</li>
+        <li>플라스틱우유통</li>
+        <li>된장이나 고추장 통 등등</li>
+      </ul>
+      <h class="howto-topic">재활용 불가능 품목</h>
+      <ul class="howto-list">
+        <li>빠삭빠삭 소리 나는 것(딸기팩, 계란팩)</li>
+        <li>고무재질(고무다라, 아이스박스)</li>
+        <li>쟁반</li>
+        <li>업소용 하얀 그릇</li>
+        <li>장난감(블록) 등등</li>
+      </ul>
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-glass-contents" class="howto-contents">
+      <h class="howto-topic">병류 : 50원/kg</h>
+      <p id="howto-article">
+        병은 다음과 같은 종류만 수거가 가능합니다.
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+      <h class="howto-topic">취급 품목</h>
+      <ul class="howto-list">
+        <li>소주병(참이슬, 처음처럼, 청하)</li>
+        <li>맥주병(카스, 하이트 등등 국산)</li>
+        <li>사이다</li>
+        <li>콜라</li>
+      </ul>
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-etc-contents" class="howto-contents">
+      <h class="howto-topic">기타(캔, 철) : 50원/kg</h>
+      <p id="howto-article">
+        캔은 부피를 최대한 줄여서 배출해주세요.<br />
+        <br />
+        캔 종류는 벌레가 꼬일 수 있으니, 물로 간단 세척 후 배출해주세요.<br />
+        <br />
+        소량의 철 재질 제품도 함께 배출해주세요.<br />
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+      <h class="howto-topic">취급 품목</h>
+      <ul class="howto-list">
+        <li>음료수 캔</li>
+        <li>맥주 캔</li>
+        <li>참치 캔</li>
+        <li>통조림 캔</li>
+        <li>부탄가스 등등</li>
+      </ul>
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-clothes-contents" class="howto-contents">
+      <h class="howto-topic">옷 : 150원/kg</h>
+      <p id="howto-article">
+        옷은 수출품 기준에 따라 다음과 같이 분류됩니다.<br />
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+      <h class="howto-topic">되는 것</h>
+      <ul class="howto-list">
+        <li>여름용 옷감</li>
+        <li>얇은 이불</li>
+        <li>운동화</li>
+        <li>구두</li>
+        <li>카페트</li>
+        <li>가방</li>
+        <li>핸드백</li>
+        <li>커튼</li>
+        <li>한복</li>
+      </ul>
+      <h class="howto-topic">안 되는 것</h>
+      <ul class="howto-list">
+        <li>솜이불</li>
+        <li>수건</li>
+        <li>양말</li>
+        <li>겨울 부츠</li>
+        <li>슬리퍼</li>
+        <li>마크 있는 가방이나 옷</li>
+        <li>작업복</li>
+        <li>쿠션</li>
+        <li>인형<li>
+        <li>군복<li>
+        <li>군과<li>
+        <li>바퀴 달린 가방이나 신발<li>
+        <li>전기장판<li>
+      </ul>
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-steel-contents" class="howto-contents">
+      <h class="howto-topic">철 : 100원/kg</h>
+      <p id="howto-article">
+        주방 식기(냄비, 프라이팬 등등) 또는 철제 제품.<br />
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-stainless-contents" class="howto-contents">
+      <h class="howto-topic">스덴(스테인리스) : 500원/kg</h>
+      <p id="howto-article">
+        스테인리스강 제품(자석에 붙지 않습니다.)<br />
+        <br />
+        주방 식기(냄비, 프라이팬 등등) 또는 스덴 제품<br />
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+    </div>
+
+    <!-- howto-contents begin -->
+    <div id="howto-smallDevices-contents" class="howto-contents">
+      <h class="howto-topic">소형가전 : 100원/kg</h>
+      <p id="howto-article">
+        가로, 세로, 높이 1m미만의 가전제품을 지칭합니다. (이상의 경우 가전제품 수거 이용)<br />
+        <br />
+        1kg미만의 소규모 물량의 경우 기타(캔, 철)류에 포함하여 배출해주시기 바랍니다.<br />
+      </p>
+      <img src="images/logo-sm.jpg" class="howto-image">
+      <h class="howto-topic">소형가전 종류</h>
+      <ul class="howto-list">
+        <li>전화기</li>
+        <li>카세트</li>
+        <li>팩스</li>
+        <li>밥솥</li>
+        <li>전자레인지</li>
+        <li>선풍기</li>
+        <li>컴퓨터</li>
+        <li>비데</li>
+        <li>프린터기 등등.</li>
+      </ul>
+    </div>
+
+
+
+
+
+
+
+
+  </div><!-- wrapper-main end -->
+
+
+
+
+
+
+
+
+  <!-- footer -->
+  <footer>
+    <div class="footerBox">
+      <div class="col-md-4 col-sm-4 col-xs-4">
+      </div>
+      <div class="col-md-8 col-sm-8 col-xs-8">
+
+      </div>
+      <p id="footer-Text">Copyright &copy; 2014 알부자</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <!-- JavaScript placed here that page loads faster -->
+  <!-- JQuery CDN -->
+  <script src="assets/js/jquery-2.1.1.min.js"></script>
+  <!-- Bootstrap Javascript - Latest compiled and minified JavaScript -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- iscroll javascript -->
+  <script src="assets/js/iscroll.js"></script>
+  <!-- rbujaRer-common javascript -->
+  <script src="assets/js/rbujaRer-common.js"></script>
+
+  <!-- cordova scripts -->
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    function onDeviceReady() {
+      cordovaSettings();
+    }
+
+  </script><!-- cordova scripts end -->
+
+  <script>
+    $(document).ready(function () {
+      // default settings
+      defaultSettings();
+
+      tabClickedFromHowto();
+    });
+  </script>
+
+</body>
+
+</html>

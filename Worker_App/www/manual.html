@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html style="background-color: #FFFFFF;height: 100%;">
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        
+        <script type="text/javascript">
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            
+            
+        
+            
+            
+            var myScroll;
+            function loaded(){
+                myScroll = new IScroll('#manual-info-part', {
+                    scrollX: true, scrollY: false, bounce: false, snap: true}
+                    );
+                
+   
+            }
+
+            
+            function setupWidth(){
+                var totalWidth = [];
+                $('li').each(function(){
+                    var singleWidth = $(this).width();
+                    totalWidth.push(singleWidth);
+                });
+                var finalWidth = (totalWidth.length * 100) + "%";
+                var liWidth = (100 / totalWidth.length) + "%";
+                var scrollWidth = 100 / totalWidth.length;
+            
+            
+                $('#manual-scroll-horizontal').width(finalWidth);
+                $('#manual-scroll-horizontal li').width(liWidth);
+                return scrollWidth;
+            }
+            
+            
+            
+            
+            
+            
+                    
+                    
+            
+            
+            $(document).ready(function(){
+                setTimeout(function(){
+                
+                    setupWidth();
+                }, 10);
+                
+                setTimeout(function(){
+                    loaded();
+                }, 20);
+            });
+                
+
+        
+        </script>
+
+
+
+        <meta charset="utf-8">
+
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_manual.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+     
+
+    </head>
+    <body style="overflow: hidden;">
+        <!-- mainframe menu-->
+        <div id="manual-menu">
+
+            <!-- maps menu bar-->
+            <div  class="common-info-title" id="manual-info-title">메뉴얼</div>
+            
+            <div id="manual-info-part">
+                <div id="manual-scroll-horizontal">
+                    <ul>
+                        <!-- product -->
+                        <li>
+                        
+                        
+                        <div class="manual-main-style" id="manual-product1">
+
+
+
+                            <p class="manual-title">플라스틱 시세 : 
+                                <span class="manual-point">200p</span>
+                                /<span>1kg</span></p>
+                            <div class="manual-picture-part">
+                                <img src="images/product1.jpg" 
+                                     alt="Plastic" class="manual-picture">
+                            </div>
+
+                            <p class="manual-content">분류 방법</p>
+
+                                <div class="manual-content-list">
+                                  
+                                    <p>플라스틱 용품은 최대한 눌러주세요!</p>
+                                    <p>다음과 같은 플라스틱 제품은 취급이 안됩니다.</p>
+
+                                    <p class="manual-content-example">ex) 000, 000, 000, 000.</p>
+                                </div>  
+
+                        </div>
+
+                        </li>
+                        
+                        <!-- product -->
+                        <li>
+                        
+                        
+                        <div class="manual-main-style" id="manual-product2">
+
+
+
+                            <p class="manual-title">비닐 시세 : 
+                                <span class="manual-point">100p</span>
+                                /<span>1kg</span></p>
+                            <div class="manual-picture-part">
+                                <img src="images/product4.jpg" 
+                                     alt="Plastic" class="manual-picture">
+                            </div>
+
+                            <p class="manual-content">분류 방법</p>
+
+                                <div class="manual-content-list">
+                                  
+                                    <p>비닐 용품은 최대한 눌러주세요!</p>
+                                    <p>다음과 같은 플라스틱 제품은 취급이 안됩니다.</p>
+
+                                    <p class="manual-content-example">ex) 000, 000, 000, 000.</p>
+                                </div>  
+
+                        </div>
+
+                        </li>
+                        <!-- product -->
+                        <li>
+                        
+                        
+                        <div class="manual-main-style" id="manual-product3">
+
+
+
+                            <p class="manual-title">화장품 시세 : 
+                                <span class="manual-point">150p</span>
+                                /<span>1kg</span></p>
+                            <div class="manual-picture-part">
+                                <img src="images/product2.jpg" 
+                                     alt="Plastic" class="manual-picture">
+                            </div>
+
+                            <p class="manual-content">분류 방법</p>
+
+                                <div class="manual-content-list">
+                                  
+                                    <p>화장품 용품은 따로 버려주세요!</p>
+                                    <p>다음과 같은 화장품 제품은 취급이 안됩니다.</p>
+
+                                    <p class="manual-content-example">ex) 000, 000, 000, 000.</p>
+                                </div>  
+
+                        </div>
+
+                        </li>
+                        <!-- product -->
+                        <li>
+                        
+                        
+                        <div class="manual-main-style" id="manual-product4">
+
+
+
+                            <p class="manual-title">종이류 시세 : 
+                                <span class="manual-point">50p</span>
+                                /<span>1kg</span></p>
+                            <div class="manual-picture-part">
+                                <img src="images/product3.jpg" 
+                                     alt="Plastic" class="manual-picture">
+                            </div>
+
+                            <p class="manual-content">분류 방법</p>
+
+                                <div class="manual-content-list">
+                                  
+                                    <p>종이류 용품은 최대한 눌러주세요!</p>
+                                    <p>다음과 같은 종이류 제품은 취급이 안됩니다.</p>
+
+                                    <p class="manual-content-example">ex) 000, 000, 000, 000.</p>
+                                </div>  
+
+                        </div>
+
+                        </li>
+
+
+                    </ul>
+                
+
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+
+
+
+
+
+</html>

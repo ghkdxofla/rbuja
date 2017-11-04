@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html style="background-color: #FFFFFF;height: 100%;">
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+
+        <meta charset="utf-8">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_maps.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    
+    </head>
+    <body style="background-color:#FFFFFF;height:100%;">
+        <!-- mainframe menu-->
+        <div id="maps-menu">
+
+            <!-- maps menu bar-->
+            <div  class="common-info-title" id="maps-info-title">지도</div>
+            
+            <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=8e1900bbc08bca40e9e399ae46b4f346"></script>
+<div id = "testMap"></div>
+<script type="text/javascript">
+            var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037);
+            nhn.api.map.setDefaultPoint('LatLng');
+            oMap = new nhn.api.map.Map('testMap' ,{
+                        point : oPoint,
+                        zoom : 10,
+                        enableWheelZoom : true,
+                        enableDragPan : true,
+                        enableDblClickZoom : false,
+                        mapMode : 0,
+                        activateTrafficMap : false,
+                        activateBicycleMap : false,
+                        minMaxLevel : [ 1, 14 ],
+                        size : new nhn.api.map.Size(500, 400)
+                    });
+</script> 
+            
+
+            
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    
+        </div>
+        
+        
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+    
+    </body>
+
+
+
+
+
+</html>

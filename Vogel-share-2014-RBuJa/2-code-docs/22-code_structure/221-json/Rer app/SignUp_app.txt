@@ -1,0 +1,13 @@
+Rer app function
+http://rbuja.herokuapp.com/accounts/SignUp_app
+POST
+username: '',
+password: '',
+realname: '',
+phone: 0,
+address: ''
+
+{
+    "message": "성공적으로 가입되었습니다",
+    "result": true
+}

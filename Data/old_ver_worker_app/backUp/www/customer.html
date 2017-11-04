@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html style="background-color:#FFFFFF;height:100%;">
+
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+        
+
+        <meta charset="utf-8">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_customer.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        
+        <script>
+        
+            
+            
+                
+            
+            $(document).ready(function(){
+                //popup-function
+                $(".customer-serach-style").hide();
+                
+                $("#customer-info-search").click(function(){
+                    $(".customer-serach-style").show();
+                });
+                $(".customer-search-back").click(function(){
+                    $(".customer-serach-style").hide();
+                });
+ 
+    
+                //ajax-function
+                
+                $.get("client.txt", function(data, status, certifyClientCustomer){
+                     var myArray = JSON.parse(certifyClientCustomer.responseText);
+                     ClientInfoIdentifier(myArray);
+                });
+                    
+                //$(document).ajaxComplete(function(){
+                    
+                    //popup-function
+                    
+                    
+                   
+                  
+                //});
+ 
+                 
+            });
+        
+        
+        
+        </script>
+ 
+    </head>
+    
+    
+    <body style="background-color:#FFFFFF;height:100%;">
+        
+        
+        <!--customer-info-title-->
+        <div  class="common-info-title" id="customer-info-title">고객정보</div>
+        <!--customer-info-main-->
+        <div class="customer-info-main-style" id="customer-info-main">
+        
+            <ul style="list-style-type:none" id="JSON-clientIndicator">
+                
+                <!-- 여기에 이름, 번호 등은 볼드 처리, 김미미, 010-0000-0000 등은 자바-->
+                <li><span class="list-style-bold">이름: </span>김미미</li>
+                <li><span class="list-style-bold">번호: </span>010-0000-0000</li>
+                <li><span class="list-style-bold">이메일: </span>asdf@naver.com</li>
+                <li><span class="list-style-bold">주소: </span>서울시 양천구 신정2동</li>
+                
+            
+            
+            
+            </ul>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+        
+        
+        <div id="customer-button-part">
+            <div onclick="" class="customer-info-button" id="customer-info-search">
+                찾기
+            
+            
+            
+            
+            
+            </div>
+            <div class="customer-info-button" id="customer-info-point-giving">
+
+                R포인트 지급
+
+            </div>
+
+
+            <div class="customer-info-button" id="customer-info-breakdown">
+
+                지급 내역
+
+            </div>
+
+            <div class="customer-info-button" id="customer-info-correct">
+
+                정정 신청
+
+            </div>
+
+
+            <div class="insert-line-horizontal" id="insert-line-1">
+
+            </div>
+
+            <div onclick="completeClicked()" class="customer-bottom-button" id="customer-button-complete">
+
+
+                방문 완료
+
+
+
+            </div>
+
+            <div onclick="outClicked()" class="customer-bottom-button" id="customer-button-out">
+
+
+                부재중
+
+
+            </div>
+        </div>
+        
+        
+        
+        <!-- customer search-->
+        <div class="customer-serach-style">
+            <div onclick="" class="customer-search-back"><br></div>
+            <div onclick="" class="customer-info-button customer-search-button" id="customer-search-name">
+            
+            
+                이름 찾기
+            
+            
+            
+            </div>
+            <div onclick="" class="customer-info-button customer-search-button" id="customer-search-phone">
+            
+            
+            
+                번호 찾기
+            
+            
+            </div>
+            <div onclick="" class="customer-info-button customer-search-button" id="customer-search-address">
+            
+            
+            
+                주소 찾기
+            
+            
+            </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+        
+        <div id="customer-form" class="mfp-hide">
+            <form>
+                이름:<br>
+                <input type="text" name="whatname">
+            
+            </form>
+        
+        
+        
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    
+
+    </body>
+
+
+</html>

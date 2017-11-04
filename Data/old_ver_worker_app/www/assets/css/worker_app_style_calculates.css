@@ -1,0 +1,103 @@
+
+#calculates-info-title {
+    position: relative;
+    display:inline-block;
+    clear: both;
+    
+    width:100%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #87CEFA;
+    color: white;   
+    z-index: 2000;
+    outline-width: 0;
+    
+     
+    outline-style: solid;
+    outline-color: white;
+}
+
+.calculates-button {
+    display:inline-block;
+    float: left;
+    
+    width:50%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #90EE90;
+    color: black;
+    
+}
+
+
+
+.calculates-table {
+    position: relative;
+    top: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    
+
+    border-collapse: collapse;
+    
+
+}
+
+
+
+.calculates-table-menu {
+    background-color: #F0FFF0;
+}
+
+#recycle-table {
+    text-align: center;
+    padding: 4px;
+    background-color: #fedfff;
+    border: 4px solid white;
+    
+}
+
+#recycle-table th {
+    text-align: center;
+    padding: 6px 0;
+    background-color: #f55;
+    color: white;
+    border: 2px solid white;
+    border-bottom: 6px solid white;
+}
+
+
+#recycle-table tr.alt td{
+    text-align: center;
+    padding: 2px;
+    background-color: #d9dcff;
+    border: 2px solid white;
+}
+
+#recycle-table tr td{
+
+    border: 2px solid white;
+}
+
+.calculates-client-info {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    left: 10%;
+    width: 80%;
+    
+}
+
+#calculates-button-point {
+    top: 50px;
+    position: relative;
+    left: 25%;
+
+    border-radius: 5px;
+    background-color: #4DC03D;
+}

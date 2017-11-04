@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <!-- cordova settings -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <title>알부자</title>
+
+    <!-- Main CSS -->
+    <link href="assets/css/rbujaRer-common.css" rel="stylesheet" type="text/css">
+    <!-- Join CSS -->
+    <link href="assets/css/rbujaRer-join.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Font-Awesome CDN -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <!-- imageBoundary -->
+    <!-- div id="imageBoundary" class="shine"></div -->
+
+    <img src="images/logo-lg.jpg" id="logo">
+
+    <!-- Login Box-->
+    <div id="loginBox">
+
+      <form class="form-signin" role="form">
+        <input type="text" class="form-control" id="idForm" placeholder="아이디" required autofocus>
+        <input type="password" class="form-control" id="passwordForm" placeholder="비밀번호" required>
+
+        <div id="buttonBox">
+          <!-- join -->
+          <button type="button" class="btn btn-lg" id="joinButton" onclick="location.href='join.html'">가입하기</button>
+
+          <!-- login -->
+          <button type="button" class="btn btn-lg" id="loginButton">로그인</button>
+        </div>
+      </form>
+
+    </div>
+
+
+
+
+
+
+    <!-- JavaScript placed here that page loads faster -->
+    <!-- JQuery CDN -->
+    <script src="assets/js/jquery-2.1.1.min.js"></script>
+    <!-- Bootstrap Javascript - Latest compiled and minified JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- cordova fastclick -->
+    <script type='application/javascript' src="assets/js/fastclick.js"></script>
+
+    <!-- cordova scripts -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+      // cordova
+      // Register the event listener
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+      // document.addEventListener("backbutton", onBackButtonFire, false);
+
+      function onDeviceReady() {
+        // show and hide the logo when keyboard is on and off
+        document.addEventListener("showkeyboard", function() {
+          document.getElementById("logo").style.display = "none";
+        }, false);
+        document.addEventListener("hidekeyboard", function() {
+          document.getElementById("logo").style.display = "block";
+        }, false);
+      }
+
+      // back button at login.html should exit app
+      /*
+      function onBackButtonFire() {
+        // exit app
+        navigator.app.exitApp();
+      }
+      */
+
+    </script><!-- cordova scripts end -->
+
+
+
+
+
+
+    <!-- common scripts -->
+    <script>
+      $(document).ready(function () {
+        // default settings
+        defaultSettings();
+      });
+    </script><!-- common scripts end -->
+
+
+
+
+
+
+    <!-- ajax scripts -->
+    <script type="text/javascript">
+      // when login button is clicked
+      $('#loginButton').click(function() {
+        // get user's id and password
+        var loginInfo = {
+          username: $('#idForm').val(),
+          password: $('#passwordForm').val()
+        };
+          
+          
+          
+
+        $.ajax({
+          type: 'POST',
+          url: "http://rbuja.herokuapp.com/app/accounts/Login",
+          data: loginInfo,
+          dataType: 'json',
+          timeout: 5000,
+          success: function(data) {
+            // if
+            if (data.result == true) {
+              // move page to home.html
+              location.href = "home.html";
+            }
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            alert("Error: " + xhr.status + "\n" +
+                  "Message: " + xhr.statusText + "\n" +
+                  "Response: " + xhr.responseText + "\n" + thrownError);
+          }
+        });
+        
+      });
+        
+        /*
+        */
+
+        /*
+        $.ajax({
+          type: 'POST',
+          url: "http://rbuja.herokuapp.com/rer",
+          data: { 'patientID' : 1 },
+          dataType: 'json',
+          success: function(jsonData) {
+            alert('hello');
+            // alert(jsonData);
+          },
+          error: function (xhr, ajaxOptions, thrownError) {
+            alert("Error: " + xhr.status + "\n" +
+            "Message: " + xhr.statusText + "\n" +
+            "Response: " + xhr.responseText + "\n" + thrownError);
+          }
+        });
+        */
+
+
+    </script><!-- ajax scripts end -->
+
+  </body>
+
+</html>

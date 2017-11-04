@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html style="background-color: #F0FFF0;height: 100%;">
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        
+        
+        
+        <script>
+            $(document).ready(function(){
+                $("#point-summery-button").addClass("change-button-clicked");
+                
+
+
+                $("#point-summery-button").click(function(){
+                    $("#point-summery-button").addClass("change-button-clicked");
+                     $("#point-detail-button").removeClass("change-button-clicked");
+                     $("#point-correction-button").removeClass("change-button-clicked");
+                     
+                    
+                });
+                $("#point-detail-button").click(function(){
+                     $("#point-summery-button").removeClass("change-button-clicked");
+                     $("#point-detail-button").addClass("change-button-clicked");
+                     $("#point-correction-button").removeClass("change-button-clicked");
+
+                    
+                });
+                $("#point-correction-button").click(function(){
+                    $("#point-summery-button").removeClass("change-button-clicked");
+                    $("#point-detail-button").removeClass("change-button-clicked");
+                    $("#point-correction-button").addClass("change-button-clicked");
+                     
+                    
+                });
+                
+                //change-function
+                $("#point-detail").hide();
+                $("#point-correction").hide();
+
+                $("#point-summery-button").click(function(){
+                    $("#point-summery").show();
+                    $("#point-detail").hide();
+                    $("#point-correction").hide();
+                });
+
+                $("#point-detail-button").click(function(){
+                    $("#point-summery").hide();
+                    $("#point-detail").show();
+                    $("#point-correction").hide();
+
+                });
+            
+                $("#point-correction-button").click(function(){
+                    $("#point-summery").hide();
+                    $("#point-detail").hide();
+                    $("#point-correction").show();
+
+                });
+                
+                
+                
+                
+                 
+            });
+        
+            
+
+        </script>
+        
+        <script>
+            //today date original
+            var todayDateAll = new date();
+            
+            
+            
+            
+            function whatIsDate() {
+
+                
+                //today date
+                var todayYear = todayDateAll.getYear();
+                var todayMonth = todayDateAll.getMonth();
+                var todayDate = todayDateAll.getDate();
+                //before date
+                var beforeYear;
+                var beforeMonth;
+                var beforeDate;
+                //after date;
+                var afterYear;
+                var afterMonth;
+                var afterDate;
+                //day calculate before
+                
+                
+
+
+
+                beforeMonth = todayMonth - 1;
+
+
+
+                todayDateAll.setMonth(beforeMonth);
+                //before date
+                beforeYear = todayMonth.getYear();
+                beforeMonth = todayDateAll.getMonth();
+                beforeDate = todayDateAll.getDate();
+
+            
+            
+            }
+            
+            
+            
+            
+            
+
+        
+        
+        
+        
+        
+        </script>
+
+        <meta charset="utf-8">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_point.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    </head>
+    <body style="overflow: hidden; background-color:#F0FFF0;height:100%;">
+    
+        
+        <!-- mainframe menu-->
+        <div id="point-menu">
+
+            <!-- point menu bar-->
+            <div id="point-info-title">포인트</div>
+            
+            
+            <!--point category button-->
+            <div class="point-button" id="point-summery-button">
+
+                요약
+
+            </div>
+
+            <div class="point-button" id="point-detail-button">
+
+                세부내역
+
+            </div>
+            
+            <div class="point-button" id="point-correction-button">
+
+                정정
+
+            </div>
+            
+            <!--point date navi-->
+            <div class="point-date-navi" id="point-date-navibar">
+                
+                <div class="point-navi-button" id="point-navi-previous">
+                
+                    <span class="fa fa-caret-square-o-left"></span>
+                
+                </div>
+                
+                <div id="point-date">
+                
+                    <div id="point-date-setting">asdf.zx.cv ~ 1234.56.78</div>
+                
+                
+                </div>
+                
+                
+                
+                
+                
+                <div class="point-navi-button" id="point-navi-next">
+                
+                    <span class="fa fa-caret-square-o-right"></span>
+                
+                </div>
+                
+                
+            
+            
+            
+            
+            
+            </div>
+            
+            <!--point summery part-->
+            
+            <div class="point-common" id="point-summery">
+                <p>방문횟수 : <span>000</span>회</p>
+                <p>정정신청 : <span>1</span>회</p>
+                
+                <div class="point-common-table" id="point-summery-table">
+                    <table class="common-table-style" id="summery-table-style">
+                        <tr>
+                            <th>지출내역</th>
+                            <th>수익내역</th> 
+
+                        </tr>
+
+                        <tr class="alt" id="point-sum">
+                            <td class="alt-red" id="ex-sum">2,242,500</td>
+                            <td id="in-sum">4,342,500</td> 
+                            
+                        </tr>
+                        <tr id="point-profit">
+                            <td>이익</td>
+                            <td style="color: green; font-weight:
+                                       bold;">2,100,000</td>
+                        </tr>
+
+                    
+                    
+                    </table>
+                </div>
+            </div>
+            
+            <!--point detail part-->
+            
+            <div class="point-common" id="point-detail">
+                <p>방문횟수 : <span>000</span>회</p>
+                <p>정정신청 : <span>1</span>회</p>
+                
+                <div class="point-common-table" id="point-detail-table">
+                    <table class="common-table-style" id="detail-table-style">
+                        <tr>
+                            <th>지출내역</th>
+                            <th>수익내역</th> 
+
+                        </tr>
+                    </table>
+                    <div class="table-scrolling">
+                        <table class="common-table-style" id="detail-tatble-scroll">   
+                            <tr>
+                                <td class="alt-red">4,100</td>
+                                <td>5,300</td>
+
+                            </tr>
+
+                            <tr class="alt">
+                                <td class="alt-red">4,500</td>
+                                <td>5,300</td>
+
+                            </tr>
+                            <tr>
+                                <td class="alt-red">4,100</td>
+                                <td>5,300</td>
+
+                            </tr>
+
+                            <tr class="alt">
+                                <td class="alt-red">4,500</td>
+                                <td>5,300</td>
+
+                            </tr>
+                            <tr>
+                                <td class="alt-red">6,100</td>
+                                <td>7,400</td>
+
+                            </tr>
+                            <tr class="alt">
+                                <td class="alt-red">2,100</td>
+                                <td>5,500</td>
+
+                            </tr>
+                            <tr>
+                                <td class="alt-red">4,100</td>
+                                <td>5,300</td>
+
+                            </tr>
+
+                            <tr class="alt">
+                                <td class="alt-red">4,500</td>
+                                <td>5,300</td>
+
+                            </tr>
+                            <tr>
+                                <td class="alt-red">3,200</td>
+                                <td>3,600</td>
+
+                            </tr>
+                            <tr class="alt">
+                                <td class="alt-red">6,600</td>
+                                <td>8,800</td>
+
+                            </tr>
+                            <tr>
+                                <td class="alt-red">3,100</td>
+                                <td>6,600</td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <table class="common-table-style" id="detail-table-total"> 
+
+                        <tr class="alt" id="point-sum">
+                            <td class="alt-red" id="ex-sum">2,242,500</td>
+                            <td id="in-sum">4,342,500</td> 
+                            
+                        </tr>
+                        
+                        <tr id="point-profit">
+                            <td>이익</td>
+                            <td style="color: green; font-weight:
+                                       bold;">2,100,000</td>
+                        </tr>
+
+                    
+                    
+                    </table>
+                </div>
+            </div>
+            
+            <!--point correction part-->
+            
+            <div class="point-common" id="point-correction">
+                <p><br></p>
+                <p>정정신청 : <span>1</span>회</p>
+                
+                <div class="point-common-table" id="point-correction-table">
+                    <table class="common-table-style" id="correction-table-style">
+                        <tr>
+                            <th style="padding-left: 0;padding-right: 0;width: 30%;">고객명</th>
+                            <th style="padding-left: 0;padding-right: 0;width: 70%;">정정내역</th> 
+
+                        </tr>
+                    </table>
+                    <div class="table-scrolling">
+                        <table class="common-table-style" id="correction-tatble-scroll">   
+                            <tr>
+                                <td class="client">이보라</td>
+                                <td><span class="wrong-point">13,200</span>
+                                    -><span class="correct-point">1,320</span>
+                                </td>
+
+                            </tr>
+
+                            <tr class="alt">
+                                <td class="client">김미미</td>
+                                <td><span class="wrong-point">13,200</span>
+                                    -><span class="correct-point">1,320</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="client">최철갑</td>
+                                <td><span class="wrong-point">13,200</span>
+                                    -><span class="correct-point">1,320</span>
+                                </td>
+
+                            </tr>
+
+                            <tr class="alt">
+                                <td class="client">황승택</td>
+                                <td><span class="wrong-point">13,200</span>
+                                    -><span class="correct-point">1,320</span>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="client">김판관</td>
+                                <td><span class="wrong-point">13,200</span>
+                                    -><span class="correct-point">1,320</span>
+                                </td>
+
+                            </tr>
+                            <tr class="alt">
+                                <td class="client">박창석</td>
+                                <td><span class="wrong-point">13,200</span>
+                                    -><span class="correct-point">1,320</span>
+                                </td>
+
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+    
+
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        </div>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+    
+    
+    </body>
+
+
+
+
+
+</html>

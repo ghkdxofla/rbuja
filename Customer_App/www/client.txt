@@ -1,0 +1,257 @@
+﻿{"reClient":[
+    {
+        "realname": "이보라",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 양천구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "200",
+        "return": "3",
+        "visit": "no",
+        "username": "223"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1",
+        "visit": "no",
+        "username": "152"
+    },
+    {
+        "realname": "최철구",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 중구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "400",
+        "return": "3",
+        "visit": "no",
+        "username": "958"
+    },
+    {
+        "realname": "고잡신",
+        "home": "02-2600-1234",
+        "cellular": "010-1111-1111",
+        "address": "서울시 강서구",
+        "emailAddress": "ㅠㅠㅠ@aaa.com",
+        "point": "1000",
+        "return": "0",
+        "visit": "no",
+        "username": "22"
+    },
+    {
+        "realname": "이형석",
+        "home": "02-1234-1234",
+        "cellular": "010-4123-1412",
+        "address": "서울시 양천구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "500",
+        "return": "1",
+        "visit": "no",
+        "username": "3920"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-1323-1231",
+        "cellular": "010-1231-4423",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "400",
+        "return": "1",
+        "visit": "no",
+        "username": "50121"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1",
+        "visit": "no",
+        "username": "2113"
+    }
+],
+"elClient":[
+    {
+        "realname": "이보라",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 양천구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "200",
+        "return": "3",
+        "visit": "no",
+        "username": "22033"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1",
+        "visit": "no",
+        "username": "3033"
+    },
+    {
+        "realname": "최철구",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 중구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "400",
+        "return": "3",
+        "visit": "no",
+        "username": "923"
+    },
+    {
+        "realname": "고잡신",
+        "home": "02-2600-1234",
+        "cellular": "010-1111-1111",
+        "address": "서울시 강서구",
+        "emailAddress": "ㅠㅠㅠ@aaa.com",
+        "point": "1000",
+        "return": "0",
+        "visit": "no",
+        "username": "283"
+    },
+    {
+        "realname": "이형석",
+        "home": "02-1234-1234",
+        "cellular": "010-4123-1412",
+        "address": "서울시 양천구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "500",
+        "return": "1",
+        "visit": "no",
+        "username": "273"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-1323-1231",
+        "cellular": "010-1231-4423",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "400",
+        "return": "1",
+        "visit": "no",
+        "username": "2234"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1",
+        "visit": "no",
+        "username": "443"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1",
+        "visit": "no",
+        "username": "302"
+    },
+    {
+        "realname": "최철구",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 중구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "400",
+        "return": "3",
+        "visit": "no",
+        "username": "9092"
+    },
+    {
+        "realname": "고잡신",
+        "home": "02-2600-1234",
+        "cellular": "010-1111-1111",
+        "address": "서울시 강서구",
+        "emailAddress": "ㅠㅠㅠ@aaa.com",
+        "point": "1000",
+        "return": "0",
+        "visit": "no",
+        "username": "28"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1",
+        "visit": "no",
+        "username": "87"
+    },
+    {
+        "realname": "최철구",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 중구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "400",
+        "return": "3",
+        "visit": "no",
+        "username": "2783"
+    },
+    {
+        "realname": "고잡신",
+        "home": "02-2600-1234",
+        "cellular": "010-1111-1111",
+        "address": "서울시 강서구",
+        "emailAddress": "ㅠㅠㅠ@aaa.com",
+        "point": "1000",
+        "return": "0",
+        "visit": "no",
+        "username": "16523"
+    },
+    {
+        "realname": "김미미",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 강서구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "300",
+        "return": "1",
+        "visit": "no",
+        "username": "32363"
+    },
+    {
+        "realname": "최철구",
+        "home": "02-2600-0000",
+        "cellular": "010-0000-0000",
+        "address": "서울시 중구",
+        "emailAddress": "aaa@aaa.com",
+        "point": "400",
+        "return": "3",
+        "visit": "no",
+        "username": "667"
+    },
+    {
+        "realname": "고잡신",
+        "home": "02-2600-1234",
+        "cellular": "010-1111-1111",
+        "address": "서울시 강서구",
+        "emailAddress": "ㅠㅠㅠ@aaa.com",
+        "point": "1000",
+        "return": "0",
+        "visit": "no",
+        "username": "999"
+    }
+]}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_service.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            $(document).ready(function(){
+                $(".service-list-main").click(function(){
+                    var serviceContent = this.nextElementSibling;
+               
+                    $(serviceContent).toggle();
+                });
+                $(".service-list-content-main").click(function(){
+                    var arrowRight = this.getElementsByClassName("service-list-content-arrow-right");
+                    var arrowDown = this.getElementsByClassName("service-list-content-arrow-down");
+                    var serviceContent = this.nextElementSibling;
+                    
+                    $(arrowRight[0]).toggle();
+                    $(arrowDown[0]).toggle();
+                    $(serviceContent).toggle();
+                });
+            });
+
+
+        </script>
+    
+    </head>
+    
+    <body style="height: 100%; width: 100%; background-color: #eaeaea;">
+        <!-- main part-->
+        <div id="service-menu">
+            <!-- service list-->
+            <ul id="service-list">
+                
+                
+                <!-- service list main-->
+                <li class="service-list-main">
+                    <div class="service-list-arrow">
+                        <div class="service-list-icon-style">
+                            <span class="fa fa-question-circle"></span>
+                        </div>
+                    
+                    </div>
+                    <div class="service-list-title">
+                        <span class="service-list-title-style">온라인 문의하기</span>
+
+                    </div>
+
+                </li>
+                <div class="service-list-content">
+                    <form class="form-horizontal service-form-style" role="form">
+						<div class="service-form-upper-style">
+							<div class="dropdown service-form-sort-style">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="service-form-sort" data-toggle="dropdown" aria-expanded="true">
+								분류　aaa
+								<span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu" aria-labelledby="service-form-sort">
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+							  </ul>
+							</div>
+							<div class="form-group service-form-title-style">
+								<input type="text" id="service-form-title" class="form-control" placeholder="제목입력">
+
+							</div>
+						
+						</div>
+
+						<div class="form-group service-form-content-style">
+							<textarea class="form-control" id="service-form-message"></textarea>
+						</div>
+						
+
+                    </form>
+					<div id="service-form-content-send">
+						등록
+					</div>
+                </div>
+                <!-- service list main-->
+                <li class="service-list-main">
+                    <div class="service-list-arrow">
+                        <div class="service-list-icon-style">
+                            <span class="fa fa-exclamation-circle"></span>
+                        </div>
+                    
+                    </div>
+                    <div class="service-list-title">
+                        <span class="service-list-title-style">문의내역 확인하기</span>
+
+                    </div>
+
+                </li>
+                <div class="service-list-content">
+					<!-- 문의내용은 여기에-->
+					<li class="service-list-content-main">
+                    	<div class="service-list-arrow">
+
+							<div class="service-list-content-arrow-right">
+								<span class="fa fa-chevron-right"></span>
+							</div>
+							<div class="service-list-content-arrow-down">
+								<span class="fa fa-chevron-down"></span>
+							</div>
+						</div>
+						<div class="service-list-title">
+							<span class="service-list-title-style">문의내역 확인하기</span>
+
+						</div>
+
+					</li>
+					<div class="service-list-content">
+						문의 내용은 여기에 표시
+					
+					</div>
+					<!-- 문의내용은 여기에-->
+					<li class="service-list-content-main">
+                    	<div class="service-list-arrow">
+
+							<div class="service-list-content-arrow-right">
+								<span class="fa fa-chevron-right"></span>
+							</div>
+							<div class="service-list-content-arrow-down">
+								<span class="fa fa-chevron-down"></span>
+							</div>
+						</div>
+						<div class="service-list-title">
+							<span class="service-list-title-style">문의내역 확인하기</span>
+
+						</div>
+
+					</li>
+					<div class="service-list-content">
+						문의 내용은 여기에 표시
+					
+					</div>
+					<!-- 문의내용은 여기에-->
+					<li class="service-list-content-main">
+                    	<div class="service-list-arrow">
+
+							<div class="service-list-content-arrow-right">
+								<span class="fa fa-chevron-right"></span>
+							</div>
+							<div class="service-list-content-arrow-down">
+								<span class="fa fa-chevron-down"></span>
+							</div>
+						</div>
+						<div class="service-list-title">
+							<span class="service-list-title-style">문의내역 확인하기</span>
+
+						</div>
+
+					</li>
+					<div class="service-list-content">
+						문의 내용은 여기에 표시
+					
+					</div>
+					<!-- 문의내용은 여기에-->
+					<li class="service-list-content-main">
+                    	<div class="service-list-arrow">
+
+							<div class="service-list-content-arrow-right">
+								<span class="fa fa-chevron-right"></span>
+							</div>
+							<div class="service-list-content-arrow-down">
+								<span class="fa fa-chevron-down"></span>
+							</div>
+						</div>
+						<div class="service-list-title">
+							<span class="service-list-title-style">문의내역 확인하기</span>
+
+						</div>
+
+					</li>
+					<div class="service-list-content">
+						문의 내용은 여기에 표시
+					
+					</div>
+
+
+                </div>
+                <!-- service list main-->
+                <li class="service-list-main">
+                    <div class="service-list-arrow">
+                        <div class="service-list-icon-style">
+                            <span class="fa fa-phone-square"></span>
+                        </div>
+                    
+                    </div>
+                    <div class="service-list-title">
+                        <span class="service-list-title-style">고객센터 전화하기</span>
+
+                    </div>
+
+                </li>
+                <div class="service-list-content">
+                    010-0000-0000
+
+                </div>
+
+
+                
+            
+            </ul>
+        
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html style="background-color: #FFFFFF;height: 100%;">
+ 
+    
+    <head>
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>        
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+
+        <script>
+
+
+            
+
+
+
+
+            function buttonDownRe(obj){
+                var buttonPosition = obj.innerHTML;
+                var indexClient = obj.parentNode.parentNode.getElementsByTagName("span");
+                var i = indexClient[0].innerHTML;
+                localStorage.setItem("cit", i);
+                
+
+
+                if(buttonPosition == "계산하기"){
+                    parent.document.location.hash = "#calculates";
+
+                }
+                else if(buttonPosition == "고객정보"){
+                    parent.document.location.hash = "#customer";
+                    
+
+
+
+                }
+                else if(buttonPosition == "지도보기"){
+                    parent.document.location.hash = "#maps";
+
+                }
+            
+
+            }
+
+            function buttonDownEl(obj){
+                var buttonPosition = obj.innerHTML;
+                var indexClient = obj.parentNode.parentNode.getElementsByTagName("span");
+                var i = indexClient[0].innerHTML;
+                localStorage.setItem("cit", i);
+
+                if(buttonPosition == "수거하기"){
+                    parent.document.location.hash = "#collects";
+                }
+                else if(buttonPosition == "고객정보"){
+                    parent.document.location.hash = "#customer";
+
+                    
+                }
+                else if(buttonPosition == "지도보기"){
+                    parent.document.location.hash = "#maps";
+                }
+
+            }
+
+            /*
+            $.getDocHeight = function(){
+                 var doc_height =  Math.max(
+                     $(document).height(),
+                     $(window).height()
+                 );
+                 var iframe_height = doc_height - 120;
+                 return iframe_height + "px";
+            };
+            */
+                    
+            function EnableScrollCheck(){
+
+
+                var checkPicker;
+
+                checkPicker = localStorage.getItem("picker");
+                if(checkPicker == null){
+                    checkPicker = localStorage.setItem("picker", "rePicker");
+                }
+
+                if(checkPicker == "rePicker"){
+
+                    $("#recycle-client-list").show();
+                    $("#electric-client-list").hide();
+
+
+                }
+                else{
+
+                    $("#electric-client-list").show();
+                    $("#recycle-client-list").hide();
+
+
+
+                }
+
+
+                //localStorage.setItem("check", "home");
+                //for close remained position(especially bottom space)!!!
+
+
+
+
+
+
+
+            }
+            
+
+            $(document).ready(function(){
+                localStorage.setItem("cit", "home");
+
+
+
+                //ajax-function
+                /*
+                $.get("client.txt", function(data, status, certifyClient){
+                     var myArray = JSON.parse(certifyClient.responseText);
+                     ClientList(myArray);
+                });
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+                */
+                
+				
+				
+				
+				
+	
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+                $.ajax({
+                    type: "GET",
+                    url: "http://rbuja.herokuapp.com/rbuja/ListRequest_app?pickup_date=2014-12-11",
+                    dataType: "json",
+                    success: function(data){
+                       var myArray = data;
+                       ClientList(myArray);
+                    },
+                    complete: function(){
+                        EnableScrollCheck();
+                    }
+                });
+
+
+                //click-function
+                
+                $("#refresh-button").click(function(){
+                    $.ajax({
+                        type: "GET",
+                        url: "http://rbuja.herokuapp.com/rbuja/ListRequest_app?pickup_date=2014-12-11",
+                        dataType: "json",
+                        success: function(data){
+                           var myArray = data;
+                           ClientList(myArray);
+                        },
+                        complete: function(){
+                            EnableScrollCheck();
+                        }
+                    });
+                    
+                });
+
+
+                 
+            });
+            
+        </script>
+
+
+        
+        
+        
+        
+        <meta charset="utf-8">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_certify.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+    
+    </head>
+
+    <body style="background-color:#FFFFFF;height:100%;">
+        
+        
+        
+        <!-- mainframe menu-->
+
+        
+        <div id="goods-Menu">
+            
+            
+            
+             <div class="common-info-title" id="certify-info-title">신청확인</div>
+            
+            <div class="fa fa-refresh" id="refresh-button"></div>
+            <div class="all-client-list-border"><br></div>
+
+            <div id="all-client-list">
+                
+                
+                <div id="recycle-main">
+                    신청고객
+
+                </div> 
+                
+
+
+                <div class="all-client-list-scroll" id="recycle-client-list">
+                    
+                    <ul class="all-client-list-setting" id="JSON-reIndicator">  
+
+                        <!-- client 1-->
+                        <li class="all-client" id="re-client-1">
+                            <div class="re-client-info">
+
+                                이보라
+                                <br>
+                                010-0000-0000
+
+                            </div>
+
+                            <div class="re-client-number">
+
+                                1
+
+
+                            </div>
+                            
+                            <div class="all-client-button">
+                                <div class="button-background"><br></div>
+                                    <div onmousedown="buttonDownRe(this)" onmouseup="buttonUpRe(this)" onmouseout="buttonOutRe(this)" class="button-style-re client-calculates">계산하기</div>
+                                    <div onmousedown="buttonDownRe(this)" onmouseup="buttonUpRe(this)" onmouseout="buttonOutRe(this)" class="button-style-re client-customer">고객정보</div>
+                                    <div onmousedown="buttonDownRe(this)" onmouseup="buttonUpRe(this)" onmouseout="buttonOutRe(this)" class="button-style-re client-map">지도보기</div>
+                            
+
+                                
+                            </div>
+                            <span class="list-client-index"></span>
+
+                            
+                        </li>
+
+                       
+                    </ul>  
+
+                </div>
+
+
+
+                <div class="all-client-list-scroll" id="electric-client-list">
+                    <ul class="all-client-list-setting" id="JSON-elIndicator">
+                        
+                        
+                        
+                        <!-- client 1-->
+                        <li class="all-client" id="el-client-1">
+                            <div class="el-client-info">
+
+                                박홍열
+                                <br>
+                                010-5555-5555
+
+
+
+
+                            </div>
+
+                            <div class="el-client-number">
+
+                                1
+
+
+                            </div>
+
+
+                            
+                            <div class="all-client-button">
+                                <div class="button-background"><br></div>
+                                
+
+                                    <div onmousedown="buttonDownEl(this)" onmouseup="buttonUpEl(this)" onmouseout="buttonOutEl(this)" class="button-style-el client-collects">수거하기</div>
+                                    <div onmousedown="buttonDownEl(this)" onmouseup="buttonUpEl(this)" onmouseout="buttonOutEl(this)" class="button-style-el client-customer">고객정보</div>
+                                    <div onmousedown="buttonDownEl(this)" onmouseup="buttonUpEl(this)" onmouseout="buttonOutEl(this)" class="button-style-el client-map">지도보기</div>
+                                
+                            
+                            
+                            
+                            </div>
+                            <span class="list-client-index"></span>
+                            
+                            
+
+                        </li>
+
+                    </ul>
+                </div>    
+
+            </div>
+                        
+        </div>
+
+    </body>
+
+</html>

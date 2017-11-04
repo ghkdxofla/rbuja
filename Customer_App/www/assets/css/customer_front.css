@@ -1,0 +1,282 @@
+
+.status-style {
+    color: yellow;
+    font-weight: bold;
+}
+
+#status-name {
+    position: absolute;
+    top: 2px;
+    float: left;
+    left: 10px;
+    display: inline-block;
+}
+
+#status-point {
+    position: absolute;
+    top: 2px;
+    float: right;
+    right: 10px;
+    display: inline-block;
+
+
+
+}
+
+.top-point-style {
+    position: absolute;
+    float: left;
+    font-size: 26px;
+    color: gray;
+    left: 5px;
+}
+
+#top-point {
+    position: relative;
+    
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: white;
+    top: 6px;
+    margin-bottom: 18px;
+    height: 120px;
+    border: solid 2px #e0e0e0;
+    border-radius: 5px;
+}
+
+#top-point-total {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: 15px;
+    height: 50px;
+    border-bottom: solid 2px #e0e0e0;
+
+}
+
+#point-total-status {
+    position: absolute;
+    float: left;
+    clear: left;
+    word-wrap: break-word;
+    line-height: 100%;
+    top: 2px;
+    left: 30%;
+    right: 30px;
+    font-size: 28px;
+    color: #1b70c3;
+}
+
+.top-point-mark {
+    position: absolute;
+    float: right;
+    right: 0px;
+
+    font-weight: bolder;
+    font-size: 20px;
+    top: 4px;
+    color: white;
+    background-color: #1b70c3;
+    width: 28px;
+    text-align: center;
+    border-radius: 100px;
+}
+
+#top-point-detail {
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 3px;
+    color: white;
+    background-color: #e2280f;
+    font-size: 11px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#top-point-level {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 25px;
+}
+
+#top-level-progress {
+    position: absolute;
+    float: right;
+    right: 0;
+    background-color: #e0e0e0;
+    width: 70%;
+    top: -5px;
+    height: 10px;
+    
+}
+
+#top-level-current {
+    position: absolute;
+    height: 10px;
+    width: 60%;
+}
+
+.main-list {
+    position: relative;
+    background-color: white;
+    margin: 12px;
+    padding: 15px;
+    padding-bottom: 0;
+    height: auto;
+    border: solid 2px #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#front-top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 45px;
+}
+
+#front-main {
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    bottom: 0;
+    overflow: auto;
+}
+
+.main-list-upper {
+    position: relative;
+    margin-top: 0px;
+    float: left;
+    width: 100%;
+
+    clear: both;
+    
+    border-bottom: solid 2px #e0e0e0;
+    display: block;
+}
+
+.main-list-image {
+    position: relative;
+    margin-left: 0;
+    width: 40%;
+    
+    float: left;
+    display: inline-block;
+    height: auto;
+}
+
+.main-list-title {
+    position: relative;
+    float: right;
+    padding: 10px;
+    padding-top: 0;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    display: inline-block;
+     
+    width: 60%;
+    min-height: 70px;
+
+    
+}
+
+p {
+    line-height: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+}
+
+.main-list-image-size {
+    width: 100%;
+    max-width: 150px;
+}
+
+.main-list-price {
+    position: relative;
+    margin-right: 0;
+    margin-bottom: 0px;
+    font-weight: bold;
+    float: right;
+    text-align: right;
+    display: block;
+    height: auto;
+    width: 60%;
+
+}
+
+.price-color {
+    color: #4ec140;
+    font-size: 30px;
+}
+
+.main-list-under {
+    position: relative;
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
+    color: #4ec140;
+    height: 60px;
+    display: block;
+    float: left;
+    width: 100%;
+    
+}
+
+#front-menu {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+
+
+.main-list-content {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-list-notice-title {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 12px;
+    
+
+    
+    border-bottom: solid 2px #e0e0e0;
+    line-height: 20px;
+    font-weight: bolder;
+    height: auto;
+
+}
+
+.main-list-notice-title-style {
+    display: inline-block;
+    line-height: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+.main-list-notice-content {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+

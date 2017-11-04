@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <!-- cordova settings -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <title>알부자</title>
+
+    <!-- Main CSS -->
+    <link href="assets/css/rbujaRer-common.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Font-Awesome CDN -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+
+<body onhashchange="callWorker()">
+
+  <!-- barFixedTop -->
+  <nav id="barFixedTop">
+
+    <!-- topBar -->
+    <div id="topBar" class="rbuja-BackgroundColor">
+      <!-- logo -->
+      <img src="images/logo-inverse-mini.png" id="topBar-Logo">
+      <!-- brand -->
+      <div id="topBar-Brand">알부자</div>
+      <span id="sideBar-Toggle">
+        <!-- sideBar-Toggle -->
+        <span class="fa fa-bars fa-lg" id="sideBar-Toggle-TopBar"></span>
+      </span>
+    </div>
+
+    <!-- menuIconBar -->
+    <div id="menuIconBar">
+      <a href="home.html">
+        <div class="col-xs-3 col-sm-3 col-md-3" id="menuIcon-Home">
+          <span class="fa fa-home menuIcon"></span>
+          <p class="menuIcon-Text" id="menuIcon-HomeText">홈</p>
+        </div>
+      </a>
+      <a href="howto.html">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <span class="fa fa-file-text-o menuIcon" id="menuIcon-DescriptionSpan"></span>
+          <p class="menuIcon-Text">설명서</p>
+        </div>
+      </a>
+      <a href="pickup.html">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <span class="fa fa-truck menuIcon rbuja-Color"></span>
+          <p class="menuIcon-Text">수거</p>
+        </div>
+      </a>
+      <a href="store.html">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <span class="fa fa-shopping-cart menuIcon"></span>
+          <p class="menuIcon-Text">상점</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- SubMenuBar -->
+    <div class="rbuja-BackgroundColor" id="subMenuBar">
+      <div class="subMenuBar-Tab" id="recycleTab">재활용품</div>
+      <div class="subMenuBar-Tab" id="electronicsTab">가전제품</div>
+    </div>
+
+  </nav>
+
+
+
+
+
+
+  <!-- sideBar -->
+  <nav id="sideBar">
+    <!-- sideBar-Item -->
+    <ul>
+      <li class="sidebar-Item"><i class="fa fa-bell sideBar-Item-Icon"></i><span class="sideBar-Item-Text">공지사항</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-question-circle sideBar-Item-Icon"></i><span class="sideBar-Item-Text">고객센터</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-file-text-o sideBar-Item-Icon"></i><span class="sideBar-Item-Text">주문내역</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-krw sideBar-Item-Icon"></i><span class="sideBar-Item-Text">포인트관리</span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-cog sideBar-Item-Icon"></i><span class="sideBar-Item-Text">설정
+        </span>
+      </li>
+      <li class="sidebar-Item"><i class="fa fa-lock sideBar-Item-Icon" style="padding-left: 3px;"></i><span class="sideBar-Item-Text">로그아웃
+        </span>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
+
+
+
+  <!-- wrapper-main begin -->
+  <div id="wrapper-main">
+
+
+
+
+
+
+    <!-- pickerProfile -->
+    <div id="pickerProfile">
+      <img id="pickerProfile-image" src="images/pickerProfile.JPG">
+      <div class="pickerProfile-text">
+        수거기사<span id="pickerProfile-pickerName">김길동</span>
+        <br />담당지역<span id="pickerProfile-pickerArea">산곡1동</span>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- recycleTab-contents -->
+    <div id="recycleTab-contents" class="pickup-tabContents">
+
+      <!-- PickupButtons -->
+      <div class="container" id="pickupButtonBox">
+        <a href="#visit_on" class="roundButton" id="recycleTab-pickupIndoorButton">방문<br />수거</a>
+        <a href="#visit_off" class="roundButton" id="recycleTab-pickupOutdoorButton">부재중<br />방문수거</a>
+      </div>
+
+      <!-- instructions -->
+      <div class="instructions">
+        <h4 class="instructions-heading">수거 신청시 참고 사항</h4>
+        <ol class="instructions-list">
+          <li>취급 요령에 맞게 재활용품을 분리수거</li>
+          <li>물량의 양은 두 봉투 이상</li>
+          <li>오후 10시 전 신청건, 익일 수거</li>
+            <li>방문 시간 지정 불가</li>
+            <li>방문 수거 유형 결정</li>
+            <ol>
+              <li>방문 신청</li>
+              <li>부재중 방문 신청 (현관 앞에 두세요!)</li>
+            </ol>
+            <li>참조사항 필독 후, 수거 신청</li>
+        </ol>
+      </div>
+
+    </div><!-- recycleTab-contents -->
+
+
+
+
+
+
+
+
+    <!-- electronicsTab-contents -->
+    <div id="electronicsTab-contents" class="pickup-tabContents">
+
+        <a href="#collect_on" class="roundButton" id="electronicsTab-pickupButton">수거<br />신청</a>
+
+      <!-- instructions -->
+      <div class="instructions">
+        <h4 class="instructions-heading">수거 신청시 참고 사항</h4>
+        <p>방문 수거 대상 물품은 인력으로 수거가 가능한 물품에 한하며, 수거가 용이하도록 분리 또는 분해된 상태로 현관 앞에 비치되어 있어야 합니다.</p>
+
+        <h4 class="instructions-heading">유의 사항</h4>
+        <ol class="instructions-list">
+          <li>가전제품은 인력비용상 무료 수거를 원칙으로 합니다.</li>
+          <li>가전제품은 부재중 신청이 불가능 합니다.</li>
+          <li>가로, 세로, 높이 1m미만의 소형가전은 재활용 방문수거를 이용해 주시기 바랍니다.</li>
+        </ol>
+      </div>
+
+      <p>수거 불가 품목
+        1. 폐가구 (장롱, 책상, 의자 등등)</p>
+
+    </div><!-- electronicsTab-contents end -->
+
+
+
+
+
+
+
+
+
+
+    <!-- pickup-electronicsRequest -->
+    <div id="pickup-electronicsRequest">
+
+      <!-- label -->
+      <div class="pickup-label">배출 품목</div>
+
+      <!-- typeAndCount -->
+      <div class="pickup-request-fieldset">
+        <!-- type dropdown -->
+        <div class="pickup-request-dropdown dropdown">
+          <button id="pickup-request-dropdown-typeButton" class="pickup-request-dropdown-button btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            선택
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>냉장고 - 대</li>
+            <li>냉장고 - 중</li>
+            <li>냉장고 - 소</li>
+          </ul>
+        </div>
+
+        <!-- count dropdown -->
+        <div class="pickup-request-dropdown dropdown">
+          <button class="pickup-request-dropdown-button btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+            1
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+          </ul>
+
+          <!-- choiceDescription -->
+          <span class="pickup-request-choiceDescription">대</span>
+        </div>
+
+        <!-- add button -->
+        <button id="pickup-request-add" class="btn btn-success">추가</button>
+      </div><!-- type end -->
+
+
+
+      <!-- label -->
+      <div class="pickup-label">배출 희망일</div>
+
+      <!-- date -->
+      <div class="pickup-request-fieldset">
+        <!-- dropdown-->
+        <div class="pickup-request-dropdown dropdown">
+          <button class="pickup-request-dropdown-button btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+            1
+            <span class="caret"></span>
+          </button>
+          <div class="dropdown-menu">
+            <ul class="pickup-request-dropdown-menu-sidedList">
+              <li>오전</li>
+              <li role="presentation" class="divider"></li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+            </ul>
+            <ul class="pickup-request-dropdown-menu-sidedList">
+              <li>오후</li>
+              <li role="presentation" class="divider"></li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- choiceDescription -->
+        <span class="pickup-request-choiceDescription">시</span>
+      </div><!-- date end -->
+
+      <!-- good to go button -->
+      <div style="overflow: hidden;">
+        <button id="pickup-electronicsRequest-requestButton" class="pickup-request-requestButton btn btn-success">신청하기</button>
+      </div>
+      <hr />
+      <!-- comment -->
+      <div class="pickup-request-comment">
+        <span class="fa fa-warning"></span>
+        교통사정 및 배출예약 집중으로 희망요청시간이 변경될 수 있습니다
+      </div>
+
+    </div><!-- pickup-electronicsRequest end-->
+
+
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <footer>
+      <div class="footerBox">
+        <div class="col-md-4 col-sm-4 col-xs-4">
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-8">
+
+        </div>
+        <p id="footer-Text">Copyright &copy; 2014 알부자</p>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+  </div><!-- wrapper-main end -->
+    
+    <div id="visit-already">no</div>
+
+
+
+
+
+
+
+  <!-- JavaScript placed here that page loads faster -->
+  <!-- JQuery CDN -->
+  <script src="assets/js/jquery-2.1.1.min.js"></script>
+  <!-- Bootstrap Javascript - Latest compiled and minified JavaScript -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- cordova fastclick -->
+  <script type='application/javascript' src="assets/js/fastclick.js"></script>
+  <!-- rbujaRer-common javascript -->
+  <script src="assets/js/rbujaRer-common.js"></script>
+
+
+  <!-- cordova scripts -->
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    function onDeviceReady() {
+      cordovaSettings();
+    }
+
+  </script><!-- cordova scripts end -->
+
+
+  <!-- common scripts -->
+  <script>
+      
+      function callWorker(){
+
+          
+          if(document.getElementById("visit-already").innerHTML == "no"){   
+            switch(location.hash){
+              case "#visit_on":
+                      //JSON-HERE;
+                    $.ajax({
+                      type: 'POST',
+                      url: "http://rbuja.herokuapp.com/rbuja/app/MakeRequest",
+                      //data: 신청완료인지 아닌지 여부 판단!,
+                      dataType: 'json',
+                      timeout: 5000,
+                      success: function(data) {
+                        alert(JSON.stringify(data));
+                        // if
+                        if (data.result == false) {
+                          // move page to home.html
+                            document.getElementById("visit-already").innerHTML = "no";
+                        }
+                      },
+                      error: function(xhr, ajaxOptions, thrownError) {
+                        alert("Error: " + xhr.status + "\n" +
+                              "Message: " + xhr.statusText + "\n" +
+                              "Response: " + xhr.responseText + "\n" + thrownError);
+                      }
+                    });      
+                    alert("신청되었습니다!");
+                    location.hash ="";
+                    document.getElementById("visit-already").innerHTML = "yes";
+                  
+
+                  break;
+              case "#visit_off":
+                      //JSON-HERE;
+                    /*
+                    $.ajax({
+                      type: 'POST',
+                      url: "http://rbuja.herokuapp.com/app/accounts/login/",
+                      //data: 신청완료인지 아닌지 여부 판단!,
+                      dataType: 'json',
+                      timeout: 5000,
+                      success: function(data) {
+                        alert(JSON.stringify(data));
+                        // if
+                        if (data.result == false) {
+                          // move page to home.html
+                            document.getElementById("visit-already").innerHTML = "no";
+                        }
+                      },
+                      error: function(xhr, ajaxOptions, thrownError) {
+                        alert("Error: " + xhr.status + "\n" +
+                              "Message: " + xhr.statusText + "\n" +
+                              "Response: " + xhr.responseText + "\n" + thrownError);
+                      }
+                    });      
+                    alert("신청되었습니다!");
+                    location.hash ="";
+                    document.getElementById("visit-already").innerHTML = "yes";
+                    */
+
+ 
+                  break;
+              case "#collect_on":
+                    /*
+                  
+                      //JSON-HERE;
+                    $.ajax({
+                      type: 'POST',
+                      url: "http://rbuja.herokuapp.com/app/accounts/login/",
+                      //data: 신청완료인지 아닌지 여부 판단!,
+                      dataType: 'json',
+                      timeout: 5000,
+                      success: function(data) {
+                        alert(JSON.stringify(data));
+                        // if
+                        if (data.result == false) {
+                          // move page to home.html
+                            document.getElementById("visit-already").innerHTML = "no";
+                        }
+                      },
+                      error: function(xhr, ajaxOptions, thrownError) {
+                        alert("Error: " + xhr.status + "\n" +
+                              "Message: " + xhr.statusText + "\n" +
+                              "Response: " + xhr.responseText + "\n" + thrownError);
+                      }
+                    });      
+                    alert("신청되었습니다!");
+                    location.hash ="";
+                    document.getElementById("visit-already").innerHTML = "yes";
+                    */
+
+
+                  break;
+            }
+         }
+        else{
+             alert("이미 신청하셨습니다.");
+            location.hash ="";
+
+          }
+      }
+    $(document).ready(function () {
+        
+        $.ajax({
+          type: 'POST',
+          url: "http://rbuja.herokuapp.com/app/MakeRequest",
+          //data: 신청완료인지 아닌지 여부 판단!,
+          dataType: 'json',
+          timeout: 5000,
+          success: function(data) {
+            //alert(JSON.stringify(data));
+            // if
+            if (data.result == false) {
+              // move page to home.html
+                document.getElementById("visit-already").innerHTML = "no";
+            }
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            alert("Error: " + xhr.status + "\n" +
+                  "Message: " + xhr.statusText + "\n" +
+                  "Response: " + xhr.responseText + "\n" + thrownError);
+          }
+        });            
+      // default settings
+      defaultSettings();
+    });
+
+    // default settings for tabs
+    document.getElementById('recycleTab').style.borderBottom = '4px solid white';
+
+    // tabClicked(id) function linker
+    var recycleTab = document.getElementById('recycleTab');
+    var electronicsTab = document.getElementById('electronicsTab');
+
+    recycleTab.addEventListener("click", function() {
+      tabClickedFromPickup(this.id);
+    });
+    electronicsTab.addEventListener("click", function() {
+      tabClickedFromPickup(this.id);
+    });
+
+  </script><!-- common scripts end -->
+
+</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <!-- cordova settings -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <title>알부자</title>
+
+    <!-- Main CSS -->
+    <link href="assets/css/rbujaRer-common.css" rel="stylesheet" type="text/css">
+    <!-- Settings CSS -->
+    <link href="assets/css/rbujaRer-settings.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- Font-Awesome CDN -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <!-- barFixedTop -->
+    <nav id="barFixedTop">
+
+      <!-- topBar -->
+      <div id="topBar" class="rbuja-BackgroundColor">
+        <!-- logo -->
+        <img src="images/logo-inverse-mini.png" id="topBar-Logo">
+        <!-- brand -->
+        <div id="topBar-Brand">알부자</div>
+        <span id="sideBar-Toggle">
+          <!-- sideBar-Toggle -->
+          <span class="fa fa-bars fa-lg" id="sideBar-Toggle-TopBar"></span>
+        </span>
+        <!-- sideBar-Home -->
+        <!-- this is only for more.html and settings.html -->
+        <a href="home.html"><span class="sideBar-Home fa fa-home"></span></a>
+      </div>
+
+    </nav>
+
+
+
+
+
+
+
+
+    <!-- sideBar -->
+    <nav id="sideBar">
+      <!-- sideBar-Item -->
+      <ul>
+        <li class="sidebar-Item"><i class="fa fa-bell sideBar-Item-Icon"></i><span class="sideBar-Item-Text">공지사항</span>
+        </li>
+        <li class="sidebar-Item"><i class="fa fa-question-circle sideBar-Item-Icon"></i><span class="sideBar-Item-Text">고객센터</span>
+        </li>
+        <li class="sidebar-Item"><i class="fa fa-file-text-o sideBar-Item-Icon"></i><span class="sideBar-Item-Text">주문내역</span>
+        </li>
+        <li class="sidebar-Item"><i class="fa fa-krw sideBar-Item-Icon"></i><span class="sideBar-Item-Text">포인트관리</span>
+        </li>
+        <li class="sidebar-Item"><i class="fa fa-cog sideBar-Item-Icon"></i><span class="sideBar-Item-Text">설정
+          </span>
+        </li>
+        <li class="sidebar-Item"><i class="fa fa-lock sideBar-Item-Icon" style="padding-left: 3px;"></i><span class="sideBar-Item-Text">로그아웃
+          </span>
+        </li>
+      </ul>
+    </nav>
+
+
+
+
+
+
+    <!-- wrapper-main -->
+    <div id="wrapper-main">
+
+
+
+
+
+
+
+      <!-- wrapper-settingsHome -->
+      <div id="settings-settingsHome" class="settings-wrapper">
+
+        <!-- accountConfigure -->
+        <div id="settingsHome-accountConfigure" class="settingsHome-label">
+          <span class="fa fa-smile-o"></span>   계정정보
+
+          <!-- longTab -->
+          <div class="settingsHome-longTab">
+            계정 관리
+          </div>
+        </div>
+
+        <!-- appConfigure -->
+        <div id="settingsHome-appConfigure" class="settingsHome-label">
+          <span class="fa fa-gears"></span>   어플설정
+
+          <!-- longTab -->
+          <div class="settingsHome-longTab">
+            알림 사용
+            <!-- switch turn on/off -->
+            <div id="settingsHome-appConfigure-notificationSwitch">
+              <span class="fa fa-bell-o"></span>
+              <span class="fa fa-bell-slash-o"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- appInfo -->
+        <div id="settingsHome-appInfo" class="settingsHome-label">
+          <span class="fa fa-info-circle"></span>   어플정보
+
+          <!-- longTab -->
+          <div class="settingsHome-longTab">
+            회사 소개 & 제휴 문의
+          </div>
+
+          <!-- longTab -->
+          <div id="settingsHome-appInfo-agreementsTab" class="settingsHome-longTab">
+            이용 약관 / 개인정보 취급방침
+          </div>
+
+          <!-- longTab -->
+          <div id="settingsHome-appInfo-versionTab" class="settingsHome-longTab">
+            버전 정보
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <!-- settings-manageAccount -->
+      <div id="settings-manageAccount" class="settings-wrapper">
+      </div>
+
+
+
+
+
+
+
+      <!-- settings-aboutCompanyAndFranchise -->
+      <div id="settings-aboutCompanyAndFranchise" class="settings-wrapper">
+      </div>
+
+
+
+
+
+
+
+      <!-- wrapper-agreements -->
+      <div id="settings-agreements" class="wrapper-join settings-wrapper">
+
+        <h class="join-header">서비스 이용약관</h>
+        <div id="agreements-service" class="textBox">
+        </div>
+
+        <h class="join-header">개인정보 취급방침</h>
+        <div id="agreements-private" class="textBox">
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+      <!-- wrapper-versionInfo -->
+      <div id="settings-versionInfo" class="settings-wrapper">
+        <img id="versionInfo-image" src="images/logo-md.jpg">
+        <!-- longTab -->
+        <div id="versionInfo-topTab" class="versionInfo-longTab">
+          현재버전
+          <span id="versionInfo-currentVersion">1.0</span>
+        </div>
+        <!-- longTab -->
+        <div id="versionInfo-bottomTab" class="versionInfo-longTab">
+          최신버전
+          <span id="versionInfo-newestVersion">1.5</span>
+        </div>
+
+        <!-- comment -->
+        <p id="versionInfo-comment">새로운 업데이트가 있습니다.<br />최신버전으로 업데이트를 진행해주세요.</p>
+
+        <button id="versionInfo-updateButton" class="btn btn-success">업데이트</button>
+      </div>
+
+
+
+
+
+
+
+
+      <!-- footer -->
+      <footer>
+        <div class="footerBox">
+          <div class="col-md-4 col-sm-4 col-xs-4">
+          </div>
+          <div class="col-md-8 col-sm-8 col-xs-8">
+
+          </div>
+          <p id="footer-Text">Copyright &copy; 2014 알부자</p>
+        </div>
+      </footer>
+
+
+
+
+
+
+
+    </div><!-- wrapper-main end -->
+
+
+
+
+
+
+
+    <!-- JavaScript placed here that page loads faster -->
+    <!-- JQuery CDN -->
+    <script src="assets/js/jquery-2.1.1.min.js"></script>
+    <!-- Bootstrap Javascript - Latest compiled and minified JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- cordova fastclick -->
+    <script type='application/javascript' src="assets/js/fastclick.js"></script>
+    <!-- rbujaRer-common javascript -->
+    <script src="assets/js/rbujaRer-common.js"></script>
+    <!-- rbujaRer-settings javascript -->
+    <script src="assets/js/rbujaRer-settings.js"></script>
+
+    <!-- cordova scripts -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+      function onDeviceReady() {
+        cordovaSettings();
+      }
+
+    </script><!-- cordova scripts end -->
+
+    <!-- common script begin -->
+    <script>
+      $(document).ready(function () {
+        // default settings
+        defaultSettings();
+      });
+
+    </script><!-- common script end -->
+
+  </body>
+
+</html>

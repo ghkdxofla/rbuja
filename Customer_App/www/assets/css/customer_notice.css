@@ -1,0 +1,95 @@
+
+#notice-menu {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+#notice-list {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+}
+
+.notice-list-main {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 2px gray;
+    box-shadow: 0px 1px 5px gray;
+
+}
+
+.notice-list-title {
+    position: absolute;
+    text-align: left;
+    float: left;
+    left: 40px;
+    right: 0;
+    padding: 10px;
+    height: 100%;
+    padding-left: 5px;
+    line-height: 30px;
+
+
+
+
+    
+}
+
+.notice-list-content {
+    position: relative;
+    background-color: white;
+    top:0;
+    padding: 20px;
+    height: auto;
+    width: 100%;
+    word-break: break-all;
+    box-shadow: 0px 2px 10px gray;
+    display: none;
+    background-color: white;
+    z-index: 1000;
+    color: #454545;
+
+}
+
+.notice-list-title-style {
+    display: inline-block;
+    line-height: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+    vertical-align: middle;
+
+
+
+}
+
+.notice-list-arrow {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    font-size: 35px;
+    text-align: center;
+    color: gray;
+    
+}
+
+.notice-list-arrow-right {
+    position: absolute;
+    left: 10px;
+    
+
+    display: block;
+}
+
+.notice-list-arrow-down {
+    position: absolute;
+    left: 5px;
+    display: none;
+    
+}

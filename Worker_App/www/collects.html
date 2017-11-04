@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html style="background-color: #FFFFFF;height: 100%;font-size: 100%;">
+    <head>
+    
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/onArrayScript.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+        
+        <meta charset="utf-8">        
+        
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            
+            function doWeight(){
+                var inputData = document.getElementById("JSON-collectsIndicator").getElementsByTagName("input");
+                var totalData=0;
+                var i;
+
+                for(i=0; i<inputData.length; i++){
+                    var num = inputData[i].value;
+                    num = Number(num);
+                    totalData += num;
+                }
+                document.getElementById("list-collects-total").innerHTML = totalData + '개';
+
+            }
+
+            //----------------button!-----------------------
+            function buttonDownChange(obj) {
+                document.getElementById("collects-popup-list").style.display = "block";
+                document.getElementById("collects-close-popup").style.display = "block";            
+            }
+
+            function buttonDownChangePopup(obj){
+                document.getElementById("collects-popup-list").style.display = "none";
+                document.getElementById("collects-close-popup").style.display = "none";
+            }            
+            
+            function buttonToggleChange(obj) {
+                $(obj).toggleClass("selected");
+                var checkPopupIndex = obj.nextSibling.innerHTML;
+
+                var checkListIndex = document.getElementsByClassName("el-index-list");
+                var checkComplete;
+                var i;
+                var j;
+                
+                for(i=0; i<checkListIndex.length; i++){
+                    if(checkListIndex[i].innerHTML == checkPopupIndex){
+                        checkComplete = checkListIndex[i].parentNode;
+                    }
+                }
+                var checkInput = checkComplete.getElementsByTagName("input");
+                var checkColor = $(obj).css('background-color');
+                if(checkColor == "rgb(128, 128, 128)"){
+                    checkComplete.style.display = "none";
+                    j = sessionStorage.getItem("listTotal");
+                    j = Number(j);
+                    checkInput[0].value = 0;
+                    doWeight();
+                    j--;
+                    
+                }
+                else {
+                    checkComplete.style.display = "block";
+                    j = sessionStorage.getItem("listTotal");
+                    j = Number(j);
+                    j++;
+                }
+                sessionStorage.setItem("listTotal", j);
+
+                        
+                    
+                    
+            }
+            
+
+
+            
+            
+            
+            
+            //----------------button!-----------------------
+            $(document).ready(function(){
+                sessionStorage.setItem("listTotal", 0);
+
+
+                
+
+                
+
+                $("#list-up-collects").hide();
+
+                
+                $("#collects-button-point").click(function(){
+                    var sendData = [
+                        {"name": "냉장고", "type": "대", "number": ""},
+                        {"name": "냉장고", "type": "중", "number": ""},
+                        {"name": "냉장고", "type": "소", "number": ""},
+                        {"name": "냉장고", "type": "쇼케이스", "number": ""},
+                        {"name": "세탁기", "type": "드럼", "number": ""},
+                        {"name": "에어컨", "type": "실내기", "number": ""},
+                        {"name": "에어컨", "type": "실외기", "number": ""},
+                        {"name": "에어컨", "type": "벽걸이", "number": ""},
+                        {"name": "정수기", "type": "대", "number": ""},
+                        {"name": "TV", "type": "LCD", "number": ""},
+                        {"name": "TV", "type": "LED", "number": ""}
+                    ];
+                        
+                    var inputData = document.getElementById("JSON-collectsIndicator").getElementsByTagName("input");
+                    var totalData=0;
+                    var i;
+                    
+                    for(i=0; i<inputData.length; i++){
+                        var num = inputData[i].value;
+                        num = Number(num);
+                        totalData += num;
+                    }
+
+                    sendData = [
+                        {"name": "냉장고", "type": "대", "number": inputData},
+                        {"name": "냉장고", "type": "중", "number": inputData},
+                        {"name": "냉장고", "type": "소", "number": inputData},
+                        {"name": "냉장고", "type": "쇼케이스", "number": inputData},
+                        {"name": "세탁기", "type": "드럼", "number": inputData},
+                        {"name": "에어컨", "type": "실내기", "number": inputData},
+                        {"name": "에어컨", "type": "실외기", "number": inputData},
+                        {"name": "에어컨", "type": "벽걸이", "number": inputData},
+                        {"name": "정수기", "type": "대", "number": inputData},
+                        {"name": "TV", "type": "LCD", "number": inputData},
+                        {"name": "TV", "type": "LED", "number": inputData},
+                        {"total": totalData}
+                    ];
+
+                    
+                    
+
+                    
+                    $.ajax({
+                        type: 'POST',
+                        url: "http://rbuja.herokuapp.com/rbuja/ListRequest_app?pickup_date=2014-12-11",
+                        //data: document.getElementById("list-point-total").innerHTML,
+                        dataType: 'json',
+                        timeout: 5000,
+                        success: function(data) {
+                            alert(JSON.stringify(data));
+                            if(data.response.request.request_type == "2"){
+
+                                if (data.status == true) {
+
+
+                                    alert("적립되었습니다!");
+                                    parent.document.location.hash = "#collects_close";
+                                    var savedTotal = localStorage.getItem("product");
+                                    savedTotal = Number(savedTotal);
+                                    savedTotal += totalData;
+                                    parent.document.getElementById("topBar-Product").innerHTML = savedTotal + ' 개 <div class="fa fa-refresh"></div>';
+                                    localStorage.setItem("product", savedTotal);
+
+
+                                }
+                            }
+                            else{
+                                if(data.status == true) {
+                                    alert("이미 처리된 고객입니다!");
+                                    parent.document.location.hash = "#collects_close";
+                                    changeURL_Certify();
+                                }
+                            }
+                        
+                            var changeVisit = parent.document.getElementById("URLhere2");
+                            changeVisit.getElementById("client-visit-check").innerHTML = "certifying";
+                        },
+                        error: function(){
+                            alert("서버 접속이 원활하지 않습니다. 잠시 후에 재시도 하십시오.");
+                        }
+                    
+                    });
+                    
+                });
+                
+                
+
+                
+                $(".collects-product-list").scroll(function(){
+                    
+                    var scrollIsDown = $(".collects-product-list").scrollTop();
+                    var scrollHeightIs = $(".collects-product-list").outerHeight(true);
+                    var scrollShow = $(".collects-list-style").outerHeight(true);
+                    var scrollButton = $("#button-change-item").outerHeight(true);
+                    //--------------------------------caution!---------------------
+                    
+
+
+                    var i = sessionStorage.getItem("listTotal");
+                    i = Number(i);
+                    scrollShow *= i;
+                    scrollShow -= scrollHeightIs;
+                    scrollShow += 50;
+                    
+
+                    if(scrollIsDown == scrollShow){
+                        $("#list-down-collects").hide();
+                        $("#list-up-collects").show();
+
+                    }
+                    else if(scrollIsDown == 0){
+                        $("#list-down-collects").show();
+                        $("#list-up-collects").hide();
+
+                    }
+
+
+                });
+                
+                
+ 
+                 
+            });
+        
+        
+        
+        </script>
+
+
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/worker_app_style_collects.css">
+        <link rel="stylesheet" href="assets/css/worker_app_style_common.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+
+    
+    </head>
+    <body style="overflow: hidden;background-color: #FFFFFF;height: 100%;">
+        <!-- mainframe menu-->
+        <div id="collects-menu">
+
+            <!-- collects menu bar-->
+            <div class="collects-info-style" id="collects-info-title">요청확인</div>
+            <div id="collects-close-popup"><br></div>
+            <div class="collects-popup-style" id="collects-popup-list">
+
+                
+                
+                <div id="collects-change-list">
+                    
+                    
+                    
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형가전</span>]</div><span class="el-index-popup"></span>
+
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형가전</span>]</div><span class="el-index-popup"></span>
+
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">진공청소기<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+                    <div onclick="buttonToggleChange(this)" class="collects-change-item">냉장고<br>[<span>대형</span>]</div><span class="el-index-popup"></span>
+
+                
+                
+                
+                
+                
+                
+                
+                </div>
+                <div onmousedown="buttonDownChangePopup(this)" class="button-style-change-popup" id="button-change-popup">변경완료</div>
+            
+            
+            
+            
+            
+            </div>
+            
+
+
+            
+            
+
+            <img src="images/arrow-up.png" id="list-up-collects">
+            
+            <div class="collects-product-list" id="JSON-collectsIndicator">
+                
+                
+                
+                <!-- popup list-->
+                <div class="collects-list-style">
+                    
+                    <div class="list-product-collects">냉장고<br>[<span>대형</span>]</div>
+                    <div class="list-amount-collects input-group input-group-sm">
+                        <input type="number" min="0" class="form-control" value=0 oninput="doWeight(this)">
+                        <span style="display: none;"></span>
+                    </div>
+                    <span class="el-index-list"></span>
+
+                </div>
+
+                <div onmousedown="buttonDownChange(this)" class="button-style-change-item" id="button-change-item">항목변경</div>
+
+            </div>
+            <img src="images/arrow-down.png" id="list-down-collects">
+
+            
+            
+            
+            
+
+
+            <div class="collects-client-info" id="collects-client-section">
+                
+                <span id="collects-customer-name">남궁민혁</span> 님
+            </div>
+            <div id="list-collects-total">0개</div>
+            
+            
+            <div class="collects-button" id="collects-button-point">
+                
+                확인 완료
+            
+            </div>
+            
+            
+            
+
+    
+        </div>
+        
+        
+
+    
+    </body>
+
+
+
+
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+		<meta user-scalable="0">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/customer_event.css">
+
+
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+
+
+            $(document).ready(function(){
+                $(".event-list-main").click(function(){
+                    var isNameSame = this.id;
+					parent.document.getElementById("home-popup").style.display = "block";
+					parent.document.getElementById("popup-event").style.display = "block";
+					var checkNameSame = "popup-" + isNameSame;
+					parent.document.getElementById("popup-eventpopup").contentWindow.document.getElementById(checkNameSame).style.display = "block";
+                });
+
+            });
+
+
+        </script>
+    
+    </head>
+    
+    <body style="height: 100%; width: 100%; background-color: #eaeaea;">
+
+        <!-- main part-->
+        <div id="event-menu">
+            
+        <!-- event list-->
+            <ul id="event-list">
+                
+                
+                <!-- event list main-->
+                <li class="event-list-main" id="event-0">
+
+                    <div class="event-list-title">
+                        <p>이벤트의 제목은 여기에 표시한다</p>
+                    </div>
+                    <div class="event-list-content-summary">
+                        <p>이벤트의 간단한 내용은 여기에 표시한다</p>
+
+                    </div>
+
+                    
+
+                </li>
+                <!-- event list main-->
+                <li class="event-list-main" id="event-1">
+
+                    <div class="event-list-title">
+                        <p>이벤트의 제목은 여기에 표시한다</p>
+                    </div>
+                    <div class="event-list-content-summary">
+                        <p>이벤트의 간단한 내용은 여기에 표시한다</p>
+
+                    </div>
+
+                    
+
+                </li>
+                <!-- event list main-->
+                <li class="event-list-main" id="event-2">
+
+                    <div class="event-list-title">
+                        <p>이벤트의 제목은 여기에 표시한다</p>
+                    </div>
+                    <div class="event-list-content-summary">
+                        <p>이벤트의 간단한 내용은 여기에 표시한다</p>
+
+                    </div>
+
+                    
+
+                </li>
+                <!-- event list main-->
+                <li class="event-list-main" id="event-3">
+
+                    <div class="event-list-title">
+                        <p>이벤트의 제목은 여기에 표시한다</p>
+                    </div>
+                    <div class="event-list-content-summary">
+                        <p>이벤트의 간단한 내용은 여기에 표시한다</p>
+
+                    </div>
+
+                    
+
+                </li>
+                <!-- event list main-->
+                <li class="event-list-main" id="event-4">
+
+                    <div class="event-list-title">
+                        <p>이벤트의 제목은 여기에 표시한다</p>
+                    </div>
+                    <div class="event-list-content-summary">
+                        <p>이벤트의 간단한 내용은 여기에 표시한다</p>
+
+                    </div>
+
+                    
+
+                </li>
+                
+                
+
+
+
+
+            </ul>
+        </div>
+
+    </body>
+</html>

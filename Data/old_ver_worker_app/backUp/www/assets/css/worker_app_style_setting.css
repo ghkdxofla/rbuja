@@ -1,0 +1,56 @@
+
+
+
+.setting-list-style {
+    position: absolute;
+    
+    font-weight: bolder;
+    font-size: 16px;
+    float: left;
+    left: 0;
+    width: 100%;
+    padding: 0 0 0 10px;
+    margin: 0;
+    overflow: hidden;
+    
+}
+
+p {
+    position: relative;
+}
+
+
+
+.setting-picture {
+    position: absolute;
+    float: right;
+    right: 0;
+    width: 100%;
+    max-width: 200px;
+}
+
+.setting-picture-part {
+    position: absolute;
+    margin: 20px 0% 0 5%;
+    width: 40%;
+    float: left;
+    display: inline-block;
+    height: 80%;
+    
+}
+
+.setting-info-part {
+    position: absolute;
+    float: right;
+    right: 0;
+    margin: 20px 5% 0 0;
+    padding: 20px 0;
+    width: 50%;
+    height: 80%;
+    display: inline-block;
+    
+}
+
+#setting-info-title {
+    position: absolute;
+}

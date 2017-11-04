@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html style="height: 100%; width: 100%;">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="assets/js/jquery-2.1.1.min.js"></script>
+        <script src="assets/js/jquery.validate.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/iscroll.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/onClickScript.js"></script>
+        <script src="assets/js/homeJavaScript.js"></script>
+		<script type="application/javascript" src="assets/js/fastclick.js"></script>
+
+
+        <title>알부자</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="assets/css/customer_home.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">
+
+        
+        <script>
+			if ('addEventListener' in document) {
+				document.addEventListener('DOMContentLoaded', function() {
+					FastClick.attach(document.body);
+				}, false);
+			}
+            //home의 click 기능은 homeJavaScript에서 처리(양이 많아서)
+
+        </script>
+    
+    </head>
+    
+    <body style="height: 100%; width: 100%;">
+        <!-- total part-->
+        <div id="home-menu">
+            <!-- topbar part-->
+            <div id="home-top">
+                <!--topbar title-->
+                <div id="home-top-title">
+                    
+                    <img src="images/home/top-bar-gradation.png" id="top-title-bar">
+                    <img src="images/home/top-bar-gradation-red.png" id="top-title-bar-red">
+
+                    <img src="images/home/logo-inverse-mini-trans.png" id="top-title-icon">
+                    <img src="images/home/logo-inverse-mini-trans-red.png" id="top-title-icon-red">
+
+                    <div id="top-title-home">알부자</div>
+					<div id="top-image-more">
+						<img src="images/common/more_button.png" id="top-image-more-style">
+
+					</div>
+                    
+                    <!-- when sidebar menu click -->
+                    <div id="top-title-sidebar"><br></div>
+                    <div class="fa fa-home" id="top-back-home"></div>
+                    
+                </div>
+
+                <!--topbar menu-->           
+                <div id="home-top-menu">
+
+                    <div class="top-menu" id="top-menu-front">
+                        <img src="images/home/top_nav_home_off.jpg" class="top-image-menu-off">
+                        <img src="images/home/top_nav_home_on.jpg" style="display: block;" class="top-image-menu-on">
+
+                    </div>
+                    <div class="top-menu" id="top-menu-manual">
+                        <img src="images/home/top_nav_manual_off.jpg" class="top-image-menu-off">
+                        <img src="images/home/top_nav_manual_on.jpg" class="top-image-menu-on">
+
+                    </div>
+                    <div class="top-menu" id="top-menu-collect">
+                        <img src="images/home/top_nav_collect_off_car.jpg" class="top-image-menu-off">
+                        <img src="images/home/top_nav_collect_on_car.jpg" class="top-image-menu-on">
+
+                    </div>
+                    <div class="top-menu" id="top-menu-shop">
+                        <img src="images/home/top_nav_shop_off.jpg" class="top-image-menu-off">
+                        <img src="images/home/top_nav_shop_on_red.jpg" class="top-image-menu-on">
+                    </div>
+
+                </div>     
+            </div>
+            <!--topbar side-->
+            <div id="home-top-side">
+                <div id="top-side-close"><br></div>
+                <div id="top-side-main"><br></div>
+`
+                <div id="top-side-list">
+                    <div class="side-list-style" id="side-list-notice">
+                        <div class="side-list-icon-style fa fa-bullhorn"><br></div>
+                        <div class="side-list-menu-style">공 지 사 항</div>
+                    </div>
+                    <div class="side-list-style" id="side-list-event">
+                        <div class="side-list-icon-style fa fa-newspaper-o"><br></div>
+                        <div class="side-list-menu-style">이  벤  트</div>
+                    </div>
+                    <div class="side-list-style" id="side-list-bag">
+                        <div class="side-list-icon-style fa fa-shopping-cart"><br></div>
+                        <div class="side-list-menu-style">장 바 구 니</div>
+                    </div>
+                    <div class="side-list-style" id="side-list-order">
+                        <div class="side-list-icon-style fa fa-barcode"><br></div>
+                        <div class="side-list-menu-style">주 문 내 역</div>
+                    </div>
+                    <div class="side-list-style" id="side-list-point">
+                        <div class="side-list-icon-style fa fa-credit-card"><br></div>
+                        <div class="side-list-menu-style">포인트 관리</div>
+                    </div>
+                    <div class="side-list-style" id="side-list-service">
+                        <div class="side-list-icon-style fa fa-tty"><br></div>
+                        <div class="side-list-menu-style">고 객 센 터</div>
+                    </div>
+                    <div class="side-list-style" id="side-list-setting">
+                        <div class="side-list-icon-style fa fa-cog"><br></div>
+                        <div class="side-list-menu-style">설      정</div>
+                    </div>
+                    <div class="side-list-style" id="side-list-logout">
+                        <div class="side-list-icon-style fa fa-power-off"><br></div>
+                        <div class="side-list-menu-style">로 그 아 웃</div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!--home main-->
+            <div id="home-main">
+                <iframe frameborder="0" class="main-style" id="main-front" style="display: block;" src="front.html"></iframe>
+                <iframe frameborder="0" class="main-style" id="main-manual" src="manual.html"></iframe>
+                <iframe frameborder="0" class="main-style" id="main-collect" src="collect.html"></iframe>
+                <iframe frameborder="0" class="main-style" id="main-shop" src="shop.html"></iframe>
+
+            </div>
+            <!--home side-->
+            <div id="home-side">
+                <iframe frameborder="0" class="side-style" id="side-notice" src="notice.html"></iframe>
+                <iframe frameborder="0" class="side-style" id="side-event" src="event.html"></iframe>
+                <iframe frameborder="0" class="side-style" id="side-bag" src="bag.html"></iframe>
+                <iframe frameborder="0" class="side-style" id="side-order" src="order.html"></iframe>
+                <iframe frameborder="0" class="side-style" id="side-point" src="point.html"></iframe>
+                <iframe frameborder="0" class="side-style" id="side-service" src="service.html"></iframe>
+                <iframe frameborder="0" class="side-style" id="side-setting" src="setting.html"></iframe>
+
+            </div>
+            <!--home popup-->
+            <div id="home-popup">
+                <div id="home-popup-close">
+					<br>
+				</div>
+				<img src="images/common/close_circle.png" id="home-popup-close-button-style">
+
+				
+
+                <div class="home-popup-style" id="popup-manual">
+                    
+                    <iframe frameborder="0" class="popup-style" id="popup-manualpopup" src="manualpopup.html"></iframe>
+
+                </div>
+                <div class="home-popup-style" id="popup-event">
+                    
+                    <iframe frameborder="0" class="popup-style" id="popup-eventpopup" src="eventpopup.html"></iframe>
+
+                </div>
+
+            
+            </div>
+            
+            <!--home logout-->
+            <div id="home-logout-close"><br></div>
+
+            <div id="home-logout">
+                <div id="home-logout-message">
+                    로그아웃 하시겠습니까?
+                </div>
+                <div class="home-logout-button" id="home-logout-button-yes">
+                    네 ㅠㅠ
+                
+                </div>
+                <div class="home-logout-button" id="home-logout-button-no">
+                    아니오!
+                
+                </div>
+            
+            </div>
+
+        </div>
+
+
+    </body>
+</html>
+

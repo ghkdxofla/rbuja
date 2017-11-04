@@ -1,0 +1,313 @@
+
+
+
+
+
+#recycle-title {
+    
+    right:50%;
+    
+    
+    background-color: #4DC03D;
+
+    
+}
+
+#electric-title {
+    
+    left:50%;
+
+
+    background-color: #90EE90;
+    color: black;
+
+}
+
+#goods-Menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    
+    
+    
+    
+}
+
+#recycle-main {
+    
+    
+    
+    position:absolute;
+    text-align: center;
+
+   
+    padding: 10px 2.5% 10px 2.5%;
+    margin-left: -43%;
+    margin-top: 10px;
+    width: 86%;
+    float: left;
+    left: 50%;
+    
+    color: black;
+    background-color: #F0E68C;
+    border:1px solid #F0E68C;
+    border-radius:5px;
+    
+    z-index: 3000;
+}
+
+.re-client-info {
+    
+
+    position: absolute;
+    text-align: left;
+    padding: 10px 0 10px 5%;
+    margin-left: 7%;
+    
+    width: 70%;
+    
+    color: black;
+    background-color: #B0C4DE;
+    border:1px solid #B0C4DE;
+    border-radius:5px;
+    z-index: 2500;
+}
+
+.re-client-number {
+    
+    position: absolute;
+    font-weight: bolder;
+    text-align: center;
+    width: 14.3%;
+    margin: 0 0 0 1%;
+    padding: 20px 0px 20px 0px;
+    float: right;
+    right: 7%;
+    
+    
+    
+    background-color: #B0C4DE;
+    border:1px solid #B0C4DE;
+    border-radius:5px;
+    z-index: 2500;
+}
+
+.all-client {
+    position: list-item;
+    margin-top: 5px;
+    ovrflow: hidden;
+    width: 100%;
+    z-index: 2500;
+    height: 62px;
+    
+    float: left;
+}
+
+
+
+#background-title {
+    position: absolute;
+    width: 100%;
+    
+    
+    padding: 40px 50% 30px 50%;
+    background-color: #F0FFF0;
+    z-index: 2800;
+}
+
+.sidebar-icon {
+
+    position:relative;
+    margin: 5px;
+    font-size: 80px;
+
+    
+    
+
+    text-align: center;
+}
+
+#sidebar-icon-search {
+    
+     margin-top:2px;
+    font-size:49px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.sidebar-text {
+    position: absolute;
+    margin:-7px 0 0 -45px;
+    padding: 1px;
+    font-size: 18px;
+    background-color:#4DC03D;
+    color: white;
+    
+    
+    width: 90px;
+    float: left;
+    left: 50%;
+
+    
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+
+
+
+.sidebar-list {
+    top: 90px;
+    position:absolute;
+    height: 390px;
+    width: 35%;
+    right: 0;
+    z-index: 3000;
+}
+
+.el-client-info {
+
+   
+    position: absolute;
+    text-align: left;
+    padding: 10px 0 10px 5%;
+    margin-left: 7%;
+    width: 70%;
+    
+
+    color: black;
+    background-color: #F4A460;
+    border:1px solid #F4A460;
+    border-radius:5px;
+    z-index: 2500;
+    
+    
+
+    
+
+}
+
+.el-client-number {
+    position: absolute;
+    font-weight: bolder;
+    text-align: center;
+    width: 14.3%;
+    margin: 0 0 0 1%;
+    padding: 20px 0px 20px 0px;
+    float: right;
+    right: 7%;
+    
+
+    background-color: #F4A460;
+    border:1px solid #F4A460;
+    border-radius:5px;
+    
+    z-index: 2500;
+}
+
+#certify-info-title {
+    position: relative;
+    display:inline-block;
+    float: left;
+    clear: both;
+    
+    width:100%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #87CEFA;
+    color: white;   
+    z-index: 2000;
+    outline-width: 0;
+    height: auto;
+    
+     
+    outline-style: solid;
+    outline-color: white;
+}
+
+.certify-button {
+    position: absolute;
+    display:inline-block;
+    top: 30px;
+    
+
+    
+    width:50%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #4DC03D;
+    color: white;   
+    
+    outline-width: 0;
+    
+    
+    outline-style: solid;
+    outline-color: white;
+}
+
+
+
+.menuIcon-certify {
+    color: #4DC03D;
+}
+
+#all-client-list {
+    position: absolute;
+    width: 70%;
+    height: 410px;
+
+    top: 80px;
+    float: left;
+    clear: both;
+   
+}
+
+.all-client-list-setting {
+    position: list-item;
+    overflow: hidden;
+    
+
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    z-index: 2500;
+    width: 100%;
+    height: auto;
+
+    
+}
+
+li {
+    
+    position: relative;
+    width: 100%;
+    float: left;
+    clear: both;
+}
+    
+    
+
+.all-client-list-scroll {
+    position: absolute;
+    height: 340px;
+    width: 100%;
+    top: 70px;
+    overflow: hidden;
+    z-index: 2500;
+}

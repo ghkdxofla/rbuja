@@ -1,0 +1,17 @@
+Rer app function
+http://rbuja.herokuapp.com/rbuja/ListRequest_app?made_date=2014-12-11
+GET
+
+{
+    "message": "요청한 작업에 성공했습니다",
+    "result": true,
+    "response": {
+        "request_ids": [
+            15,
+            16,
+            17,
+            19,
+            18
+        ]
+    }
+}

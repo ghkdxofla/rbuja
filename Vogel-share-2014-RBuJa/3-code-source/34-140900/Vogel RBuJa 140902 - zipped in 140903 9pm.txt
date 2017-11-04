@@ -1,0 +1,195 @@
+Picker::Picker(
+	string id,
+	string pw,
+	string name,
+	string phone,
+
+	Date joinDate,
+	Long likeCount,
+
+	RPoint rPoint,
+
+	RResource* rResourceLink,
+	SArea* sAreaLink,
+
+	LinkedList<Area*> *areaLinks,
+	LinkedList<RRequest*> *rRequestsToDo,
+	DateIndexes<LinkedList<RRequest*>::Node*> *dateRRequestLinkIndexes
+	)
+{
+	this->id = id;
+	this->pw = pw;
+	this->name = name;
+	this->phone = phone;
+
+	this->joinDate = joinDate;
+	this->likeCount = likeCount;
+
+	this->rPoint = rPoint;
+
+	this->rResourceLink = rResourceLink;
+	this->sAreaLink = sAreaLink;
+
+	this->areaLinks = *areaLinks;
+	this->rRequestsToDo = *rRequestsToDo;
+	this->dateRRequestLinkIndexes = *dateRRequestLinkIndexes;
+
+	this->lengthForAreaLinks = areaLinks->GetLength();
+	this->lengthForToDo = rRequestsToDo->GetLength();
+	this->lengthForDateRRequestLinkIndexes = dateRRequestLinkIndexes->GetLength();
+
+	if (areaLinks->GetCurrent() != 0)
+	{
+		currentForAreaLinks = areaLinks->GetCurrent()->GetObject();
+	}
+	else
+	{
+		currentForAreaLinks = 0;
+	}
+
+	if (rRequestsToDo->GetCurrent() != 0)
+	{
+		currentForToDo = rRequestsToDo->GetCurrent()->GetObject();
+	}
+	else
+	{
+		currentForToDo = 0;
+	}
+
+	if (dateRRequestLinkIndexes->GetCurrent() != 0)
+	{
+		currentForDateRRequestLinkIndexes = dateRRequestLinkIndexes->GetCurrent();
+	}
+	else
+	{
+		currentForDateRRequestLinkIndexes = 0;
+	}
+}
+
+
+Picker* RBuJa::ModifyPicker(
+	string id,
+	string pw,
+	string name,
+	string phone
+	)
+{
+	// Picker를 찾는다.
+	Picker* pickerLink = 0;
+
+	if (id != "") // id가 있으면
+	{
+		pickerLink = FindPicker(id);
+	}
+
+	if (pickerLink != 0) // pickerLink가 있으면
+	{
+		Picker* oldPickerLink = pickerLink;
+
+		pickerLink = controlPickerLink->ModifyPicker(pickerLink, pw, name, phone);
+	}
+
+
+
+	return pickerLink;
+}
+
+Picker* ControlPicker::ModifyPicker(
+	Picker* oldPickerLink,
+	string pw,
+	string name,
+	string phone)
+{
+	BinaryTree<Picker>::Node* nodeLink = pickers.Search(oldPickerLink->GetId(), ComparePickerIds);
+
+	this->pickers.Modify(
+		nodeLink,
+		Picker(
+		oldPickerLink->GetId(),
+		pw,
+		name,
+		phone,
+		oldPickerLink->GetJoinDate(),
+		oldPickerLink->GetLikeCount(),
+		*oldPickerLink->GetRPoint(),
+		oldPickerLink->GetRResourceLink(),
+		oldPickerLink->GetSAreaLink(),
+		oldPickerLink->GetAreaLinks(),
+		oldPickerLink->GetRRequestsToDo(),
+		oldPickerLink->GetDateRRequestLinkIndexes()
+		)
+		);
+
+	return 0;
+}
+
+//치환연산자
+template<typename T>
+DateIndexes<T>& DateIndexes<T>:: operator = (const DateIndexes& source){
+
+	//this의 기존 노드 삭제하기
+	if (this->head != 0){
+		this->DeleteAllItems();
+	}
+
+
+
+
+	//복사 생성자 로직.
+
+	Node *it = 0;
+	Long i = 0;
+	Node *temp = 0;	//링크 정리를 위한 임시변수
+
+	//this의 초기 헤드값을 널로 설정
+	this->head = 0;
+
+	//반복제어위한 변경
+	//source.tail.next =0; 오류가나서 반복제어변수를 source.Length로 하겟음
+	it = source.head;
+	//Node복사위한 반복구조
+	while (i<source.GetLength()){
+		if (this->head == 0){//첫노드 처리
+			//node생성
+			this->current = new Node(*it);
+
+			//링크 정리
+			this->head = this->current;
+		}
+		else {//첫노드 이후 처리
+			this->current = new Node(*it);
+			temp->next = this->current;
+		}
+
+		temp = this->current;
+		it = it->GetNext();
+		i++;
+	}
+
+	//this의 DateIndexes정리
+	this->tail = this->current;
+	this->length = source.length;
+	//source.tail.next = source.tail;오류가나서 반복제어변수를 source.Length로 하겟음
+
+
+	//this.current를 source.current와 같은 object노드를 가리키도록 설정하기 위한 준비
+	Long count = 0;
+	it = source.head;
+
+	//source의 current가 몇번 링크 타는지 확인
+	while (it != source.current){
+		it = it->next;
+		count++;
+	}
+
+	//this current 찾기
+	this->current = this->head;
+	i = 0;
+
+	while (i < count){
+		this->current = this->current->next;
+		i++;
+	}
+	return *this;
+}
+
